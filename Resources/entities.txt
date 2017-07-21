@@ -1,0 +1,138 @@
+9876:Entity
+1200:Rat
+1201:Small Rat
+1202:Large Rat
+1203:Snow Rat
+2060:Infested Ghoul
+2230:Stray Demon
+2231:Demon Firesage
+2232:Asylum Demon
+2240:Capra Demon
+2250:Taurus Demon
+2260:Batwing Demon
+2270:Mushroom Parent
+2280:Mushroom Child
+2300:Titanite Demon
+2310:Crow Demon
+2320:Iron Golem
+2330:Demonic Foliage 
+2360:Smough
+2370:Channeler
+2380:Giant Stone Knight
+2390:Darkwraith
+2400:Painting Guardian
+2410:Silver Knight
+2430:Demonic Statue
+2500:Hollow
+2510:Undead Merchant
+2520:Undead Assassin
+2530:Blowdart Sniper
+2540:Armored Hollow
+2550:Undead Soldier
+2560:Balder Knight
+2570:Berenike Knight
+2640:Andre of Astora
+2650:Necromancer
+2660:Butcher
+2670:Ghost (Male)
+2680:Ghost (Female)
+2690:Serpent Soldier
+2700:Serpent Mage
+2710:Crystal Golem
+2711:Golden Crystal Golem
+2730:Crossbreed Priscilla
+2750:Anastacia of Astora
+2780:Mimic
+2790:Black Knight (Sword)
+2791:Black Knight (Great Sword)
+2792:Black Knight (Axe)
+2793:Black Knight (Halberd)
+2800:Undead Crystal Soldier
+2810:Infested Barbarian (Club)
+2811:Infested Barbarian (Boulder)
+2830:Phalanx
+2840:Engorged Zombie
+2860:Giant
+2870:Sentinel or Royal Sentinel
+2900:Skeleton
+2910:Giant Skeleton
+2920:Vamos
+2930:Bonewheel Skeleton
+2940:Skeleton Baby
+2950:Skeleton Beast
+2960:Bone Tower
+3090:Giant Mosquito
+3200:Slime
+3210:Egg Carrier
+3220:Vile Maggot
+3230:Moonlight Butterfly
+3240:Chaos Eater
+3250:Man-Eater Shell
+3270:Basilisk
+3300:Crystal Lizard
+3320:Pinwheel
+3330:Pisaca
+3340:Undead Attack Dog
+3341:Flaming Attack Dog
+3350:Possessed Tree
+3370:Tree Lizard
+3380:Giant Leech
+3390:Burrowing Rockworm
+3400:Crag-Spider
+3410:Frog-Ray
+3420:Undead Dragon
+3421:Bounding Demon of Izalith
+3430:Hellkite Drake
+3450:Everlasting Dragon
+3460:Armored Tusk
+3461:Armored Tusk (Reinforced)
+3471:Sanctuary Guardian
+3480:Chaos Bug
+3490:Good Vagrant
+3491:Evil Vagrant
+3500:Mass of Souls
+3501:Wisp (exploding skull)
+3510:Asylum Transport Crow
+3520:Drake
+3530:Hydra
+3531:Hydra Head
+4090:Marvelous Chester
+4100:Artorias
+4110:Hawkeye Gough
+4120:Stone Guardian
+4130:Scarecrow
+4140:Elizabeth
+4150:Bloathead
+4160:Bloathead Sorcerer
+4170:Humanity Phantom (small)
+4171:Humanity Phantom (medium)
+4172:Humanity Phantom (large)
+4180:Chained Prisoner
+4190:Attack Dog (DLC)
+4500:Manus, Father of the Abyss
+4510:Black Dragon Kalameet
+4520:Young Sif
+5200:Centipede Demon
+5201:Centipede Demon's Arm
+5202:Centipede Demon's Tail
+5210:Sif
+5220:Gravelord Nito
+5230:Bed of Chaos
+5240:Parasitic Wall Hugger
+5250:Ceaseless Discharge
+5260:Gaping Dragon
+5270:Ornstein
+5271:Super Ornstein
+5280:Quelaag
+5290:Seath the Scaleless
+5310:Gwynevere
+5320:Gwyndolin
+5330:Frampt / Kaathe
+5340:The Fair Lady
+5350:Bell Gargoyles
+5351:Lightning Gargoyles
+5360:Great Feline
+5361:Alvina
+5362:Alvina
+5370:Gwyn
+5390:Four Kings
