@@ -25,8 +25,8 @@ Partial Class CosplaySouls
         Me.fullSetup = New System.Windows.Forms.Button()
         Me.UnhookButton = New System.Windows.Forms.Button()
         Me.CosplayEditor = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.autoGear = New System.Windows.Forms.CheckBox()
+        Me.autoLevel = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -60,29 +60,29 @@ Partial Class CosplaySouls
         Me.CosplayEditor.Text = "Cosplay Editor"
         Me.CosplayEditor.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'autoGear
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Location = New System.Drawing.Point(279, 24)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(193, 29)
-        Me.CheckBox1.TabIndex = 7
-        Me.CheckBox1.Text = "Auto-level Gear"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.autoGear.AutoSize = True
+        Me.autoGear.Checked = True
+        Me.autoGear.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.autoGear.Location = New System.Drawing.Point(279, 24)
+        Me.autoGear.Name = "autoGear"
+        Me.autoGear.Size = New System.Drawing.Size(193, 29)
+        Me.autoGear.TabIndex = 7
+        Me.autoGear.Text = "Auto-level Gear"
+        Me.autoGear.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'autoLevel
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Checked = True
-        Me.CheckBox2.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox2.Location = New System.Drawing.Point(279, 71)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(195, 29)
-        Me.CheckBox2.TabIndex = 8
-        Me.CheckBox2.Text = "Auto-level Stats"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.autoLevel.AutoSize = True
+        Me.autoLevel.Checked = True
+        Me.autoLevel.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.autoLevel.Location = New System.Drawing.Point(279, 71)
+        Me.autoLevel.Name = "autoLevel"
+        Me.autoLevel.Size = New System.Drawing.Size(195, 29)
+        Me.autoLevel.TabIndex = 8
+        Me.autoLevel.Text = "Auto-level Stats"
+        Me.autoLevel.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -101,8 +101,8 @@ Partial Class CosplaySouls
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(514, 249)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.autoLevel)
+        Me.Controls.Add(Me.autoGear)
         Me.Controls.Add(Me.CosplayEditor)
         Me.Controls.Add(Me.UnhookButton)
         Me.Controls.Add(Me.fullSetup)
@@ -116,7 +116,7 @@ Partial Class CosplaySouls
     Friend WithEvents fullSetup As Button
     Friend WithEvents UnhookButton As Button
     Friend WithEvents CosplayEditor As Button
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents autoGear As CheckBox
+    Friend WithEvents autoLevel As CheckBox
     Friend WithEvents Label1 As Label
 End Class

@@ -17,7 +17,6 @@ Public Class CosplaySouls
     Public Const processAllAccess = &H1F0FFF
     Private targetProcess As Process = Nothing
     Private targetProcessHandle As IntPtr = IntPtr.Zero
-    Dim cosplaysFile = My.Resources.cosplays
     Dim modifiedHitFunct As Integer
     Dim lastHitPtr As Integer
     Dim lastHitBytes(3) As Byte
@@ -25,16 +24,16 @@ Public Class CosplaySouls
     Dim validityCheck() As Byte = {&H0}
     Dim entity = "Entity"
     Dim fullAddress As Integer
-    Dim cosplayHash As New Hashtable()
+    Public cosplayHash As New Hashtable()
     Dim previousHit As Integer = 9876
     Dim latestHit As Integer = 9876
-    Dim currentCosplay(7) As Integer
+    Dim currentCosplay(16) As Integer
     Dim equipmentBase As Integer
     Dim statBase As Integer
-    Dim autoStats As Boolean = False
-    Dim autoLvlGear As Boolean = False
-    Dim externalCosplays As String
-    Dim usingExternal As Boolean
+    Dim autoStats As Boolean
+    Dim autoLvlGear As Boolean
+    'Public externalCosplays() As Array
+    'Dim usingExternal As Boolean
 
     Private WithEvents refreshTimer As New System.Windows.Forms.Timer()
 
@@ -87,7 +86,6 @@ Public Class CosplaySouls
             End If
             Return False
         Else
-            fullSetup.Text = "Hooked!"
             'MessageBox.Show("Hooked!")
             Return True
         End If
@@ -111,7 +109,7 @@ Public Class CosplaySouls
         refreshTimer.Interval = 500
         refreshTimer.Enabled = True
 
-        Me.Icon = My.Resources.sunlight_maggot__1_
+        Me.Icon = My.Resources.maggotnobgicon_7r2_icon
 
         loadCosplays()
 
@@ -153,6 +151,7 @@ Public Class CosplaySouls
 
                 'Calibration
                 isCalibrated = True
+                fullSetup.Text = "Hooked!"
             End If
         End If
         If Not hooked Then
@@ -178,6 +177,8 @@ Public Class CosplaySouls
         editor.Show()
     End Sub
 
+
+
     Private Sub refreshing() Handles refreshTimer.Tick
         If isCalibrated Then
             getLastHitID()
@@ -191,12 +192,11 @@ Public Class CosplaySouls
                 End If
             End If
         End If
+        autoStats = autoLevel.Checked
+        autoLvlGear = autoGear.Checked
     End Sub
 
     Public Sub loadCosplays()
-        If usingExternal Then
-            cosplaysFile = externalCosplays
-        End If
         Dim cosplayList = My.Resources.cosplays.Split(Chr(&HA))
         For i = 0 To cosplayList.Length - 1
             Dim cosplayLine(16) As Integer
@@ -222,7 +222,7 @@ Public Class CosplaySouls
 
     Public Sub setCosplay()
         setEquipment()
-        If autoStats = True Then
+        If autoStats Then
             setStats()
         End If
     End Sub
@@ -235,50 +235,81 @@ Public Class CosplaySouls
         'Helmet
         tempAddress = equipmentBase + &HB4
         If currentCosplay(1) <> 9876 Then
-            WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(1)), 4, 0)
+            If autoLvlGear Then
+                WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(1)), 4, 0)
+            Else
+                WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(1) \ 100) * 100)), 4, 0)
+            End If
         End If
 
         'Armor
         tempAddress = equipmentBase + &HB8
         If currentCosplay(2) <> 9876 Then
+            'If autoLvlGear Then
             WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(2)), 4, 0)
-            Label1.Text = currentCosplay(2)
+            'Else
+            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(2) \ 100 * 100)), 4, 0)
+            'End If
         End If
 
         'Gauntlets
         tempAddress = equipmentBase + &HBC
         If currentCosplay(3) <> 9876 Then
+            'If autoLvlGear Then
             WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(3)), 4, 0)
+            'Else
+            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(3) \ 100 * 100)), 4, 0)
+            'End If
         End If
 
         'Leggings
         tempAddress = equipmentBase + &HC0
         If currentCosplay(4) <> 9876 Then
+            'If autoLvlGear Then
             WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(4)), 4, 0)
+            'Else
+            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(4) \ 100 * 100)), 4, 0)
+            'End If
         End If
 
         'L1
         tempAddress = equipmentBase + &H94
         If currentCosplay(5) <> 9876 Then
+            'If autoLvlGear Then
             WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(5)), 4, 0)
+            'Else
+            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(5) \ 100 * 100)), 4, 0)
+            'End If
         End If
 
         'R1
         tempAddress = equipmentBase + &H98
         If currentCosplay(6) <> 9876 Then
+            'If autoLvlGear Then
             WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(6)), 4, 0)
+            'Else
+            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(6) \ 100 * 100)), 4, 0)
+            'End If
         End If
 
         'L2
         tempAddress = equipmentBase + &HA0
         If currentCosplay(7) <> 9876 Then
+            ' If autoLvlGear Then
             WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(7)), 4, 0)
+            ' Else
+            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(7) \ 100 * 100)), 4, 0)
+            'End If
         End If
 
         'R2
         tempAddress = equipmentBase + &H9C
         If currentCosplay(8) <> 9876 Then
+            'If autoLvlGear Then
             WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(8)), 4, 0)
+            'Else
+            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(8) \ 100 * 100)), 4, 0)
+            'End If
         End If
     End Sub
 
@@ -288,6 +319,7 @@ Public Class CosplaySouls
 
         'VIT
         tempAddress = statBase + &H38
+        'Label1.Text = tempAddress
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(9)), 4, 0)
 
         'ATN
@@ -318,5 +350,4 @@ Public Class CosplaySouls
         tempAddress = statBase + &H68
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(16)), 4, 0)
     End Sub
-
 End Class

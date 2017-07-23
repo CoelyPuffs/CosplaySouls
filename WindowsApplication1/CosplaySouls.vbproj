@@ -47,7 +47,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>sunlight-maggot %281%29.ico</ApplicationIcon>
+    <ApplicationIcon>maggotgradiconnochop_0zt_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -137,7 +137,9 @@
     <None Include="Resources\helmets.txt" />
     <None Include="Resources\leggings.txt" />
     <None Include="Resources\weapons.txt" />
+    <Content Include="maggotgradiconnochop_0zt_icon.ico" />
     <Content Include="Resources\cosplays.txt" />
+    <None Include="Resources\maggotnobgicon_7r2_icon.ico" />
     <Content Include="Resources\sunlight-maggot %281%29.ico" />
     <Content Include="sunlight-maggot %281%29.ico" />
   </ItemGroup>

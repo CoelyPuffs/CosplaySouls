@@ -9,7 +9,7 @@ Public Class CosplayEditor
     Dim isExternal As Boolean = False
 
     'Dim editorCosplayHash As New Hashtable
-    Dim allCosplaysArray(136) As Array
+    Public allCosplaysArray(136) As Array
     Dim entityIDArray(137) As Integer
     Dim entityNameArray(137) As String
     Dim helmetIDArray(72) As Integer
@@ -22,6 +22,7 @@ Public Class CosplayEditor
     Dim leggingNameArray(60) As String
     Dim weaponIDArray(185) As Integer
     Dim weaponNameArray(185) As String
+    Public isApplied As Boolean = False
 
     Private WithEvents editorTimer As New System.Windows.Forms.Timer()
 
@@ -45,6 +46,7 @@ Public Class CosplayEditor
                 editorCosplayLine(n) = (Convert.ToInt32(editorCosplayList(i).Split(":")(n)))
             Next
             allCosplaysArray(i) = editorCosplayLine
+            CosplaySouls.cosplayHash.Item(editorCosplayLine(0)) = editorCosplayLine
             'editorCosplayHash.Add(editorCosplayLine(0), editorCosplayLine)
         Next
     End Sub
