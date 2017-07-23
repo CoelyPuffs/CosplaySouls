@@ -109,7 +109,7 @@ Public Class CosplaySouls
         refreshTimer.Interval = 500
         refreshTimer.Enabled = True
 
-        Me.Icon = My.Resources.maggotnobgicon_7r2_icon
+        Me.Icon = My.Resources.maggotgradiconnochop_0zt_icon
 
         loadCosplays()
 

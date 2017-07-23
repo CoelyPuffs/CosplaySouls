@@ -140,6 +140,7 @@
     <Content Include="maggotgradiconnochop_0zt_icon.ico" />
     <Content Include="Resources\cosplays.txt" />
     <None Include="Resources\maggotnobgicon_7r2_icon.ico" />
+    <None Include="Resources\maggotgradiconnochop_0zt_icon.ico" />
     <Content Include="Resources\sunlight-maggot %281%29.ico" />
     <Content Include="sunlight-maggot %281%29.ico" />
   </ItemGroup>

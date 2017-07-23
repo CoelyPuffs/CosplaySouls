@@ -52,29 +52,29 @@ Public Class CosplayEditor
     End Sub
 
     Public Sub editorLoadDualLists()
-        For i = 0 To My.Resources.entities.Replace(&HD, "").Split(Chr(&HA)).Length - 1
-            entityIDArray(i) = Convert.ToInt32(My.Resources.entities.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(0))
-            entityNameArray(i) = My.Resources.entities.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(1)
+        For i = 0 To My.Resources.entities.Split(Chr(&HA)).Length - 1
+            entityIDArray(i) = Convert.ToInt32(My.Resources.entities.Split(Chr(&HA))(i).Split(":")(0))
+            entityNameArray(i) = My.Resources.entities.Split(Chr(&HA))(i).Split(":")(1)
         Next
-        For i = 0 To My.Resources.helmets.Replace(&HD, "").Split(Chr(&HA)).Length - 1
-            helmetIDArray(i) = Convert.ToInt32(My.Resources.helmets.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(0))
-            helmetNameArray(i) = My.Resources.helmets.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(1)
+        For i = 0 To My.Resources.helmets.Split(Chr(&HA)).Length - 1
+            helmetIDArray(i) = Convert.ToInt32(My.Resources.helmets.Split(Chr(&HA))(i).Split(":")(0))
+            helmetNameArray(i) = My.Resources.helmets.Split(Chr(&HA))(i).Split(":")(1)
         Next
-        For i = 0 To My.Resources.armors.Replace(&HD, "").Split(Chr(&HA)).Length - 1
-            armorIDArray(i) = Convert.ToInt32(My.Resources.armors.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(0))
-            armorNameArray(i) = My.Resources.armors.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(1)
+        For i = 0 To My.Resources.armors.Split(Chr(&HA)).Length - 1
+            armorIDArray(i) = Convert.ToInt32(My.Resources.armors.Split(Chr(&HA))(i).Split(":")(0))
+            armorNameArray(i) = My.Resources.armors.Split(Chr(&HA))(i).Split(":")(1)
         Next
-        For i = 0 To My.Resources.gauntlets.Replace(&HD, "").Split(Chr(&HA)).Length - 1
-            gauntletIDArray(i) = Convert.ToInt32(My.Resources.gauntlets.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(0))
-            gauntletNameArray(i) = My.Resources.gauntlets.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(1)
+        For i = 0 To My.Resources.gauntlets.Split(Chr(&HA)).Length - 1
+            gauntletIDArray(i) = Convert.ToInt32(My.Resources.gauntlets.Split(Chr(&HA))(i).Split(":")(0))
+            gauntletNameArray(i) = My.Resources.gauntlets.Split(Chr(&HA))(i).Split(":")(1)
         Next
-        For i = 0 To My.Resources.leggings.Replace(&HD, "").Split(Chr(&HA)).Length - 1
-            leggingIDArray(i) = Convert.ToInt32(My.Resources.leggings.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(0))
-            leggingNameArray(i) = My.Resources.leggings.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(1)
+        For i = 0 To My.Resources.leggings.Split(Chr(&HA)).Length - 1
+            leggingIDArray(i) = Convert.ToInt32(My.Resources.leggings.Split(Chr(&HA))(i).Split(":")(0))
+            leggingNameArray(i) = My.Resources.leggings.Split(Chr(&HA))(i).Split(":")(1)
         Next
-        For i = 0 To My.Resources.weapons.Replace(&HD, "").Split(Chr(&HA)).Length - 1
-            weaponIDArray(i) = Convert.ToInt32(My.Resources.weapons.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(0))
-            weaponNameArray(i) = My.Resources.weapons.Replace(&HD, "").Split(Chr(&HA))(i).Split(":")(1)
+        For i = 0 To My.Resources.weapons.Split(Chr(&HA)).Length - 1
+            weaponIDArray(i) = Convert.ToInt32(My.Resources.weapons.Split(Chr(&HA))(i).Split(":")(0))
+            weaponNameArray(i) = My.Resources.weapons.Split(Chr(&HA))(i).Split(":")(1)
         Next
     End Sub
 
@@ -141,7 +141,7 @@ Public Class CosplayEditor
             Exit Sub
         End If
         Dim applyLine(17) As Integer
-        applyLine(0) = entityIDArray(entityBox.SelectedIndex)
+        applyLine(0) = entityIDArray(entityBox.SelectedIndex + 1)
         applyLine(1) = helmetIDArray(helmetName.SelectedIndex)
         applyLine(2) = armorIDArray(armorName.SelectedIndex)
         applyLine(3) = gauntletIDArray(gauntletsName.SelectedIndex)
@@ -179,7 +179,8 @@ Public Class CosplayEditor
         'For i = 9 To 15
         '    applyLine(i) = 9876
         'Next
-        allCosplaysArray(entityBox.SelectedIndex - 1) = applyLine
+        allCosplaysArray(entityBox.SelectedIndex) = applyLine
+        MessageBox.Show("Applied!")
     End Sub
 
     Private Function makeCurrentString(applyLine() As Integer) As String

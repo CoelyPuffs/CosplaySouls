@@ -236,6 +236,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         '''</summary>
+        Friend ReadOnly Property maggotgradiconnochop_0zt_icon() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("maggotgradiconnochop_0zt_icon", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        '''</summary>
         Friend ReadOnly Property maggotnobgicon_7r2_icon() As System.Drawing.Icon
             Get
                 Dim obj As Object = ResourceManager.GetObject("maggotnobgicon_7r2_icon", resourceCulture)
