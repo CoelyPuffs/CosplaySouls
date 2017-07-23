@@ -245,71 +245,71 @@ Public Class CosplaySouls
         'Armor
         tempAddress = equipmentBase + &HB8
         If currentCosplay(2) <> 9876 Then
-            'If autoLvlGear Then
-            WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(2)), 4, 0)
-            'Else
-            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(2) \ 100 * 100)), 4, 0)
-            'End If
+            If autoLvlGear Then
+                WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(2)), 4, 0)
+            Else
+                WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(2) \ 100) * 100)), 4, 0)
+            End If
         End If
 
-        'Gauntlets
-        tempAddress = equipmentBase + &HBC
+            'Gauntlets
+            tempAddress = equipmentBase + &HBC
         If currentCosplay(3) <> 9876 Then
-            'If autoLvlGear Then
-            WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(3)), 4, 0)
-            'Else
-            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(3) \ 100 * 100)), 4, 0)
-            'End If
+            If autoLvlGear Then
+                WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(3)), 4, 0)
+            Else
+                WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(3) \ 100) * 100)), 4, 0)
+            End If
         End If
 
-        'Leggings
-        tempAddress = equipmentBase + &HC0
+            'Leggings
+            tempAddress = equipmentBase + &HC0
         If currentCosplay(4) <> 9876 Then
-            'If autoLvlGear Then
-            WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(4)), 4, 0)
-            'Else
-            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(4) \ 100 * 100)), 4, 0)
-            'End If
+            If autoLvlGear Then
+                WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(4)), 4, 0)
+            Else
+                WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(4) \ 100) * 100)), 4, 0)
+            End If
         End If
 
-        'L1
-        tempAddress = equipmentBase + &H94
+            'L1
+            tempAddress = equipmentBase + &H94
         If currentCosplay(5) <> 9876 Then
-            'If autoLvlGear Then
-            WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(5)), 4, 0)
-            'Else
-            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(5) \ 100 * 100)), 4, 0)
-            'End If
+            If autoLvlGear Then
+                WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(5)), 4, 0)
+            Else
+                WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(5) \ 100) * 100)), 4, 0)
+            End If
         End If
 
-        'R1
-        tempAddress = equipmentBase + &H98
+            'R1
+            tempAddress = equipmentBase + &H98
         If currentCosplay(6) <> 9876 Then
-            'If autoLvlGear Then
-            WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(6)), 4, 0)
-            'Else
-            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(6) \ 100 * 100)), 4, 0)
-            'End If
+            If autoLvlGear Then
+                WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(6)), 4, 0)
+            Else
+                WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(6) \ 100) * 100)), 4, 0)
+            End If
         End If
 
-        'L2
-        tempAddress = equipmentBase + &HA0
+            'L2
+            tempAddress = equipmentBase + &HA0
         If currentCosplay(7) <> 9876 Then
-            ' If autoLvlGear Then
-            WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(7)), 4, 0)
-            ' Else
-            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(7) \ 100 * 100)), 4, 0)
-            'End If
+            If autoLvlGear Then
+                WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(7)), 4, 0)
+            Else
+                WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(7) \ 100) * 100)), 4, 0)
+            End If
         End If
 
-        'R2
-        tempAddress = equipmentBase + &H9C
+            'R2
+            tempAddress = equipmentBase + &H9C
         If currentCosplay(8) <> 9876 Then
-            'If autoLvlGear Then
-            WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(8)), 4, 0)
-            'Else
-            'WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(8) \ 100 * 100)), 4, 0)
-            'End If
+            If autoLvlGear Then
+                WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(8)), 4, 0)
+            Else
+                WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes(currentCosplay(8) \ 100 * 100)), 4, 0)
+            End If
         End If
     End Sub
 
@@ -319,7 +319,6 @@ Public Class CosplaySouls
 
         'VIT
         tempAddress = statBase + &H38
-        'Label1.Text = tempAddress
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(9)), 4, 0)
 
         'ATN
