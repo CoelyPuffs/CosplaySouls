@@ -177,8 +177,6 @@ Public Class CosplaySouls
         editor.Show()
     End Sub
 
-
-
     Private Sub refreshing() Handles refreshTimer.Tick
         If isCalibrated Then
             getLastHitID()
