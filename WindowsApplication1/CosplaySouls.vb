@@ -192,6 +192,7 @@ Public Class CosplaySouls
         End If
         autoStats = autoLevel.Checked
         autoLvlGear = autoGear.Checked
+        Label1.Text = cosplayHash(1201)(1)
     End Sub
 
     Public Sub loadCosplays()

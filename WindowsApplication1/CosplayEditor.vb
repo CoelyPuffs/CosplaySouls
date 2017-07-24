@@ -180,6 +180,7 @@ Public Class CosplayEditor
         '    applyLine(i) = 9876
         'Next
         allCosplaysArray(entityBox.SelectedIndex) = applyLine
+        CosplaySouls.cosplayHash.Item(applyLine(0)) = applyLine
         MessageBox.Show("Applied!")
     End Sub
 
