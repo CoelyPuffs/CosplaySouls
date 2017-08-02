@@ -313,6 +313,11 @@ Public Class CosplaySouls
     End Sub
 
     Private Sub setStats()
+
+        If currentCosplay(9) = 9876 Then
+            Exit Sub
+        End If
+
         Dim tempAddress = pointerToAddress(&H1378700)
         statBase = pointerToAddress(tempAddress + &H8)
 

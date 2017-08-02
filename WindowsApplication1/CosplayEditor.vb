@@ -108,14 +108,19 @@ Public Class CosplayEditor
         rightTwoName.SelectedIndex = Array.IndexOf(weaponIDArray, currentData(0))
         rightTwoInfusion.SelectedIndex = currentData(1)
         rightTwoLevel.SelectedIndex = currentData(2)
-        vitSet.Value = 11
-        atnSet.Value = 11
-        endSet.Value = 11
-        strSet.Value = 11
-        dexSet.Value = 11
-        resSet.Value = 11
-        intSet.Value = 11
-        fthSet.Value = 11
+        If selectedLine(9) = 9876 Then
+            noChangeStats.Checked = True
+        Else
+            noChangeStats.Checked = False
+            vitSet.Value = selectedLine(9)
+            atnSet.Value = selectedLine(10)
+            endSet.Value = selectedLine(11)
+            strSet.Value = selectedLine(12)
+            dexSet.Value = selectedLine(13)
+            resSet.Value = selectedLine(14)
+            intSet.Value = selectedLine(15)
+            fthSet.Value = selectedLine(16)
+        End If
     End Sub
 
     Private Function analyzeName(name As Integer, hasInfusion As Boolean) As Integer()

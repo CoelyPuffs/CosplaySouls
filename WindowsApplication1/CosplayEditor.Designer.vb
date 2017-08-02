@@ -72,6 +72,7 @@ Partial Class CosplayEditor
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
+        Me.noChangeStats = New System.Windows.Forms.CheckBox()
         CType(Me.vitSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.atnSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.endSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +85,7 @@ Partial Class CosplayEditor
         '
         'entityBox
         '
+        Me.entityBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.entityBox.FormattingEnabled = True
         Me.entityBox.Items.AddRange(New Object() {"Rat", "Small Rat", "Large Rat", "Snow Rat", "Infested Ghoul", "Stray Demon", "Demon Firesage", "Asylum Demon", "Capra Demon", "Taurus Demon", "Batwing Demon", "Mushroom Parent", "Mushroom Child", "Titanite Demon", "Crow Demon", "Iron Golem", "Demonic Foliage ", "Smough", "Channeler", "Giant Stone Knight", "Darkwraith", "Painting Guardian", "Silver Knight", "Demonic Statue", "Hollow", "Undead Merchant", "Undead Assassin", "Blowdart Sniper", "Armored Hollow", "Undead Soldier", "Balder Knight", "Berenike Knight", "Andre of Astora", "Necromancer", "Butcher", "Ghost (Male)", "Ghost (Female)", "Serpent Soldier", "Serpent Mage", "Crystal Golem", "Golden Crystal Golem", "Crossbreed Priscilla", "Anastacia of Astora", "Mimic", "Black Knight (Sword)", "Black Knight (Great Sword)", "Black Knight (Axe)", "Black Knight (Halberd)", "Undead Crystal Soldier", "Infested Barbarian (Club)", "Infested Barbarian (Boulder)", "Phalanx", "Engorged Zombie", "Giant", "Sentinel or Royal Sentinel", "Skeleton", "Giant Skeleton", "Vamos", "Bonewheel Skeleton", "Skeleton Baby", "Skeleton Beast", "Bone Tower", "Giant Mosquito", "Slime", "Egg Carrier", "Vile Maggot", "Moonlight Butterfly", "Chaos Eater", "Man-Eater Shell", "Basilisk", "Crystal Lizard", "Pinwheel", "Pisaca", "Undead Attack Dog", "Flaming Attack Dog", "Possessed Tree", "Tree Lizard", "Giant Leech", "Burrowing Rockworm", "Crag-Spider", "Frog-Ray", "Undead Dragon", "Bounding Demon of Izalith", "Hellkite Drake", "Everlasting Dragon", "Armored Tusk", "Armored Tusk (Reinforced)", "Sanctuary Guardian", "Chaos Bug", "Good Vagrant", "Evil Vagrant", "Mass of Souls", "Wisp (exploding skull)", "Asylum Transport Crow", "Drake", "Hydra", "Hydra Head", "Marvelous Chester", "Artorias", "Hawkeye Gough", "Stone Guardian", "Scarecrow", "Elizabeth", "Bloathead", "Bloathead Sorcerer", "Humanity Phantom (small)", "Humanity Phantom (medium)", "Humanity Phantom (large)", "Chained Prisoner", "Attack Dog (DLC)", "Manus, Father of the Abyss", "Black Dragon Kalameet", "Young Sif", "Centipede Demon", "Centipede Demon's Arm", "Centipede Demon's Tail", "Sif", "Gravelord Nito", "Bed of Chaos", "Parasitic Wall Hugger", "Ceaseless Discharge", "Gaping Dragon", "Ornstein", "Super Ornstein", "Quelaag", "Seath the Scaleless", "Gwynevere", "Gwyndolin", "Frampt / Kaathe", "The Fair Lady", "Bell Gargoyles", "Lightning Gargoyles", "Great Feline", "Alvina", "Alvina", "Gwyn", "Four Kings"})
         Me.entityBox.Location = New System.Drawing.Point(16, 70)
@@ -94,6 +96,7 @@ Partial Class CosplayEditor
         '
         'helmetName
         '
+        Me.helmetName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.helmetName.DropDownWidth = 200
         Me.helmetName.FormattingEnabled = True
         Me.helmetName.Items.AddRange(New Object() {"No Change", "Bare", "Balder Helm", "Big Hat", "Black Iron Helm", "Black Knight Helm", "Black Sorcerer Hat", "Bloated Head", "Bloated Sorcerer Head", "Brass Helm", "Brigand Hood", "Catarina Helm", "Chain Helm", "Cleric Helm", "Crown of Dusk", "Crown of the Dark Sun", "Crown of the Great Lord", "Crystalline Helm", "Dark Mask", "Dingy Hood", "Dragon Head", "Eastern Helm", "Egg Head", "Elite Cleric Helm", "Elite Knight Helm", "Fang Boar Helm", "Gargoyle Helm", "Giant Helm", "Gold-Hemmed Black Hood", "Golem Helm", "Ghough's Helm", "Guardian Helm", "Havel's Helm", "Helm of Artorias", "Helm of Favor", "Helm of the Wise", "Helm of Thorns", "Hollow Soldier Helm", "Hollow Thief's Hood", "Hollow Warrior Helm", "Iron Helm", "Knight Helm", "Mage Smith Hat", "Maiden Hood", "Mask of the Child", "Mask of the Father", "Mask of the Mother", "Mask of the Sealer", "Mask of Velka", "Ornstein's Helm", "Painting Guardian Hood", "Paladin Helm", "Pharis's Hat", "Porcelain Mask", "Priest's Hat", "Royal Helm", "Sack", "Shadow Mask", "Silver Knight Helm", "Six-Eyed Helm of the Channelers", "Smough's Helm", "Snickering Top Hat", "Sorcerer Hat", "Standard Helm", "Steel Helm", "Stone Helm", "Sunlight Maggot", "Symbol of Avarice", "Tattered Cloth Hood", "Theif Mask", "Wanderer Hood", "Witch Hat", "Xanthous Crown"})
@@ -105,6 +108,7 @@ Partial Class CosplayEditor
         '
         'armorName
         '
+        Me.armorName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.armorName.DropDownWidth = 200
         Me.armorName.FormattingEnabled = True
         Me.armorName.Items.AddRange(New Object() {"No Change", "Bare", "Antiquated Dress", "Armor of Artorias", "Armor of the Glorious", "Armor of the Sun", "Armor of Thorns", "Balder Armor", "Black Cleric Robe", "Black Iron Armor", "Black Knight Armor", "Black Leather Armor", "Black Sorcerer Cloak", "Brass Armor", "Brigand Armor", "Catarina Armor", "Chain Armor", "Chester's Long Coat", "Cleric Armor", "Crimson Robe", "Crystalline Armor", "Dark Armor", "Dingy Robe", "Dragon Torso", "Eastern Armor", "Elite Cleric Armor", "Elite Knight Armor", "Embraced Armor of Favor", "Giant Armor", "Gold-Hemmed Black Cloak", "Golem Armor", "Gough's Armor", "Guardian Armor", "Hard Leather Armor", "Havel's Armor", "Hollow Soldier Armor", "Hollow Thief's Leather Armor", "Hollow Warrior Armor", "Holy Robe", "Knight Armor", "Leather Armor", "Lord's Blade Robe", "Maiden Robe", "Mage Smith Coat", "Moonlight Robe", "Ornstein's Armor", "Painting Guardian Robe", "Paladin Armor", "Robe of the Channelers", "Robe of the Great Lord", "Sage Robe", "Shadow Garb", "Silver Knight Armor", "Smough's Armor", "Sorcerer Cloak", "Steel Armor", "Stone Armor", "Tattered Cloth Robe", "Wanderer Coat", "Witch Cloak", "Xanthous Overcoat"})
@@ -116,6 +120,7 @@ Partial Class CosplayEditor
         '
         'gauntletsName
         '
+        Me.gauntletsName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.gauntletsName.DropDownWidth = 200
         Me.gauntletsName.FormattingEnabled = True
         Me.gauntletsName.Items.AddRange(New Object() {"No Change", "Bare", "Antiquated Gloves", "Balder Gauntlets", "Black Iron Gauntlets", "Black Knight Gauntlets", "Black Leather Gloves", "Black Manchette", "Black Sorcerer Gauntlets", "Bracelet of the Great Lord", "Brass Gauntlets", "Brigand Gauntlets", "Catarina Gauntlets", "Chester`s Gloves", "Cleric Gauntlets", "Crimson Gloves", "Crystalline Gauntlets", "Dark Gauntlets", "Dingy Gloves", "Dragon Arms", "Eastern Gauntlets", "Elite Cleric Gauntlets", "Elite Knight Gauntlets", "Gauntlets of Artorias", "Gauntlets of Favor", "Gauntlets of the Channelers", "Gauntlets of the Vanquisher", "Gauntlets of Thorns", "Giant Gauntlets", "Gold-Hemmed Black Gloves", "Golem Gauntlets", "Gough`s Gauntlets", "Guardian Gauntlets", "Hard Leather Gauntlets", "Havel`s Gauntlets", "Iron Bracelet", "Knight Gauntlets", "Leather Gauntlets", "Leather Gloves", "Lord`s Blade Gloves", "Mage Smith Gauntlets", "Maiden Gloves", "Moonlight Gloves", "Ornstein`s Gauntlets", "Painting Guardian Gloves", "Paladin Gauntlets", "Shadow Gauntlets", "Silver Knight Gauntlets", "Smough`s Gauntlets", "Sorcerer Gauntlets", "Steel Gauntlets", "Stone Gauntlets", "Tattered Cloth Manchette", "Traveling Gloves", "Wanderer Manchette", "Witch Gloves", "Xanthous Gloves"})
@@ -127,6 +132,7 @@ Partial Class CosplayEditor
         '
         'leggingsName
         '
+        Me.leggingsName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leggingsName.DropDownWidth = 200
         Me.leggingsName.FormattingEnabled = True
         Me.leggingsName.Items.AddRange(New Object() {"No Change", "Bare", "Anklet of the Great Lord", "Antiquated Skirt", "Balder Leggings", "Black Iron Leggings", "Black Knight Leggings", "Black Leather Boots", "Black Sorcerer Boots", "Black Tights", "Blood-Stained Skirt", "Boots of the Explorer", "Brass Leggings", "Brigand Trousers", "Catarina Leggings", "Chain Leggings", "Chester`s Trousers", "Cleric Leggings", "Crimson Waistcloth", "Crystalline Leggings", "Dark Leggings", "Dragon Legs", "Eastern Leggings", "Elite Cleric Leggings", "Elite Knight Leggings", "Giant Leggings", "Gold-Hemmed Black Skirt", "Golem Leggings", "Gough`s Leggings", "Guardian Leggings", "Hard Leather Boots", "Havel`s Leggings", "Heavy Boots", "Hollow Soldier Waistcloth", "Hollow Thief`s Tights", "Hollow Warrior Waistcloth", "Holy Trousers", "Iron Leggings", "Knight Leggings", "Leather Boots", "Leggings of Artorias", "Leggings of Favor", "Leggings of Thorns", "Lord`s Blade Waistcloth", "Mage Smith Boots", "Maiden Skirt", "Moonlight Waistcloth", "Ornstein`s Leggings", "Painting Guardian Waistcloth", "Paladin Leggings", "Shadow Leggings", "Silver Knight Leggings", "Smough`s Leggings", "Sorcerer Boots", "Steel Leggings", "Stone Leggings", "Traveling Boots", "Waistcloth of the Channelers", "Wanderer Boots", "Witch Skirt", "Xanthous Waistcloth"})
@@ -138,6 +144,7 @@ Partial Class CosplayEditor
         '
         'leftOneName
         '
+        Me.leftOneName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leftOneName.DropDownWidth = 200
         Me.leftOneName.FormattingEnabled = True
         Me.leftOneName.Items.AddRange(New Object() {"No Change", "Bare", "Caestus", "Claw", "Dark Hand", "Dragon Bone Fist", "Blacksmith Giant Hammer", "Blacksmith Hammer", "Hammer of Vamos", "Club", "Mace", "Morning Star", "Pickaxe", "Reinforced Club", "Warpick", "Demon's Great Hammer", "Dragon Tooth", "Grant", "Great Club", "Large Club", "Smough's Hammer", "Battle Axe", "Butcher Knife", "Crescent Axe", "Gargoyle Tail Axe", "Golem Axe", "Hand Axe", "Black Knight Greataxe", "Demon's Greataxe", "Dragon King Greataxe", "Greataxe", "Stone Greataxe", "Bandit's Knife", "Dagger", "Dark Silver Tracer", "Ghost Blade", "Parrying Dagger", "Priscilla's Dagger", "Estoc", "Mail Breaker", "Rapier", "Ricard's Rapier", "Velka's Rapier", "Astora's Straight Sword", "Balder Side Sword", "Barbed Straight Sword", "Broad Sword", "Broken Straight Sword", "Crystal Straight Sword", "Dark Sword", "Drake Sword", "Longsword", "Shortsword", "Silver Knight Straight Sword", "Straight Sword Hilt", "Sunlight Straight Sword", "Abyss Greatsword", "Bastard Sword", "Black Knight Sword", "Claymore", "Crystal Greatsword", "Flamberge", "Great Lord Greatsword", "Greatsword of Artorias", "Greatsword of Artorias (Cursed)", "Man Serpent Greatsword", "Moonlight Greatsword", "Obsidian Greatsword", "Stone Greatsword", "Black Knight Greatsword", "Demon Great Machete", "Dragon Greatsword", "Greatsword", "Zweihander", "Chaos Blade", "Iaito", "Uchigatana", "Washing Pole", "Falchion", "Gold Tracer", "Jagged Ghost Blade", "Painting Guardian Sword", "Quelaag's Fury Sword", "Scimitar", "Shotel", "Gravelord Sword", "Murakumo", "Server", "Channeler's Trident", "Demon's Spear", "Dragonslayer Spear", "Four-Pronged Plow", "Moonlight Butterfly Horn", "Partizan", "Pike", "Silver Knight Spear", "Spear", "Winged Spear", "Black Knight Halberd", "Gargoyle's Halberd", "Giant's Halberd", "Great Scythe", "Halberd", "Lifehunt Scythe", "Lucerne", "Scythe", "Titanite Catch Pole", "Black Bow of Pharis", "Composite Bow", "Darkmoon Bow", "Long Bow", "Short Bow", "Avelyn", "Heavy Crossbow", "Light Crossbow", "Sniper Crossbow", "Dragonslayer Greatbow", "Gough's Greatbow", "Guardian Tail", "Notched Whip", "Whip", "Beatrice's Catalyst", "Demon's Catalyst", "Izalith Catalyst", "Logan's Catalyst", "Manus Catalyst", "Oolacile Catalyst", "Oolacile Ivory Catalyst", "Sorcerer's Catalyst", "Tin Banishment Catalyst", "Tin Crystallization Catalyst", "Tin Darkmoon Catalyst", "Canvas Talisman", "Darkmoon Talisman", "Ivory Talisman", "Sunlight Talisman", "Talisman", "Thorolund Talisman", "Velka's Talisman", "Skull Lantern", "Ascended Pyromancy Flame", "Pyromancy Flame", "Buckler", "Caduceus Round Shield", "Cracked Round Shield", "Effigy Shield", "Leather Shield", "Plank Shield", "Red and White Round Shield", "Small Leather Shield", "Target Shield", "Warrior's Round Shield", "Balder Shield", "Black Knight Shield", "Bloodshield", "Caduceus Kite Shield", "Crest Shield", "Dragon Crest Shield", "East-West Shield", "Gargoyle's Shield", "Grass Crest Shield", "Heater Shield", "Hollow Soldier Shield", "Iron Round Shield", "Knight Shield", "Large Leather Shield", "Sanctus", "Silver Knight Shield", "Spider Shield", "Sunlight Shield", "Tower Kite Shield", "Wooden Shield", "Black Iron Greatshield", "Bonewheel Shield", "Cleansing Greatshield", "Eagle Shield", "Giant Shield", "Greatshield of Artorias", "Havel's Greatshield", "Stone Greatshield", "Tower Shield", "Crystal Ring Shield", "Crystal Shield", "Spiked Shield", "Pierce Shield", "Dark Hand"})
@@ -149,6 +156,7 @@ Partial Class CosplayEditor
         '
         'rightOneName
         '
+        Me.rightOneName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.rightOneName.DropDownWidth = 200
         Me.rightOneName.FormattingEnabled = True
         Me.rightOneName.Items.AddRange(New Object() {"No Change", "Bare", "Caestus", "Claw", "Dark Hand", "Dragon Bone Fist", "Blacksmith Giant Hammer", "Blacksmith Hammer", "Hammer of Vamos", "Club", "Mace", "Morning Star", "Pickaxe", "Reinforced Club", "Warpick", "Demon's Great Hammer", "Dragon Tooth", "Grant", "Great Club", "Large Club", "Smough's Hammer", "Battle Axe", "Butcher Knife", "Crescent Axe", "Gargoyle Tail Axe", "Golem Axe", "Hand Axe", "Black Knight Greataxe", "Demon's Greataxe", "Dragon King Greataxe", "Greataxe", "Stone Greataxe", "Bandit's Knife", "Dagger", "Dark Silver Tracer", "Ghost Blade", "Parrying Dagger", "Priscilla's Dagger", "Estoc", "Mail Breaker", "Rapier", "Ricard's Rapier", "Velka's Rapier", "Astora's Straight Sword", "Balder Side Sword", "Barbed Straight Sword", "Broad Sword", "Broken Straight Sword", "Crystal Straight Sword", "Dark Sword", "Drake Sword", "Longsword", "Shortsword", "Silver Knight Straight Sword", "Straight Sword Hilt", "Sunlight Straight Sword", "Abyss Greatsword", "Bastard Sword", "Black Knight Sword", "Claymore", "Crystal Greatsword", "Flamberge", "Great Lord Greatsword", "Greatsword of Artorias", "Greatsword of Artorias (Cursed)", "Man Serpent Greatsword", "Moonlight Greatsword", "Obsidian Greatsword", "Stone Greatsword", "Black Knight Greatsword", "Demon Great Machete", "Dragon Greatsword", "Greatsword", "Zweihander", "Chaos Blade", "Iaito", "Uchigatana", "Washing Pole", "Falchion", "Gold Tracer", "Jagged Ghost Blade", "Painting Guardian Sword", "Quelaag's Fury Sword", "Scimitar", "Shotel", "Gravelord Sword", "Murakumo", "Server", "Channeler's Trident", "Demon's Spear", "Dragonslayer Spear", "Four-Pronged Plow", "Moonlight Butterfly Horn", "Partizan", "Pike", "Silver Knight Spear", "Spear", "Winged Spear", "Black Knight Halberd", "Gargoyle's Halberd", "Giant's Halberd", "Great Scythe", "Halberd", "Lifehunt Scythe", "Lucerne", "Scythe", "Titanite Catch Pole", "Black Bow of Pharis", "Composite Bow", "Darkmoon Bow", "Long Bow", "Short Bow", "Avelyn", "Heavy Crossbow", "Light Crossbow", "Sniper Crossbow", "Dragonslayer Greatbow", "Gough's Greatbow", "Guardian Tail", "Notched Whip", "Whip", "Beatrice's Catalyst", "Demon's Catalyst", "Izalith Catalyst", "Logan's Catalyst", "Manus Catalyst", "Oolacile Catalyst", "Oolacile Ivory Catalyst", "Sorcerer's Catalyst", "Tin Banishment Catalyst", "Tin Crystallization Catalyst", "Tin Darkmoon Catalyst", "Canvas Talisman", "Darkmoon Talisman", "Ivory Talisman", "Sunlight Talisman", "Talisman", "Thorolund Talisman", "Velka's Talisman", "Skull Lantern", "Ascended Pyromancy Flame", "Pyromancy Flame", "Buckler", "Caduceus Round Shield", "Cracked Round Shield", "Effigy Shield", "Leather Shield", "Plank Shield", "Red and White Round Shield", "Small Leather Shield", "Target Shield", "Warrior's Round Shield", "Balder Shield", "Black Knight Shield", "Bloodshield", "Caduceus Kite Shield", "Crest Shield", "Dragon Crest Shield", "East-West Shield", "Gargoyle's Shield", "Grass Crest Shield", "Heater Shield", "Hollow Soldier Shield", "Iron Round Shield", "Knight Shield", "Large Leather Shield", "Sanctus", "Silver Knight Shield", "Spider Shield", "Sunlight Shield", "Tower Kite Shield", "Wooden Shield", "Black Iron Greatshield", "Bonewheel Shield", "Cleansing Greatshield", "Eagle Shield", "Giant Shield", "Greatshield of Artorias", "Havel's Greatshield", "Stone Greatshield", "Tower Shield", "Crystal Ring Shield", "Crystal Shield", "Spiked Shield", "Pierce Shield", "Dark Hand"})
@@ -160,6 +168,7 @@ Partial Class CosplayEditor
         '
         'leftTwoName
         '
+        Me.leftTwoName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leftTwoName.DropDownWidth = 200
         Me.leftTwoName.FormattingEnabled = True
         Me.leftTwoName.Items.AddRange(New Object() {"No Change", "Bare", "Caestus", "Claw", "Dark Hand", "Dragon Bone Fist", "Blacksmith Giant Hammer", "Blacksmith Hammer", "Hammer of Vamos", "Club", "Mace", "Morning Star", "Pickaxe", "Reinforced Club", "Warpick", "Demon's Great Hammer", "Dragon Tooth", "Grant", "Great Club", "Large Club", "Smough's Hammer", "Battle Axe", "Butcher Knife", "Crescent Axe", "Gargoyle Tail Axe", "Golem Axe", "Hand Axe", "Black Knight Greataxe", "Demon's Greataxe", "Dragon King Greataxe", "Greataxe", "Stone Greataxe", "Bandit's Knife", "Dagger", "Dark Silver Tracer", "Ghost Blade", "Parrying Dagger", "Priscilla's Dagger", "Estoc", "Mail Breaker", "Rapier", "Ricard's Rapier", "Velka's Rapier", "Astora's Straight Sword", "Balder Side Sword", "Barbed Straight Sword", "Broad Sword", "Broken Straight Sword", "Crystal Straight Sword", "Dark Sword", "Drake Sword", "Longsword", "Shortsword", "Silver Knight Straight Sword", "Straight Sword Hilt", "Sunlight Straight Sword", "Abyss Greatsword", "Bastard Sword", "Black Knight Sword", "Claymore", "Crystal Greatsword", "Flamberge", "Great Lord Greatsword", "Greatsword of Artorias", "Greatsword of Artorias (Cursed)", "Man Serpent Greatsword", "Moonlight Greatsword", "Obsidian Greatsword", "Stone Greatsword", "Black Knight Greatsword", "Demon Great Machete", "Dragon Greatsword", "Greatsword", "Zweihander", "Chaos Blade", "Iaito", "Uchigatana", "Washing Pole", "Falchion", "Gold Tracer", "Jagged Ghost Blade", "Painting Guardian Sword", "Quelaag's Fury Sword", "Scimitar", "Shotel", "Gravelord Sword", "Murakumo", "Server", "Channeler's Trident", "Demon's Spear", "Dragonslayer Spear", "Four-Pronged Plow", "Moonlight Butterfly Horn", "Partizan", "Pike", "Silver Knight Spear", "Spear", "Winged Spear", "Black Knight Halberd", "Gargoyle's Halberd", "Giant's Halberd", "Great Scythe", "Halberd", "Lifehunt Scythe", "Lucerne", "Scythe", "Titanite Catch Pole", "Black Bow of Pharis", "Composite Bow", "Darkmoon Bow", "Long Bow", "Short Bow", "Avelyn", "Heavy Crossbow", "Light Crossbow", "Sniper Crossbow", "Dragonslayer Greatbow", "Gough's Greatbow", "Guardian Tail", "Notched Whip", "Whip", "Beatrice's Catalyst", "Demon's Catalyst", "Izalith Catalyst", "Logan's Catalyst", "Manus Catalyst", "Oolacile Catalyst", "Oolacile Ivory Catalyst", "Sorcerer's Catalyst", "Tin Banishment Catalyst", "Tin Crystallization Catalyst", "Tin Darkmoon Catalyst", "Canvas Talisman", "Darkmoon Talisman", "Ivory Talisman", "Sunlight Talisman", "Talisman", "Thorolund Talisman", "Velka's Talisman", "Skull Lantern", "Ascended Pyromancy Flame", "Pyromancy Flame", "Buckler", "Caduceus Round Shield", "Cracked Round Shield", "Effigy Shield", "Leather Shield", "Plank Shield", "Red and White Round Shield", "Small Leather Shield", "Target Shield", "Warrior's Round Shield", "Balder Shield", "Black Knight Shield", "Bloodshield", "Caduceus Kite Shield", "Crest Shield", "Dragon Crest Shield", "East-West Shield", "Gargoyle's Shield", "Grass Crest Shield", "Heater Shield", "Hollow Soldier Shield", "Iron Round Shield", "Knight Shield", "Large Leather Shield", "Sanctus", "Silver Knight Shield", "Spider Shield", "Sunlight Shield", "Tower Kite Shield", "Wooden Shield", "Black Iron Greatshield", "Bonewheel Shield", "Cleansing Greatshield", "Eagle Shield", "Giant Shield", "Greatshield of Artorias", "Havel's Greatshield", "Stone Greatshield", "Tower Shield", "Crystal Ring Shield", "Crystal Shield", "Spiked Shield", "Pierce Shield", "Dark Hand"})
@@ -171,6 +180,7 @@ Partial Class CosplayEditor
         '
         'rightTwoName
         '
+        Me.rightTwoName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.rightTwoName.DropDownWidth = 200
         Me.rightTwoName.FormattingEnabled = True
         Me.rightTwoName.Items.AddRange(New Object() {"No Change", "Bare", "Caestus", "Claw", "Dark Hand", "Dragon Bone Fist", "Blacksmith Giant Hammer", "Blacksmith Hammer", "Hammer of Vamos", "Club", "Mace", "Morning Star", "Pickaxe", "Reinforced Club", "Warpick", "Demon's Great Hammer", "Dragon Tooth", "Grant", "Great Club", "Large Club", "Smough's Hammer", "Battle Axe", "Butcher Knife", "Crescent Axe", "Gargoyle Tail Axe", "Golem Axe", "Hand Axe", "Black Knight Greataxe", "Demon's Greataxe", "Dragon King Greataxe", "Greataxe", "Stone Greataxe", "Bandit's Knife", "Dagger", "Dark Silver Tracer", "Ghost Blade", "Parrying Dagger", "Priscilla's Dagger", "Estoc", "Mail Breaker", "Rapier", "Ricard's Rapier", "Velka's Rapier", "Astora's Straight Sword", "Balder Side Sword", "Barbed Straight Sword", "Broad Sword", "Broken Straight Sword", "Crystal Straight Sword", "Dark Sword", "Drake Sword", "Longsword", "Shortsword", "Silver Knight Straight Sword", "Straight Sword Hilt", "Sunlight Straight Sword", "Abyss Greatsword", "Bastard Sword", "Black Knight Sword", "Claymore", "Crystal Greatsword", "Flamberge", "Great Lord Greatsword", "Greatsword of Artorias", "Greatsword of Artorias (Cursed)", "Man Serpent Greatsword", "Moonlight Greatsword", "Obsidian Greatsword", "Stone Greatsword", "Black Knight Greatsword", "Demon Great Machete", "Dragon Greatsword", "Greatsword", "Zweihander", "Chaos Blade", "Iaito", "Uchigatana", "Washing Pole", "Falchion", "Gold Tracer", "Jagged Ghost Blade", "Painting Guardian Sword", "Quelaag's Fury Sword", "Scimitar", "Shotel", "Gravelord Sword", "Murakumo", "Server", "Channeler's Trident", "Demon's Spear", "Dragonslayer Spear", "Four-Pronged Plow", "Moonlight Butterfly Horn", "Partizan", "Pike", "Silver Knight Spear", "Spear", "Winged Spear", "Black Knight Halberd", "Gargoyle's Halberd", "Giant's Halberd", "Great Scythe", "Halberd", "Lifehunt Scythe", "Lucerne", "Scythe", "Titanite Catch Pole", "Black Bow of Pharis", "Composite Bow", "Darkmoon Bow", "Long Bow", "Short Bow", "Avelyn", "Heavy Crossbow", "Light Crossbow", "Sniper Crossbow", "Dragonslayer Greatbow", "Gough's Greatbow", "Guardian Tail", "Notched Whip", "Whip", "Beatrice's Catalyst", "Demon's Catalyst", "Izalith Catalyst", "Logan's Catalyst", "Manus Catalyst", "Oolacile Catalyst", "Oolacile Ivory Catalyst", "Sorcerer's Catalyst", "Tin Banishment Catalyst", "Tin Crystallization Catalyst", "Tin Darkmoon Catalyst", "Canvas Talisman", "Darkmoon Talisman", "Ivory Talisman", "Sunlight Talisman", "Talisman", "Thorolund Talisman", "Velka's Talisman", "Skull Lantern", "Ascended Pyromancy Flame", "Pyromancy Flame", "Buckler", "Caduceus Round Shield", "Cracked Round Shield", "Effigy Shield", "Leather Shield", "Plank Shield", "Red and White Round Shield", "Small Leather Shield", "Target Shield", "Warrior's Round Shield", "Balder Shield", "Black Knight Shield", "Bloodshield", "Caduceus Kite Shield", "Crest Shield", "Dragon Crest Shield", "East-West Shield", "Gargoyle's Shield", "Grass Crest Shield", "Heater Shield", "Hollow Soldier Shield", "Iron Round Shield", "Knight Shield", "Large Leather Shield", "Sanctus", "Silver Knight Shield", "Spider Shield", "Sunlight Shield", "Tower Kite Shield", "Wooden Shield", "Black Iron Greatshield", "Bonewheel Shield", "Cleansing Greatshield", "Eagle Shield", "Giant Shield", "Greatshield of Artorias", "Havel's Greatshield", "Stone Greatshield", "Tower Shield", "Crystal Ring Shield", "Crystal Shield", "Spiked Shield", "Pierce Shield", "Dark Hand"})
@@ -283,6 +293,7 @@ Partial Class CosplayEditor
         '
         'helmetLevel
         '
+        Me.helmetLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.helmetLevel.FormattingEnabled = True
         Me.helmetLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
         Me.helmetLevel.Location = New System.Drawing.Point(245, 670)
@@ -293,6 +304,7 @@ Partial Class CosplayEditor
         '
         'armorLevel
         '
+        Me.armorLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.armorLevel.FormattingEnabled = True
         Me.armorLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
         Me.armorLevel.Location = New System.Drawing.Point(520, 670)
@@ -303,6 +315,7 @@ Partial Class CosplayEditor
         '
         'gauntletsLevel
         '
+        Me.gauntletsLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.gauntletsLevel.FormattingEnabled = True
         Me.gauntletsLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
         Me.gauntletsLevel.Location = New System.Drawing.Point(795, 669)
@@ -313,6 +326,7 @@ Partial Class CosplayEditor
         '
         'leggingsLevel
         '
+        Me.leggingsLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leggingsLevel.FormattingEnabled = True
         Me.leggingsLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
         Me.leggingsLevel.Location = New System.Drawing.Point(1069, 669)
@@ -323,6 +337,7 @@ Partial Class CosplayEditor
         '
         'leftOneLevel
         '
+        Me.leftOneLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leftOneLevel.FormattingEnabled = True
         Me.leftOneLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
         Me.leftOneLevel.Location = New System.Drawing.Point(245, 456)
@@ -333,6 +348,7 @@ Partial Class CosplayEditor
         '
         'rightOneLevel
         '
+        Me.rightOneLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.rightOneLevel.FormattingEnabled = True
         Me.rightOneLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
         Me.rightOneLevel.Location = New System.Drawing.Point(245, 222)
@@ -343,6 +359,7 @@ Partial Class CosplayEditor
         '
         'LeftTwoLevel
         '
+        Me.LeftTwoLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.LeftTwoLevel.FormattingEnabled = True
         Me.LeftTwoLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
         Me.LeftTwoLevel.Location = New System.Drawing.Point(520, 456)
@@ -353,6 +370,7 @@ Partial Class CosplayEditor
         '
         'rightTwoLevel
         '
+        Me.rightTwoLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.rightTwoLevel.FormattingEnabled = True
         Me.rightTwoLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
         Me.rightTwoLevel.Location = New System.Drawing.Point(519, 222)
@@ -363,6 +381,7 @@ Partial Class CosplayEditor
         '
         'leftOneInfusion
         '
+        Me.leftOneInfusion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leftOneInfusion.FormattingEnabled = True
         Me.leftOneInfusion.Items.AddRange(New Object() {"Standard/None", "Crystal", "Lightning", "Raw", "Magic", "Enchanged", "Divine", "Occult", "Fire", "Chaos"})
         Me.leftOneInfusion.Location = New System.Drawing.Point(245, 515)
@@ -373,6 +392,7 @@ Partial Class CosplayEditor
         '
         'rightOneInfusion
         '
+        Me.rightOneInfusion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.rightOneInfusion.FormattingEnabled = True
         Me.rightOneInfusion.Items.AddRange(New Object() {"Standard/None", "Crystal", "Lightning", "Raw", "Magic", "Enchanged", "Divine", "Occult", "Fire", "Chaos"})
         Me.rightOneInfusion.Location = New System.Drawing.Point(245, 281)
@@ -383,6 +403,7 @@ Partial Class CosplayEditor
         '
         'leftTwoInfusion
         '
+        Me.leftTwoInfusion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leftTwoInfusion.FormattingEnabled = True
         Me.leftTwoInfusion.Items.AddRange(New Object() {"Standard/None", "Crystal", "Lightning", "Raw", "Magic", "Enchanged", "Divine", "Occult", "Fire", "Chaos"})
         Me.leftTwoInfusion.Location = New System.Drawing.Point(520, 514)
@@ -393,6 +414,7 @@ Partial Class CosplayEditor
         '
         'rightTwoInfusion
         '
+        Me.rightTwoInfusion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.rightTwoInfusion.FormattingEnabled = True
         Me.rightTwoInfusion.Items.AddRange(New Object() {"Standard/None", "Crystal", "Lightning", "Raw", "Magic", "Enchanged", "Divine", "Occult", "Fire", "Chaos"})
         Me.rightTwoInfusion.Location = New System.Drawing.Point(520, 281)
@@ -555,12 +577,23 @@ Partial Class CosplayEditor
         Me.Label17.TabIndex = 50
         Me.Label17.Text = "Faith"
         '
+        'noChangeStats
+        '
+        Me.noChangeStats.AutoSize = True
+        Me.noChangeStats.Location = New System.Drawing.Point(973, 26)
+        Me.noChangeStats.Name = "noChangeStats"
+        Me.noChangeStats.Size = New System.Drawing.Size(196, 29)
+        Me.noChangeStats.TabIndex = 51
+        Me.noChangeStats.Text = "No Stat Change"
+        Me.noChangeStats.UseVisualStyleBackColor = True
+        '
         'CosplayEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1400, 756)
+        Me.Controls.Add(Me.noChangeStats)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label15)
@@ -676,4 +709,5 @@ Partial Class CosplayEditor
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
+    Friend WithEvents noChangeStats As CheckBox
 End Class
