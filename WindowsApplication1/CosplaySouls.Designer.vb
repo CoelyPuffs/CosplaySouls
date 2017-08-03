@@ -42,17 +42,17 @@ Partial Class CosplaySouls
         '
         'UnhookButton
         '
-        Me.UnhookButton.Location = New System.Drawing.Point(56, 120)
+        Me.UnhookButton.Location = New System.Drawing.Point(65, 119)
         Me.UnhookButton.Margin = New System.Windows.Forms.Padding(4)
         Me.UnhookButton.Name = "UnhookButton"
-        Me.UnhookButton.Size = New System.Drawing.Size(171, 55)
+        Me.UnhookButton.Size = New System.Drawing.Size(166, 43)
         Me.UnhookButton.TabIndex = 5
         Me.UnhookButton.Text = "UNHOOK"
         Me.UnhookButton.UseVisualStyleBackColor = True
         '
         'CosplayEditor
         '
-        Me.CosplayEditor.Location = New System.Drawing.Point(291, 125)
+        Me.CosplayEditor.Location = New System.Drawing.Point(288, 119)
         Me.CosplayEditor.Margin = New System.Windows.Forms.Padding(4)
         Me.CosplayEditor.Name = "CosplayEditor"
         Me.CosplayEditor.Size = New System.Drawing.Size(167, 44)
@@ -87,11 +87,11 @@ Partial Class CosplaySouls
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(171, 192)
+        Me.Label1.Location = New System.Drawing.Point(369, 203)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(77, 25)
+        Me.Label1.Size = New System.Drawing.Size(133, 25)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "Version 0.01"
         '
         'CosplaySouls
         '
@@ -99,7 +99,7 @@ Partial Class CosplaySouls
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(514, 249)
+        Me.ClientSize = New System.Drawing.Size(514, 237)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.autoLevel)
         Me.Controls.Add(Me.autoGear)

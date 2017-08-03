@@ -32,6 +32,7 @@ Public Class CosplaySouls
     Dim statBase As Integer
     Dim autoStats As Boolean
     Dim autoLvlGear As Boolean
+    Dim cosplayList = My.Resources.basicCosplays.Split(Chr(&HA))
     'Public externalCosplays() As Array
     'Dim usingExternal As Boolean
 
@@ -192,11 +193,11 @@ Public Class CosplaySouls
         End If
         autoStats = autoLevel.Checked
         autoLvlGear = autoGear.Checked
-        Label1.Text = cosplayHash(1201)(1)
+        'Label1.Text = cosplayHash(1201)(1)
     End Sub
 
     Public Sub loadCosplays()
-        Dim cosplayList = My.Resources.cosplays.Split(Chr(&HA))
+        'Dim cosplayList = My.Resources.basicCosplays.Split(Chr(&HA))
         For i = 0 To cosplayList.Length - 1
             Dim cosplayLine(16) As Integer
             For n = 0 To 16

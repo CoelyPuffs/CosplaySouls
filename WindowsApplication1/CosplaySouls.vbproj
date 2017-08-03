@@ -138,7 +138,8 @@
     <None Include="Resources\leggings.txt" />
     <None Include="Resources\weapons.txt" />
     <Content Include="maggotgradiconnochop_0zt_icon.ico" />
-    <Content Include="Resources\cosplays.txt" />
+    <None Include="Resources\basicCosplays.txt" />
+    <Content Include="Resources\emptyCosplays.txt" />
     <None Include="Resources\maggotnobgicon_7r2_icon.ico" />
     <None Include="Resources\maggotgradiconnochop_0zt_icon.ico" />
     <Content Include="Resources\sunlight-maggot %281%29.ico" />

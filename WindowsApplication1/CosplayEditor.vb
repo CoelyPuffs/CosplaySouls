@@ -2,7 +2,7 @@
 
 Public Class CosplayEditor
 
-    Dim cosplayFile = My.Resources.cosplays
+    Dim cosplayFile = My.Resources.emptyCosplays
     Dim cosplayFileName As String
     Dim externalPath As String
 
@@ -147,10 +147,10 @@ Public Class CosplayEditor
         End If
         Dim applyLine(17) As Integer
         applyLine(0) = entityIDArray(entityBox.SelectedIndex + 1)
-        applyLine(1) = helmetIDArray(helmetName.SelectedIndex)
-        applyLine(2) = armorIDArray(armorName.SelectedIndex)
-        applyLine(3) = gauntletIDArray(gauntletsName.SelectedIndex)
-        applyLine(4) = leggingIDArray(leggingsName.SelectedIndex)
+        applyLine(1) = helmetIDArray(helmetName.SelectedIndex) + helmetLevel.SelectedIndex
+        applyLine(2) = armorIDArray(armorName.SelectedIndex) + armorLevel.SelectedIndex
+        applyLine(3) = gauntletIDArray(gauntletsName.SelectedIndex) + gauntletsLevel.SelectedIndex
+        applyLine(4) = leggingIDArray(leggingsName.SelectedIndex) + leggingsLevel.SelectedIndex
         If leftOneName.SelectedIndex > 0 Then
             applyLine(5) = (weaponIDArray(leftOneName.SelectedIndex) + (leftOneInfusion.SelectedIndex * 100) + leftOneLevel.SelectedIndex)
         Else
@@ -172,18 +172,20 @@ Public Class CosplayEditor
             applyLine(8) = 9876
         End If
 
-        applyLine(9) = vitSet.Value
-        applyLine(10) = atnSet.Value
-        applyLine(11) = endSet.Value
-        applyLine(12) = strSet.Value
-        applyLine(13) = dexSet.Value
-        applyLine(14) = resSet.Value
-        applyLine(15) = intSet.Value
-        applyLine(16) = fthSet.Value
-
-        'For i = 9 To 15
-        '    applyLine(i) = 9876
-        'Next
+        If noChangeStats.Checked Then
+            For i = 9 To 16
+                applyLine(i) = 9876
+            Next
+        Else
+            applyLine(9) = vitSet.Value
+            applyLine(10) = atnSet.Value
+            applyLine(11) = endSet.Value
+            applyLine(12) = strSet.Value
+            applyLine(13) = dexSet.Value
+            applyLine(14) = resSet.Value
+            applyLine(15) = intSet.Value
+            applyLine(16) = fthSet.Value
+        End If
         allCosplaysArray(entityBox.SelectedIndex) = applyLine
         CosplaySouls.cosplayHash.Item(applyLine(0)) = applyLine
         MessageBox.Show("Applied!")
