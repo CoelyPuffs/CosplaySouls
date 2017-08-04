@@ -184,7 +184,7 @@ Public Class CosplaySouls
             'If validityCheck Is {&H63} Then
             latestHit = Val(System.Text.Encoding.Unicode.GetString(lastHit))
             'entityName.Text = System.Text.Encoding.Unicode.GetString(lastHit)
-            If latestHit <> previousHit Then
+            If latestHit <> previousHit And latestHit <> 0 Then
                 ReadProcessMemory(targetProcessHandle, (pointerToAddress(lastHitPtr) + 56), validityCheck, 1, vbNull)
                 If Convert.ToChar(validityCheck(0)) = "c" Then
                     onHit()
