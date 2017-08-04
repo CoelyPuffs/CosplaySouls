@@ -28,34 +28,38 @@ Partial Class CosplaySouls
         Me.autoGear = New System.Windows.Forms.CheckBox()
         Me.autoLevel = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.enemyScale = New System.Windows.Forms.RadioButton()
+        Me.areaNormal = New System.Windows.Forms.RadioButton()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.areaChallenge = New System.Windows.Forms.RadioButton()
         Me.SuspendLayout()
         '
         'fullSetup
         '
-        Me.fullSetup.Location = New System.Drawing.Point(36, 24)
+        Me.fullSetup.Location = New System.Drawing.Point(24, 24)
         Me.fullSetup.Margin = New System.Windows.Forms.Padding(4)
         Me.fullSetup.Name = "fullSetup"
-        Me.fullSetup.Size = New System.Drawing.Size(213, 76)
+        Me.fullSetup.Size = New System.Drawing.Size(167, 176)
         Me.fullSetup.TabIndex = 4
-        Me.fullSetup.Text = "HOOK"
+        Me.fullSetup.Text = "START"
         Me.fullSetup.UseVisualStyleBackColor = True
         '
         'UnhookButton
         '
-        Me.UnhookButton.Location = New System.Drawing.Point(65, 119)
+        Me.UnhookButton.Location = New System.Drawing.Point(24, 228)
         Me.UnhookButton.Margin = New System.Windows.Forms.Padding(4)
         Me.UnhookButton.Name = "UnhookButton"
-        Me.UnhookButton.Size = New System.Drawing.Size(166, 43)
+        Me.UnhookButton.Size = New System.Drawing.Size(167, 64)
         Me.UnhookButton.TabIndex = 5
         Me.UnhookButton.Text = "UNHOOK"
         Me.UnhookButton.UseVisualStyleBackColor = True
         '
         'CosplayEditor
         '
-        Me.CosplayEditor.Location = New System.Drawing.Point(288, 119)
+        Me.CosplayEditor.Location = New System.Drawing.Point(231, 24)
         Me.CosplayEditor.Margin = New System.Windows.Forms.Padding(4)
         Me.CosplayEditor.Name = "CosplayEditor"
-        Me.CosplayEditor.Size = New System.Drawing.Size(167, 44)
+        Me.CosplayEditor.Size = New System.Drawing.Size(195, 44)
         Me.CosplayEditor.TabIndex = 6
         Me.CosplayEditor.Text = "Cosplay Editor"
         Me.CosplayEditor.UseVisualStyleBackColor = True
@@ -65,7 +69,7 @@ Partial Class CosplaySouls
         Me.autoGear.AutoSize = True
         Me.autoGear.Checked = True
         Me.autoGear.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.autoGear.Location = New System.Drawing.Point(279, 24)
+        Me.autoGear.Location = New System.Drawing.Point(231, 76)
         Me.autoGear.Name = "autoGear"
         Me.autoGear.Size = New System.Drawing.Size(193, 29)
         Me.autoGear.TabIndex = 7
@@ -77,7 +81,7 @@ Partial Class CosplaySouls
         Me.autoLevel.AutoSize = True
         Me.autoLevel.Checked = True
         Me.autoLevel.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.autoLevel.Location = New System.Drawing.Point(279, 71)
+        Me.autoLevel.Location = New System.Drawing.Point(231, 123)
         Me.autoLevel.Name = "autoLevel"
         Me.autoLevel.Size = New System.Drawing.Size(195, 29)
         Me.autoLevel.TabIndex = 8
@@ -87,19 +91,64 @@ Partial Class CosplaySouls
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(369, 203)
+        Me.Label1.Location = New System.Drawing.Point(37, 316)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 25)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Version 0.01"
+        Me.Label1.Text = "Version 0.03"
+        '
+        'enemyScale
+        '
+        Me.enemyScale.AutoSize = True
+        Me.enemyScale.Checked = True
+        Me.enemyScale.Location = New System.Drawing.Point(255, 213)
+        Me.enemyScale.Name = "enemyScale"
+        Me.enemyScale.Size = New System.Drawing.Size(296, 29)
+        Me.enemyScale.TabIndex = 11
+        Me.enemyScale.TabStop = True
+        Me.enemyScale.Text = "By Enemy (recommended)"
+        Me.enemyScale.UseVisualStyleBackColor = True
+        '
+        'areaNormal
+        '
+        Me.areaNormal.AutoSize = True
+        Me.areaNormal.Location = New System.Drawing.Point(255, 263)
+        Me.areaNormal.Name = "areaNormal"
+        Me.areaNormal.Size = New System.Drawing.Size(204, 29)
+        Me.areaNormal.TabIndex = 12
+        Me.areaNormal.Text = "By Area (normal)"
+        Me.areaNormal.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(226, 175)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(171, 25)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "VIT/END Scaling"
+        '
+        'areaChallenge
+        '
+        Me.areaChallenge.AutoSize = True
+        Me.areaChallenge.Location = New System.Drawing.Point(255, 312)
+        Me.areaChallenge.Name = "areaChallenge"
+        Me.areaChallenge.Size = New System.Drawing.Size(232, 29)
+        Me.areaChallenge.TabIndex = 15
+        Me.areaChallenge.TabStop = True
+        Me.areaChallenge.Text = "By Area (challenge)"
+        Me.areaChallenge.UseVisualStyleBackColor = True
         '
         'CosplaySouls
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(514, 237)
+        Me.ClientSize = New System.Drawing.Size(559, 380)
+        Me.Controls.Add(Me.areaChallenge)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.areaNormal)
+        Me.Controls.Add(Me.enemyScale)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.autoLevel)
         Me.Controls.Add(Me.autoGear)
@@ -119,4 +168,8 @@ Partial Class CosplaySouls
     Friend WithEvents autoGear As CheckBox
     Friend WithEvents autoLevel As CheckBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents enemyScale As RadioButton
+    Friend WithEvents areaNormal As RadioButton
+    Friend WithEvents Label2 As Label
+    Friend WithEvents areaChallenge As RadioButton
 End Class

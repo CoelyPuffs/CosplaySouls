@@ -150,7 +150,7 @@
 1403000:Small Leather Shield:15
 1404000:Target Shield:15
 1460000:Warrior's Round Shield:15
-2040000:Balder Shield:15
+1455000:Balder Shield:15
 1474000:Black Knight Shield:5
 9002000:Bloodshield:15
 1477000:Caduceus Kite Shield:15

@@ -33,6 +33,10 @@ Public Class CosplaySouls
     Dim autoStats As Boolean
     Dim autoLvlGear As Boolean
     Dim cosplayList = My.Resources.basicCosplays.Split(Chr(&HA))
+    Dim entityList = My.Resources.entities.Split(Chr(&HA))
+    Dim currentHelm() As Byte
+    Dim entityLine(137) As Integer
+    Dim entityScale(137) As Double
     'Public externalCosplays() As Array
     'Dim usingExternal As Boolean
 
@@ -113,6 +117,7 @@ Public Class CosplaySouls
         Me.Icon = My.Resources.maggotgradiconnochop_0zt_icon
 
         loadCosplays()
+        loadEntities()
 
     End Sub
 
@@ -167,7 +172,7 @@ Public Class CosplaySouls
         Dim originalInstructions() As Byte = {&H8B, &H3, &H8B, &H90, &H14, &H3, &H0, &H0}
         WriteProcessMemory(targetProcessHandle, &HE80242, originalInstructions, originalInstructions.Length, 0)
         VirtualFreeEx(targetProcessHandle, modifiedHitFunct, &H1000, &H8000)
-        fullSetup.Text = "HOOK"
+        fullSetup.Text = "START"
         isHooked = False
         isSetup = False
         isCalibrated = False
@@ -176,6 +181,12 @@ Public Class CosplaySouls
     Private Sub CosplayEditor_Click(sender As Object, e As EventArgs) Handles CosplayEditor.Click
         Dim editor = New CosplayEditor(Me)
         editor.Show()
+    End Sub
+
+    Private Sub levelCheckChanged() Handles autoLevel.CheckStateChanged
+        enemyScale.Enabled = autoLevel.Checked
+        areaNormal.Enabled = autoLevel.Checked
+        areaChallenge.Enabled = autoLevel.Checked
     End Sub
 
     Private Sub refreshing() Handles refreshTimer.Tick
@@ -207,6 +218,13 @@ Public Class CosplaySouls
         Next
     End Sub
 
+    Public Sub loadEntities()
+        For i = 0 To entityList.Length - 1
+            entityLine(i) = Convert.ToInt32(entityList(i).Split(":")(0))
+            entityScale(i) = Convert.ToDouble(entityList(i).Split(":")(2))
+        Next
+    End Sub
+
     Public Sub getLastHitID()
         fullAddress = pointerToAddress(lastHitPtr)
         fullAddress = fullAddress + 58
@@ -234,11 +252,14 @@ Public Class CosplaySouls
 
         'Helmet
         tempAddress = equipmentBase + &HB4
-        If currentCosplay(1) <> 9876 Then
-            If autoLvlGear Then
-                WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(1)), 4, 0)
-            Else
-                WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(1) \ 100) * 100)), 4, 0)
+        ReadProcessMemory(targetProcessHandle, tempAddress, currentHelm, 4, vbNull)
+        If currentHelm IsNot BitConverter.GetBytes(1010000) Then
+            If currentCosplay(1) <> 9876 Then
+                If autoLvlGear Then
+                    WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(1)), 4, 0)
+                Else
+                    WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(1) \ 100) * 100)), 4, 0)
+                End If
             End If
         End If
 
@@ -324,11 +345,27 @@ Public Class CosplaySouls
 
         'VIT
         tempAddress = statBase + &H38
-        WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(9)), 4, 0)
+        Dim vit As Integer
+        If areaNormal.Checked Then
+            vit = (entityScale(Array.IndexOf(entityList, latestHit)) * 30) + 10
+        ElseIf areaChallenge.Checked Then
+            vit = (entityScale(Array.IndexOf(entityList, latestHit)) * 15) + 5
+        Else
+            vit = currentCosplay(9)
+        End If
+        WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(vit), 4, 0)
 
         'ATN
         tempAddress = statBase + &H40
-        WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(10)), 4, 0)
+        Dim endurance As Integer
+        If areaNormal.Checked Then
+            endurance = (entityScale(Array.IndexOf(entityList, latestHit)) * 30) + 10
+        ElseIf areaChallenge.Checked Then
+            endurance = (entityScale(Array.IndexOf(entityList, latestHit)) * 20) + 10
+        Else
+            endurance = currentCosplay(9)
+        End If
+        WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(endurance), 4, 0)
 
         'END
         tempAddress = statBase + &H48
