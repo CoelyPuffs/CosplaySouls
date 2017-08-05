@@ -313,8 +313,8 @@ Public Class CosplaySouls
             End If
         End If
 
-            'L2
-            tempAddress = equipmentBase + &HA0
+        'L2
+        tempAddress = equipmentBase + &H9C
         If currentCosplay(7) <> 9876 Then
             If autoLvlGear Then
                 WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(7)), 4, 0)
@@ -323,8 +323,8 @@ Public Class CosplaySouls
             End If
         End If
 
-            'R2
-            tempAddress = equipmentBase + &H9C
+        'R2
+        tempAddress = equipmentBase + &HA0
         If currentCosplay(8) <> 9876 Then
             If autoLvlGear Then
                 WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(8)), 4, 0)
@@ -347,9 +347,9 @@ Public Class CosplaySouls
         tempAddress = statBase + &H38
         Dim vit As Integer
         If areaNormal.Checked Then
-            vit = (entityScale(Array.IndexOf(entityList, latestHit)) * 30) + 10
+            vit = (entityScale(Array.IndexOf(entityLine, latestHit)) * 30) + 10
         ElseIf areaChallenge.Checked Then
-            vit = (entityScale(Array.IndexOf(entityList, latestHit)) * 15) + 5
+            vit = (entityScale(Array.IndexOf(entityLine, latestHit)) * 15) + 5
         Else
             vit = currentCosplay(9)
         End If
@@ -359,9 +359,9 @@ Public Class CosplaySouls
         tempAddress = statBase + &H40
         Dim endurance As Integer
         If areaNormal.Checked Then
-            endurance = (entityScale(Array.IndexOf(entityList, latestHit)) * 30) + 10
+            endurance = (entityScale(Array.IndexOf(entityLine, latestHit)) * 30) + 10
         ElseIf areaChallenge.Checked Then
-            endurance = (entityScale(Array.IndexOf(entityList, latestHit)) * 20) + 10
+            endurance = (entityScale(Array.IndexOf(entityLine, latestHit)) * 20) + 10
         Else
             endurance = currentCosplay(9)
         End If

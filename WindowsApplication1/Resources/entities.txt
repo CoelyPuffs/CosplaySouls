@@ -43,10 +43,10 @@
 2730:Crossbreed Priscilla:0.6
 2750:Anastacia of Astora:0.7
 2780:Mimic:0.6
-2790:Black Knight (Axe):0.7
-2791:Black Knight (Halberd):0.4
 2792:Black Knight (Sword):0.2
 2793:Black Knight (Greatsword):0.2
+2794:Black Knight (Axe):0.7
+2795:Black Knight (Halberd):0.4
 2800:Undead Crystal Soldier:0.8
 2810:Infested Barbarian (Club):0.4
 2811:Infested Barbarian (Boulder):0.4
