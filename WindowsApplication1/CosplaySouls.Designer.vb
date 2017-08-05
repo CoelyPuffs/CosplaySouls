@@ -95,7 +95,7 @@ Partial Class CosplaySouls
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 25)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Version 0.03"
+        Me.Label1.Text = "Version 0.04"
         '
         'enemyScale
         '
