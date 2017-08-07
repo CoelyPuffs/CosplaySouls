@@ -95,7 +95,7 @@ Partial Class CosplaySouls
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 25)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Version 0.04"
+        Me.Label1.Text = "Version 0.05"
         '
         'enemyScale
         '
@@ -144,7 +144,7 @@ Partial Class CosplaySouls
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(559, 380)
+        Me.ClientSize = New System.Drawing.Size(568, 380)
         Me.Controls.Add(Me.areaChallenge)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.areaNormal)

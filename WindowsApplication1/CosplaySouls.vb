@@ -34,7 +34,6 @@ Public Class CosplaySouls
     Dim autoLvlGear As Boolean
     Dim cosplayList = My.Resources.basicCosplays.Split(Chr(&HA))
     Dim entityList = My.Resources.entities.Split(Chr(&HA))
-    Dim currentHelm() As Byte
     Dim entityLine(137) As Integer
     Dim entityScale(137) As Double
     'Public externalCosplays() As Array
@@ -252,14 +251,11 @@ Public Class CosplaySouls
 
         'Helmet
         tempAddress = equipmentBase + &HB4
-        ReadProcessMemory(targetProcessHandle, tempAddress, currentHelm, 4, vbNull)
-        If currentHelm IsNot BitConverter.GetBytes(1010000) Then
-            If currentCosplay(1) <> 9876 Then
-                If autoLvlGear Then
-                    WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(1)), 4, 0)
-                Else
-                    WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(1) \ 100) * 100)), 4, 0)
-                End If
+        If currentCosplay(1) <> 9876 Then
+            If autoLvlGear Then
+                WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(1)), 4, 0)
+            Else
+                WriteProcessMemory(targetProcessHandle, tempAddress, (BitConverter.GetBytes((currentCosplay(1) \ 100) * 100)), 4, 0)
             End If
         End If
 
@@ -348,6 +344,9 @@ Public Class CosplaySouls
         Dim vit As Integer
         If areaNormal.Checked Then
             vit = (entityScale(Array.IndexOf(entityLine, latestHit)) * 30) + 10
+            'Label3.Text = Array.IndexOf(entityLine, latestHit)
+            'Label4.Text = entityScale(Array.IndexOf(entityLine, latestHit))
+            'Label5.Text = vit
         ElseIf areaChallenge.Checked Then
             vit = (entityScale(Array.IndexOf(entityLine, latestHit)) * 15) + 5
         Else
