@@ -73,6 +73,20 @@ Partial Class CosplayEditor
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.noChangeStats = New System.Windows.Forms.CheckBox()
+        Me.headSize = New System.Windows.Forms.TrackBar()
+        Me.chestSize = New System.Windows.Forms.TrackBar()
+        Me.handSize = New System.Windows.Forms.TrackBar()
+        Me.legSize = New System.Windows.Forms.TrackBar()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.speedBar = New System.Windows.Forms.TrackBar()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.abdomenSize = New System.Windows.Forms.TrackBar()
+        Me.deprive = New System.Windows.Forms.Button()
+        Me.cosplayNow = New System.Windows.Forms.Button()
         CType(Me.vitSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.atnSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.endSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,13 +95,19 @@ Partial Class CosplayEditor
         CType(Me.resSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.intSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.fthSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.headSize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chestSize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.handSize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.legSize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.speedBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.abdomenSize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'entityBox
         '
         Me.entityBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.entityBox.FormattingEnabled = True
-        Me.entityBox.Items.AddRange(New Object() {"Rat", "Small Rat", "Large Rat", "Snow Rat", "Infested Ghoul", "Stray Demon", "Demon Firesage", "Asylum Demon", "Capra Demon", "Taurus Demon", "Batwing Demon", "Mushroom Parent", "Mushroom Child", "Titanite Demon", "Crow Demon", "Iron Golem", "Demonic Foliage ", "Smough", "Channeler", "Giant Stone Knight", "Darkwraith", "Painting Guardian", "Silver Knight", "Demonic Statue", "Hollow", "Undead Merchant", "Undead Assassin", "Blowdart Sniper", "Armored Hollow", "Undead Soldier", "Balder Knight", "Berenike Knight", "Andre of Astora", "Necromancer", "Butcher", "Ghost (Male)", "Ghost (Female)", "Serpent Soldier", "Serpent Mage", "Crystal Golem", "Golden Crystal Golem", "Crossbreed Priscilla", "Anastacia of Astora", "Mimic", "Black Knight (Axe)", "Black Knight (Halberd)", "Black Knight (Sword)", "Black Knight (Greatsword)", "Undead Crystal Soldier", "Infested Barbarian (Club)", "Infested Barbarian (Boulder)", "Phalanx", "Engorged Zombie", "Giant", "Sentinel or Royal Sentinel", "Skeleton", "Giant Skeleton", "Vamos", "Bonewheel Skeleton", "Skeleton Baby", "Skeleton Beast", "Bone Tower", "Giant Mosquito", "Slime", "Egg Carrier", "Vile Maggot", "Moonlight Butterfly", "Chaos Eater", "Man-Eater Shell", "Basilisk", "Crystal Lizard", "Pinwheel", "Pisaca", "Undead Attack Dog", "Flaming Attack Dog", "Possessed Tree", "Tree Lizard", "Giant Leech", "Burrowing Rockworm", "Crag-Spider", "Frog-Ray", "Undead Dragon", "Bounding Demon of Izalith", "Hellkite Drake", "Everlasting Dragon", "Armored Tusk", "Armored Tusk (Reinforced)", "Sanctuary Guardian", "Chaos Bug", "Good Vagrant", "Evil Vagrant", "Mass of Souls", "Wisp (exploding skull)", "Asylum Transport Crow", "Drake", "Hydra", "Hydra Head", "Marvelous Chester", "Artorias", "Hawkeye Gough", "Stone Guardian", "Scarecrow", "Elizabeth", "Bloathead", "Bloathead Sorcerer", "Humanity Phantom (small)", "Humanity Phantom (medium)", "Humanity Phantom (large)", "Chained Prisoner", "Attack Dog (DLC)", "Manus, Father of the Abyss", "Black Dragon Kalameet", "Young Sif", "Centipede Demon", "Centipede Demon's Arm", "Centipede Demon's Tail", "Sif", "Gravelord Nito", "Bed of Chaos", "Parasitic Wall Hugger", "Ceaseless Discharge", "Gaping Dragon", "Ornstein", "Super Ornstein", "Quelaag", "Seath the Scaleless", "Gwynevere", "Gwyndolin", "Frampt / Kaathe", "The Fair Lady", "Bell Gargoyles", "Lightning Gargoyles", "Great Feline", "Alvina", "Alvina", "Gwyn", "Four Kings"})
+        Me.entityBox.Items.AddRange(New Object() {"Rat", "Small Rat", "Large Rat", "Snow Rat", "Infested Ghoul", "Stray Demon", "Demon Firesage", "Asylum Demon", "Capra Demon", "Taurus Demon", "Batwing Demon", "Mushroom Parent", "Mushroom Child", "Titanite Demon", "Crow Demon", "Iron Golem", "Demonic Foliage ", "Smough", "Channeler", "Giant Stone Knight", "Darkwraith", "Painting Guardian", "Silver Knight", "Demonic Statue", "Hollow", "Undead Merchant", "Undead Assassin", "Blowdart Sniper", "Armored Hollow", "Undead Soldier", "Balder Knight", "Berenike Knight", "Andre of Astora", "Necromancer", "Butcher", "Ghost (Male)", "Ghost (Female)", "Serpent Soldier", "Serpent Mage", "Crystal Golem", "Golden Crystal Golem", "Crossbreed Priscilla", "Anastacia of Astora", "Mimic", "Black Knight (Axe)", "Black Knight (Halberd)", "Black Knight (Sword)", "Black Knight (Greatsword)", "Undead Crystal Soldier", "Infested Barbarian (Club)", "Infested Barbarian (Boulder)", "Phalanx", "Engorged Zombie", "Giant", "Sentinel or Royal Sentinel", "Skeleton", "Giant Skeleton", "Vamos", "Bonewheel Skeleton", "Skeleton Baby", "Skeleton Beast", "Bone Tower", "Giant Mosquito", "Slime", "Egg Carrier", "Vile Maggot", "Moonlight Butterfly", "Chaos Eater", "Man-Eater Shell", "Basilisk", "Crystal Lizard", "Pinwheel", "Pisaca", "Undead Attack Dog", "Flaming Attack Dog", "Possessed Tree", "Tree Lizard", "Giant Leech", "Burrowing Rockworm", "Crag-Spider", "Frog-Ray", "Undead Dragon", "Bounding Demon of Izalith", "Hellkite Drake", "Everlasting Dragon", "Armored Tusk", "Armored Tusk (Reinforced)", "Sanctuary Guardian", "Chaos Bug", "Good Vagrant", "Evil Vagrant", "Mass of Souls", "Wisp (exploding skull)", "Asylum Transport Crow", "Drake", "Hydra", "Hydra Head", "Marvelous Chester", "Artorias", "Hawkeye Gough", "Stone Guardian", "Scarecrow", "Elizabeth", "Bloathead", "Bloathead Sorcerer", "Humanity Phantom (small)", "Humanity Phantom (medium)", "Humanity Phantom (large)", "Chained Prisoner", "Attack Dog (DLC)", "Manus, Father of the Abyss", "Black Dragon Kalameet", "Young Sif", "Centipede Demon", "Centipede Demon's Arm", "Centipede Demon's Tail", "Sif", "Gravelord Nito", "Bed of Chaos", "Parasitic Wall Hugger", "Ceaseless Discharge", "Gaping Dragon", "Ornstein", "Super Ornstein", "Quelaag", "Seath the Scaleless", "Gwynevere", "Gwyndolin", "Frampt / Kaathe", "The Fair Lady", "Bell Gargoyles", "Lightning Gargoyles", "Great Feline", "Alvina", "Alvina", "Gwyn", "Four Kings", "Solaire of Astora", "Darkmoon Knightess", "Oscar of Astora", "Big Hat Logan", "Griggs of Vinheim", "Dusk of Oolacile", "Rhea of Thorolund", "Petrus of Thorolund", "Vince of Thorolund", "Nico of Thorolund", "Laurentius of the Great Swamp", "Quelaana", "Ingward", "Rickert of Vinheim", "Crestfallen Merchant", "Domhnall of Zena", "Crestfallen Warrior", "Siegmeyer of Catarina", "Sieglinde of Catarina", "Lautrec of Carim (Black Eye Orb)", "Shiva of the East", "Patches", "Oswald of Carim", "Shiva's Bodyguard", "Lautrec's Pikeman", "Lautrec's Sorcerer", "Black Iron Tarkus", "Witch Beatrice", "Maneater Mildred", "Paladin Leeroy", "Kirk, Knight of Thorns", "Xanthous King Jeremiah", "Havel", "Undead Prince Ricard", "Crystal General", "Daughter of Chaos", "Darkmoon Berenike", "Darkmoon Balder", "Ciaran", "Forest Bandit", "Forest Warrior", "Forest Archer", "Forest Sorcerer", "Forest Cleric", "Forest Thief"})
         Me.entityBox.Location = New System.Drawing.Point(16, 70)
         Me.entityBox.Margin = New System.Windows.Forms.Padding(4)
         Me.entityBox.Name = "entityBox"
@@ -123,7 +143,7 @@ Partial Class CosplayEditor
         Me.gauntletsName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.gauntletsName.DropDownWidth = 200
         Me.gauntletsName.FormattingEnabled = True
-        Me.gauntletsName.Items.AddRange(New Object() {"No Change", "Bare", "Antiquated Gloves", "Balder Gauntlets", "Black Iron Gauntlets", "Black Knight Gauntlets", "Black Leather Gloves", "Black Manchette", "Black Sorcerer Gauntlets", "Bracelet of the Great Lord", "Brass Gauntlets", "Brigand Gauntlets", "Catarina Gauntlets", "Chester`s Gloves", "Cleric Gauntlets", "Crimson Gloves", "Crystalline Gauntlets", "Dark Gauntlets", "Dingy Gloves", "Dragon Arms", "Eastern Gauntlets", "Elite Cleric Gauntlets", "Elite Knight Gauntlets", "Gauntlets of Artorias", "Gauntlets of Favor", "Gauntlets of the Channelers", "Gauntlets of the Vanquisher", "Gauntlets of Thorns", "Giant Gauntlets", "Gold-Hemmed Black Gloves", "Golem Gauntlets", "Gough`s Gauntlets", "Guardian Gauntlets", "Hard Leather Gauntlets", "Havel`s Gauntlets", "Iron Bracelet", "Knight Gauntlets", "Leather Gauntlets", "Leather Gloves", "Lord`s Blade Gloves", "Mage Smith Gauntlets", "Maiden Gloves", "Moonlight Gloves", "Ornstein`s Gauntlets", "Painting Guardian Gloves", "Paladin Gauntlets", "Shadow Gauntlets", "Silver Knight Gauntlets", "Smough`s Gauntlets", "Sorcerer Gauntlets", "Steel Gauntlets", "Stone Gauntlets", "Tattered Cloth Manchette", "Traveling Gloves", "Wanderer Manchette", "Witch Gloves", "Xanthous Gloves"})
+        Me.gauntletsName.Items.AddRange(New Object() {"No Change", "Bare", "Antiquated Gloves", "Balder Gauntlets", "Black Iron Gauntlets", "Black Knight Gauntlets", "Black Leather Gloves", "Black Manchette", "Black Sorcerer Gauntlets", "Bracelet of the Great Lord", "Brass Gauntlets", "Brigand Gauntlets", "Catarina Gauntlets", "Chester`s Gloves", "Cleric Gauntlets", "Crimson Gloves", "Crystalline Gauntlets", "Dark Gauntlets", "Dingy Gloves", "Eastern Gauntlets", "Elite Cleric Gauntlets", "Elite Knight Gauntlets", "Gauntlets of Artorias", "Gauntlets of Favor", "Gauntlets of the Channelers", "Gauntlets of the Vanquisher", "Gauntlets of Thorns", "Giant Gauntlets", "Gold-Hemmed Black Gloves", "Golem Gauntlets", "Gough`s Gauntlets", "Guardian Gauntlets", "Hard Leather Gauntlets", "Havel`s Gauntlets", "Iron Bracelet", "Knight Gauntlets", "Leather Gauntlets", "Leather Gloves", "Lord`s Blade Gloves", "Mage Smith Gauntlets", "Maiden Gloves", "Moonlight Gloves", "Ornstein`s Gauntlets", "Painting Guardian Gloves", "Paladin Gauntlets", "Shadow Gauntlets", "Silver Knight Gauntlets", "Smough`s Gauntlets", "Sorcerer Gauntlets", "Steel Gauntlets", "Stone Gauntlets", "Tattered Cloth Manchette", "Traveling Gloves", "Wanderer Manchette", "Witch Gloves", "Xanthous Gloves"})
         Me.gauntletsName.Location = New System.Drawing.Point(795, 615)
         Me.gauntletsName.Margin = New System.Windows.Forms.Padding(4)
         Me.gauntletsName.Name = "gauntletsName"
@@ -135,7 +155,7 @@ Partial Class CosplayEditor
         Me.leggingsName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leggingsName.DropDownWidth = 200
         Me.leggingsName.FormattingEnabled = True
-        Me.leggingsName.Items.AddRange(New Object() {"No Change", "Bare", "Anklet of the Great Lord", "Antiquated Skirt", "Balder Leggings", "Black Iron Leggings", "Black Knight Leggings", "Black Leather Boots", "Black Sorcerer Boots", "Black Tights", "Blood-Stained Skirt", "Boots of the Explorer", "Brass Leggings", "Brigand Trousers", "Catarina Leggings", "Chain Leggings", "Chester`s Trousers", "Cleric Leggings", "Crimson Waistcloth", "Crystalline Leggings", "Dark Leggings", "Dragon Legs", "Eastern Leggings", "Elite Cleric Leggings", "Elite Knight Leggings", "Giant Leggings", "Gold-Hemmed Black Skirt", "Golem Leggings", "Gough`s Leggings", "Guardian Leggings", "Hard Leather Boots", "Havel`s Leggings", "Heavy Boots", "Hollow Soldier Waistcloth", "Hollow Thief`s Tights", "Hollow Warrior Waistcloth", "Holy Trousers", "Iron Leggings", "Knight Leggings", "Leather Boots", "Leggings of Artorias", "Leggings of Favor", "Leggings of Thorns", "Lord`s Blade Waistcloth", "Mage Smith Boots", "Maiden Skirt", "Moonlight Waistcloth", "Ornstein`s Leggings", "Painting Guardian Waistcloth", "Paladin Leggings", "Shadow Leggings", "Silver Knight Leggings", "Smough`s Leggings", "Sorcerer Boots", "Steel Leggings", "Stone Leggings", "Traveling Boots", "Waistcloth of the Channelers", "Wanderer Boots", "Witch Skirt", "Xanthous Waistcloth"})
+        Me.leggingsName.Items.AddRange(New Object() {"No Change", "Bare", "Anklet of the Great Lord", "Antiquated Skirt", "Balder Leggings", "Black Iron Leggings", "Black Knight Leggings", "Black Leather Boots", "Black Sorcerer Boots", "Black Tights", "Blood-Stained Skirt", "Boots of the Explorer", "Brass Leggings", "Brigand Trousers", "Catarina Leggings", "Chain Leggings", "Chester`s Trousers", "Cleric Leggings", "Crimson Waistcloth", "Crystalline Leggings", "Dark Leggings", "Eastern Leggings", "Elite Cleric Leggings", "Elite Knight Leggings", "Giant Leggings", "Gold-Hemmed Black Skirt", "Golem Leggings", "Gough`s Leggings", "Guardian Leggings", "Hard Leather Boots", "Havel`s Leggings", "Heavy Boots", "Hollow Soldier Waistcloth", "Hollow Thief`s Tights", "Hollow Warrior Waistcloth", "Holy Trousers", "Iron Leggings", "Knight Leggings", "Leather Boots", "Leggings of Artorias", "Leggings of Favor", "Leggings of Thorns", "Lord`s Blade Waistcloth", "Mage Smith Boots", "Maiden Skirt", "Moonlight Waistcloth", "Ornstein`s Leggings", "Painting Guardian Waistcloth", "Paladin Leggings", "Shadow Leggings", "Silver Knight Leggings", "Smough`s Leggings", "Sorcerer Boots", "Steel Leggings", "Stone Leggings", "Traveling Boots", "Waistcloth of the Channelers", "Wanderer Boots", "Witch Skirt", "Xanthous Waistcloth"})
         Me.leggingsName.Location = New System.Drawing.Point(1069, 615)
         Me.leggingsName.Margin = New System.Windows.Forms.Padding(4)
         Me.leggingsName.Name = "leggingsName"
@@ -295,7 +315,7 @@ Partial Class CosplayEditor
         '
         Me.helmetLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.helmetLevel.FormattingEnabled = True
-        Me.helmetLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
+        Me.helmetLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10"})
         Me.helmetLevel.Location = New System.Drawing.Point(245, 670)
         Me.helmetLevel.Margin = New System.Windows.Forms.Padding(4)
         Me.helmetLevel.Name = "helmetLevel"
@@ -306,7 +326,7 @@ Partial Class CosplayEditor
         '
         Me.armorLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.armorLevel.FormattingEnabled = True
-        Me.armorLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
+        Me.armorLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10"})
         Me.armorLevel.Location = New System.Drawing.Point(520, 670)
         Me.armorLevel.Margin = New System.Windows.Forms.Padding(4)
         Me.armorLevel.Name = "armorLevel"
@@ -317,7 +337,7 @@ Partial Class CosplayEditor
         '
         Me.gauntletsLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.gauntletsLevel.FormattingEnabled = True
-        Me.gauntletsLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
+        Me.gauntletsLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10"})
         Me.gauntletsLevel.Location = New System.Drawing.Point(795, 669)
         Me.gauntletsLevel.Margin = New System.Windows.Forms.Padding(4)
         Me.gauntletsLevel.Name = "gauntletsLevel"
@@ -328,7 +348,7 @@ Partial Class CosplayEditor
         '
         Me.leggingsLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leggingsLevel.FormattingEnabled = True
-        Me.leggingsLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
+        Me.leggingsLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10"})
         Me.leggingsLevel.Location = New System.Drawing.Point(1069, 669)
         Me.leggingsLevel.Margin = New System.Windows.Forms.Padding(4)
         Me.leggingsLevel.Name = "leggingsLevel"
@@ -443,7 +463,7 @@ Partial Class CosplayEditor
         '
         'vitSet
         '
-        Me.vitSet.Location = New System.Drawing.Point(1069, 70)
+        Me.vitSet.Location = New System.Drawing.Point(970, 79)
         Me.vitSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.vitSet.Name = "vitSet"
         Me.vitSet.Size = New System.Drawing.Size(100, 31)
@@ -451,7 +471,7 @@ Partial Class CosplayEditor
         '
         'atnSet
         '
-        Me.atnSet.Location = New System.Drawing.Point(1069, 133)
+        Me.atnSet.Location = New System.Drawing.Point(970, 142)
         Me.atnSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.atnSet.Name = "atnSet"
         Me.atnSet.Size = New System.Drawing.Size(100, 31)
@@ -459,7 +479,7 @@ Partial Class CosplayEditor
         '
         'endSet
         '
-        Me.endSet.Location = New System.Drawing.Point(1068, 195)
+        Me.endSet.Location = New System.Drawing.Point(969, 204)
         Me.endSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.endSet.Name = "endSet"
         Me.endSet.Size = New System.Drawing.Size(100, 31)
@@ -467,7 +487,7 @@ Partial Class CosplayEditor
         '
         'strSet
         '
-        Me.strSet.Location = New System.Drawing.Point(1069, 254)
+        Me.strSet.Location = New System.Drawing.Point(970, 263)
         Me.strSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.strSet.Name = "strSet"
         Me.strSet.Size = New System.Drawing.Size(100, 31)
@@ -475,7 +495,7 @@ Partial Class CosplayEditor
         '
         'dexSet
         '
-        Me.dexSet.Location = New System.Drawing.Point(1069, 315)
+        Me.dexSet.Location = New System.Drawing.Point(970, 324)
         Me.dexSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.dexSet.Name = "dexSet"
         Me.dexSet.Size = New System.Drawing.Size(100, 31)
@@ -483,7 +503,7 @@ Partial Class CosplayEditor
         '
         'resSet
         '
-        Me.resSet.Location = New System.Drawing.Point(1069, 370)
+        Me.resSet.Location = New System.Drawing.Point(970, 379)
         Me.resSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.resSet.Name = "resSet"
         Me.resSet.Size = New System.Drawing.Size(100, 31)
@@ -491,7 +511,7 @@ Partial Class CosplayEditor
         '
         'intSet
         '
-        Me.intSet.Location = New System.Drawing.Point(1069, 423)
+        Me.intSet.Location = New System.Drawing.Point(970, 432)
         Me.intSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.intSet.Name = "intSet"
         Me.intSet.Size = New System.Drawing.Size(100, 31)
@@ -499,7 +519,7 @@ Partial Class CosplayEditor
         '
         'fthSet
         '
-        Me.fthSet.Location = New System.Drawing.Point(1069, 478)
+        Me.fthSet.Location = New System.Drawing.Point(970, 487)
         Me.fthSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.fthSet.Name = "fthSet"
         Me.fthSet.Size = New System.Drawing.Size(100, 31)
@@ -508,7 +528,7 @@ Partial Class CosplayEditor
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(944, 76)
+        Me.Label10.Location = New System.Drawing.Point(845, 85)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(76, 25)
         Me.Label10.TabIndex = 43
@@ -517,7 +537,7 @@ Partial Class CosplayEditor
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(944, 195)
+        Me.Label11.Location = New System.Drawing.Point(845, 204)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(116, 25)
         Me.Label11.TabIndex = 44
@@ -526,7 +546,7 @@ Partial Class CosplayEditor
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(944, 139)
+        Me.Label12.Location = New System.Drawing.Point(845, 148)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(121, 25)
         Me.Label12.TabIndex = 45
@@ -535,7 +555,7 @@ Partial Class CosplayEditor
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(944, 260)
+        Me.Label13.Location = New System.Drawing.Point(845, 269)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(93, 25)
         Me.Label13.TabIndex = 46
@@ -544,7 +564,7 @@ Partial Class CosplayEditor
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(944, 321)
+        Me.Label14.Location = New System.Drawing.Point(845, 330)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(97, 25)
         Me.Label14.TabIndex = 47
@@ -553,7 +573,7 @@ Partial Class CosplayEditor
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(944, 376)
+        Me.Label15.Location = New System.Drawing.Point(845, 385)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(119, 25)
         Me.Label15.TabIndex = 48
@@ -562,7 +582,7 @@ Partial Class CosplayEditor
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(944, 429)
+        Me.Label16.Location = New System.Drawing.Point(845, 438)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(121, 25)
         Me.Label16.TabIndex = 49
@@ -571,7 +591,7 @@ Partial Class CosplayEditor
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(944, 484)
+        Me.Label17.Location = New System.Drawing.Point(845, 493)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(60, 25)
         Me.Label17.TabIndex = 50
@@ -580,12 +600,161 @@ Partial Class CosplayEditor
         'noChangeStats
         '
         Me.noChangeStats.AutoSize = True
-        Me.noChangeStats.Location = New System.Drawing.Point(973, 26)
+        Me.noChangeStats.Location = New System.Drawing.Point(874, 35)
         Me.noChangeStats.Name = "noChangeStats"
         Me.noChangeStats.Size = New System.Drawing.Size(196, 29)
         Me.noChangeStats.TabIndex = 51
         Me.noChangeStats.Text = "No Stat Change"
         Me.noChangeStats.UseVisualStyleBackColor = True
+        '
+        'headSize
+        '
+        Me.headSize.AutoSize = False
+        Me.headSize.Location = New System.Drawing.Point(1107, 35)
+        Me.headSize.Maximum = 50
+        Me.headSize.Minimum = -50
+        Me.headSize.Name = "headSize"
+        Me.headSize.Size = New System.Drawing.Size(240, 50)
+        Me.headSize.TabIndex = 52
+        Me.headSize.TickFrequency = 10
+        Me.headSize.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.headSize.Value = -1
+        '
+        'chestSize
+        '
+        Me.chestSize.AutoSize = False
+        Me.chestSize.Location = New System.Drawing.Point(1107, 123)
+        Me.chestSize.Maximum = 50
+        Me.chestSize.Minimum = -50
+        Me.chestSize.Name = "chestSize"
+        Me.chestSize.Size = New System.Drawing.Size(240, 50)
+        Me.chestSize.TabIndex = 53
+        Me.chestSize.TickFrequency = 10
+        Me.chestSize.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.chestSize.Value = -1
+        '
+        'handSize
+        '
+        Me.handSize.AutoSize = False
+        Me.handSize.Location = New System.Drawing.Point(1107, 297)
+        Me.handSize.Maximum = 50
+        Me.handSize.Minimum = -50
+        Me.handSize.Name = "handSize"
+        Me.handSize.Size = New System.Drawing.Size(240, 50)
+        Me.handSize.TabIndex = 54
+        Me.handSize.TickFrequency = 10
+        Me.handSize.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.handSize.Value = -1
+        '
+        'legSize
+        '
+        Me.legSize.AutoSize = False
+        Me.legSize.Location = New System.Drawing.Point(1107, 385)
+        Me.legSize.Maximum = 50
+        Me.legSize.Minimum = -50
+        Me.legSize.Name = "legSize"
+        Me.legSize.Size = New System.Drawing.Size(240, 50)
+        Me.legSize.TabIndex = 55
+        Me.legSize.TickFrequency = 10
+        Me.legSize.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.legSize.Value = -1
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(1102, 7)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(111, 25)
+        Me.Label18.TabIndex = 56
+        Me.Label18.Text = "Head Size"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(1102, 95)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(116, 25)
+        Me.Label19.TabIndex = 57
+        Me.Label19.Text = "Chest Size"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(1102, 269)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(111, 25)
+        Me.Label20.TabIndex = 58
+        Me.Label20.Text = "Hand Size"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(1102, 359)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(96, 25)
+        Me.Label21.TabIndex = 59
+        Me.Label21.Text = "Leg Size"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(1102, 489)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(74, 25)
+        Me.Label22.TabIndex = 60
+        Me.Label22.Text = "Speed"
+        '
+        'speedBar
+        '
+        Me.speedBar.AutoSize = False
+        Me.speedBar.Location = New System.Drawing.Point(1107, 514)
+        Me.speedBar.Maximum = 20
+        Me.speedBar.Minimum = 1
+        Me.speedBar.Name = "speedBar"
+        Me.speedBar.Size = New System.Drawing.Size(240, 50)
+        Me.speedBar.TabIndex = 61
+        Me.speedBar.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.speedBar.Value = 10
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(1102, 176)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(151, 25)
+        Me.Label23.TabIndex = 62
+        Me.Label23.Text = "Abdomen Size"
+        '
+        'abdomenSize
+        '
+        Me.abdomenSize.AutoSize = False
+        Me.abdomenSize.Location = New System.Drawing.Point(1107, 205)
+        Me.abdomenSize.Maximum = 50
+        Me.abdomenSize.Minimum = -50
+        Me.abdomenSize.Name = "abdomenSize"
+        Me.abdomenSize.Size = New System.Drawing.Size(240, 50)
+        Me.abdomenSize.TabIndex = 63
+        Me.abdomenSize.TickFrequency = 10
+        Me.abdomenSize.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        Me.abdomenSize.Value = -1
+        '
+        'deprive
+        '
+        Me.deprive.Location = New System.Drawing.Point(16, 631)
+        Me.deprive.Name = "deprive"
+        Me.deprive.Size = New System.Drawing.Size(160, 43)
+        Me.deprive.TabIndex = 64
+        Me.deprive.Text = "Deprive"
+        Me.deprive.UseVisualStyleBackColor = True
+        '
+        'cosplayNow
+        '
+        Me.cosplayNow.Location = New System.Drawing.Point(16, 696)
+        Me.cosplayNow.Name = "cosplayNow"
+        Me.cosplayNow.Size = New System.Drawing.Size(160, 65)
+        Me.cosplayNow.TabIndex = 65
+        Me.cosplayNow.Text = "Cosplay NOW (beta feature)"
+        Me.cosplayNow.UseVisualStyleBackColor = True
         '
         'CosplayEditor
         '
@@ -593,6 +762,20 @@ Partial Class CosplayEditor
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1400, 783)
+        Me.Controls.Add(Me.cosplayNow)
+        Me.Controls.Add(Me.deprive)
+        Me.Controls.Add(Me.abdomenSize)
+        Me.Controls.Add(Me.Label23)
+        Me.Controls.Add(Me.speedBar)
+        Me.Controls.Add(Me.Label22)
+        Me.Controls.Add(Me.Label21)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.legSize)
+        Me.Controls.Add(Me.handSize)
+        Me.Controls.Add(Me.chestSize)
+        Me.Controls.Add(Me.headSize)
         Me.Controls.Add(Me.noChangeStats)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.Label16)
@@ -655,6 +838,12 @@ Partial Class CosplayEditor
         CType(Me.resSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.intSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.fthSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.headSize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chestSize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.handSize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.legSize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.speedBar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.abdomenSize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -710,4 +899,18 @@ Partial Class CosplayEditor
     Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents noChangeStats As CheckBox
+    Friend WithEvents headSize As TrackBar
+    Friend WithEvents chestSize As TrackBar
+    Friend WithEvents handSize As TrackBar
+    Friend WithEvents legSize As TrackBar
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents speedBar As TrackBar
+    Friend WithEvents Label23 As Label
+    Friend WithEvents abdomenSize As TrackBar
+    Friend WithEvents deprive As Button
+    Friend WithEvents cosplayNow As Button
 End Class

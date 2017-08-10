@@ -127,6 +127,9 @@
   <data name="emptyCosplays" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\emptyCosplays.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="endurance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\endurance.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="entities" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\entities.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
@@ -147,6 +150,9 @@
   </data>
   <data name="sunlight_maggot__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sunlight-maggot (1).ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vitality" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vitality.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="weapons" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\weapons.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>

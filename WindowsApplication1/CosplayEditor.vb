@@ -9,19 +9,24 @@ Public Class CosplayEditor
     Dim isExternal As Boolean = False
 
     'Dim editorCosplayHash As New Hashtable
-    Public allCosplaysArray(136) As Array
-    Dim entityIDArray(137) As Integer
-    Dim entityNameArray(137) As String
+    Public allCosplaysArray(181) As Array
+    Dim entityIDArray(183) As Integer
+    Dim entityNameArray(183) As String
     Dim helmetIDArray(72) As Integer
     Dim helmetNameArray(72) As String
+    Dim helmetLimitArray(72) As Integer
     Dim armorIDArray(60) As Integer
     Dim armorNameArray(60) As String
+    Dim armorLimitArray(60) As Integer
     Dim gauntletIDArray(56) As Integer
     Dim gauntletNameArray(56) As String
+    Dim gauntletLimitArray(56) As Integer
     Dim leggingIDArray(60) As Integer
     Dim leggingNameArray(60) As String
+    Dim leggingLimitArray(60) As Integer
     Dim weaponIDArray(185) As Integer
     Dim weaponNameArray(185) As String
+    Dim weaponLimitArray(185) As Integer
     Public isApplied As Boolean = False
 
     Private WithEvents editorTimer As New System.Windows.Forms.Timer()
@@ -41,14 +46,17 @@ Public Class CosplayEditor
         End If
         Dim editorCosplayList = cosplayFile.Split(Chr(&HA))
         For i = 0 To editorCosplayList.Length - 1
-            Dim editorCosplayLine(16) As Integer
+            Dim editorCosplayLine(22) As Integer
             For n = 0 To 16
                 editorCosplayLine(n) = (Convert.ToInt32(editorCosplayList(i).Split(":")(n)))
             Next
+            For n = 17 To 22
+                editorCosplayLine(n) = (Convert.ToDouble(editorCosplayList(i).Split(":")(n)))
+            Next
             allCosplaysArray(i) = editorCosplayLine
-            CosplaySouls.cosplayHash.Item(editorCosplayLine(0)) = editorCosplayLine
-            'editorCosplayHash.Add(editorCosplayLine(0), editorCosplayLine)
-        Next
+                CosplaySouls.cosplayHash.Item(editorCosplayLine(0)) = editorCosplayLine
+                'editorCosplayHash.Add(editorCosplayLine(0), editorCosplayLine)
+            Next
     End Sub
 
     Public Sub editorLoadDualLists()
@@ -59,22 +67,27 @@ Public Class CosplayEditor
         For i = 0 To My.Resources.helmets.Split(Chr(&HA)).Length - 1
             helmetIDArray(i) = Convert.ToInt32(My.Resources.helmets.Split(Chr(&HA))(i).Split(":")(0))
             helmetNameArray(i) = My.Resources.helmets.Split(Chr(&HA))(i).Split(":")(1)
+            helmetLimitArray(i) = My.Resources.helmets.Split(Chr(&HA))(i).Split(":")(2)
         Next
         For i = 0 To My.Resources.armors.Split(Chr(&HA)).Length - 1
             armorIDArray(i) = Convert.ToInt32(My.Resources.armors.Split(Chr(&HA))(i).Split(":")(0))
             armorNameArray(i) = My.Resources.armors.Split(Chr(&HA))(i).Split(":")(1)
+            armorLimitArray(i) = My.Resources.armors.Split(Chr(&HA))(i).Split(":")(2)
         Next
         For i = 0 To My.Resources.gauntlets.Split(Chr(&HA)).Length - 1
             gauntletIDArray(i) = Convert.ToInt32(My.Resources.gauntlets.Split(Chr(&HA))(i).Split(":")(0))
             gauntletNameArray(i) = My.Resources.gauntlets.Split(Chr(&HA))(i).Split(":")(1)
+            gauntletLimitArray(i) = My.Resources.gauntlets.Split(Chr(&HA))(i).Split(":")(2)
         Next
         For i = 0 To My.Resources.leggings.Split(Chr(&HA)).Length - 1
             leggingIDArray(i) = Convert.ToInt32(My.Resources.leggings.Split(Chr(&HA))(i).Split(":")(0))
             leggingNameArray(i) = My.Resources.leggings.Split(Chr(&HA))(i).Split(":")(1)
+            leggingLimitArray(i) = My.Resources.leggings.Split(Chr(&HA))(i).Split(":")(2)
         Next
         For i = 0 To My.Resources.weapons.Split(Chr(&HA)).Length - 1
             weaponIDArray(i) = Convert.ToInt32(My.Resources.weapons.Split(Chr(&HA))(i).Split(":")(0))
             weaponNameArray(i) = My.Resources.weapons.Split(Chr(&HA))(i).Split(":")(1)
+            weaponLimitArray(i) = My.Resources.weapons.Split(Chr(&HA))(i).Split(":")(2)
         Next
     End Sub
 
@@ -93,21 +106,69 @@ Public Class CosplayEditor
         leggingsName.SelectedIndex = Array.IndexOf(leggingIDArray, currentData(0))
         leggingsLevel.SelectedIndex = currentData(2)
         currentData = analyzeName(selectedLine(5), True)
-        leftOneName.SelectedIndex = Array.IndexOf(weaponIDArray, currentData(0))
-        leftOneInfusion.SelectedIndex = currentData(1)
-        leftOneLevel.SelectedIndex = currentData(2)
+        If (currentData(0) > 1330000 And currentData(0) < 1333600) Then
+            If currentData(0) < 1331600 Then
+                leftOneName.SelectedIndex = 141
+                leftOneInfusion.SelectedIndex = 0
+                leftOneLevel.SelectedIndex = currentData(1)
+            Else
+                leftOneName.SelectedIndex = 140
+                leftOneInfusion.SelectedIndex = 0
+                leftOneLevel.SelectedIndex = currentData(1)
+            End If
+        Else
+            leftOneName.SelectedIndex = Array.IndexOf(weaponIDArray, currentData(0))
+            leftOneInfusion.SelectedIndex = currentData(1)
+            leftOneLevel.SelectedIndex = currentData(2)
+        End If
         currentData = analyzeName(selectedLine(6), True)
-        rightOneName.SelectedIndex = Array.IndexOf(weaponIDArray, currentData(0))
-        rightOneInfusion.SelectedIndex = currentData(1)
-        rightOneLevel.SelectedIndex = currentData(2)
+        If (currentData(0) > 1330000 And currentData(0) < 1333600) Then
+            If currentData(0) < 1331600 Then
+                rightOneName.SelectedIndex = 141
+                rightOneInfusion.SelectedIndex = 0
+                rightOneLevel.SelectedIndex = currentData(1)
+            Else
+                rightOneName.SelectedIndex = 140
+                rightOneInfusion.SelectedIndex = 0
+                rightOneLevel.SelectedIndex = currentData(1)
+            End If
+        Else
+            rightOneName.SelectedIndex = Array.IndexOf(weaponIDArray, currentData(0))
+            rightOneInfusion.SelectedIndex = currentData(1)
+            rightOneLevel.SelectedIndex = currentData(2)
+        End If
         currentData = analyzeName(selectedLine(7), True)
-        leftTwoName.SelectedIndex = Array.IndexOf(weaponIDArray, currentData(0))
-        leftTwoInfusion.SelectedIndex = currentData(1)
-        LeftTwoLevel.SelectedIndex = currentData(2)
+        If (currentData(0) > 1330000 And currentData(0) < 1333600) Then
+            If currentData(0) < 1331600 Then
+                leftTwoName.SelectedIndex = 141
+                leftTwoInfusion.SelectedIndex = 0
+                LeftTwoLevel.SelectedIndex = currentData(1)
+            Else
+                leftTwoName.SelectedIndex = 140
+                leftTwoInfusion.SelectedIndex = 0
+                LeftTwoLevel.SelectedIndex = currentData(1)
+            End If
+        Else
+            leftTwoName.SelectedIndex = Array.IndexOf(weaponIDArray, currentData(0))
+            leftTwoInfusion.SelectedIndex = currentData(1)
+            LeftTwoLevel.SelectedIndex = currentData(2)
+        End If
         currentData = analyzeName(selectedLine(8), True)
-        rightTwoName.SelectedIndex = Array.IndexOf(weaponIDArray, currentData(0))
-        rightTwoInfusion.SelectedIndex = currentData(1)
-        rightTwoLevel.SelectedIndex = currentData(2)
+        If (currentData(0) > 1330000 And currentData(0) < 1333600) Then
+            If currentData(0) < 1331600 Then
+                rightTwoName.SelectedIndex = 141
+                rightTwoInfusion.SelectedIndex = 0
+                rightTwoLevel.SelectedIndex = currentData(1)
+            Else
+                rightTwoName.SelectedIndex = 140
+                rightTwoInfusion.SelectedIndex = 0
+                rightTwoLevel.SelectedIndex = currentData(1)
+            End If
+        Else
+            rightTwoName.SelectedIndex = Array.IndexOf(weaponIDArray, currentData(0))
+            rightTwoInfusion.SelectedIndex = currentData(1)
+            rightTwoLevel.SelectedIndex = currentData(2)
+        End If
         If selectedLine(9) = 9876 Then
             noChangeStats.Checked = True
         Else
@@ -121,6 +182,12 @@ Public Class CosplayEditor
             intSet.Value = selectedLine(15)
             fthSet.Value = selectedLine(16)
         End If
+        headSize.Value = selectedLine(17)
+        chestSize.Value = selectedLine(18)
+        abdomenSize.Value = selectedLine(19)
+        handSize.Value = selectedLine(20)
+        legSize.Value = selectedLine(21)
+        speedBar.Value = selectedLine(22)
     End Sub
 
     Private Function analyzeName(name As Integer, hasInfusion As Boolean) As Integer()
@@ -141,33 +208,170 @@ Public Class CosplayEditor
         Return returnNums
     End Function
 
+    Private Sub onR1BoxChanged() Handles rightOneName.SelectedIndexChanged
+        rightOneLevel.Items.Clear()
+        rightOneInfusion.Items.Clear()
+        addUpgrades(weaponLimitArray, rightOneName, rightOneLevel)
+        rightOneLevel.SelectedIndex = 0
+        addInfusions(rightOneName, rightOneInfusion)
+        rightOneInfusion.SelectedIndex = 0
+    End Sub
+
+    Private Sub onR2BoxChanged() Handles rightTwoName.SelectedIndexChanged
+        rightTwoLevel.Items.Clear()
+        rightTwoInfusion.Items.Clear()
+        addUpgrades(weaponLimitArray, rightTwoName, rightTwoLevel)
+        rightTwoLevel.SelectedIndex = 0
+        addInfusions(rightTwoName, rightTwoInfusion)
+        rightTwoInfusion.SelectedIndex = 0
+    End Sub
+
+    Private Sub onL1BoxChanged() Handles leftOneName.SelectedIndexChanged
+        leftOneLevel.Items.Clear()
+        leftOneInfusion.Items.Clear()
+        addUpgrades(weaponLimitArray, leftOneName, leftOneLevel)
+        leftOneLevel.SelectedIndex = 0
+        addInfusions(leftOneName, leftOneInfusion)
+        leftOneInfusion.SelectedIndex = 0
+    End Sub
+
+    Private Sub onL2BoxChanged() Handles leftTwoName.SelectedIndexChanged
+        LeftTwoLevel.Items.Clear()
+        leftTwoInfusion.Items.Clear()
+        addUpgrades(weaponLimitArray, leftTwoName, LeftTwoLevel)
+        LeftTwoLevel.SelectedIndex = 0
+        addInfusions(leftTwoName, leftTwoInfusion)
+        leftTwoInfusion.SelectedIndex = 0
+    End Sub
+
+    Private Sub onHelmChanged() Handles helmetName.SelectedIndexChanged
+        helmetLevel.Items.Clear()
+        addUpgrades(helmetLimitArray, helmetName, helmetLevel)
+        helmetLevel.SelectedIndex = 0
+    End Sub
+
+    Private Sub onChestChanged() Handles armorName.SelectedIndexChanged
+        armorLevel.Items.Clear()
+        addUpgrades(armorLimitArray, armorName, armorLevel)
+        armorLevel.SelectedIndex = 0
+    End Sub
+
+    Private Sub onArmsChanged() Handles gauntletsName.SelectedIndexChanged
+        gauntletsLevel.Items.Clear()
+        addUpgrades(gauntletLimitArray, gauntletsName, gauntletsLevel)
+        gauntletsLevel.SelectedIndex = 0
+    End Sub
+
+    Private Sub onFeetChanged() Handles leggingsName.SelectedIndexChanged
+        leggingsLevel.Items.Clear()
+        addUpgrades(leggingLimitArray, leggingsName, leggingsLevel)
+        leggingsLevel.SelectedIndex = 0
+    End Sub
+
+    Public Sub addUpgrades(type As Integer(), nameBox As ComboBox, box As ComboBox)
+        Dim numString As String
+        For n = 0 To type(nameBox.SelectedIndex)
+            numString = n
+            box.Items.Add("+" + numString)
+        Next
+    End Sub
+
+    Public Sub addInfusions(nameBox As ComboBox, box As ComboBox)
+        If weaponLimitArray(nameBox.SelectedIndex) = 15 And nameBox.SelectedIndex <> 141 Then
+            box.Items.Add("Standard")
+            box.Items.Add("Crystal")
+            box.Items.Add("Lightning")
+            box.Items.Add("Raw")
+            box.Items.Add("Magic")
+            box.Items.Add("Enchanted")
+            box.Items.Add("Divine")
+            box.Items.Add("Occult")
+            box.Items.Add("Fire")
+            box.Items.Add("Chaos")
+        Else
+            box.Items.Add("No Infusion")
+        End If
+    End Sub
+
+    Private Sub onVitSetClicked() Handles vitSet.Click
+        noChangeStats.Checked = False
+    End Sub
+
+    Private Sub onAtnSetClicked() Handles atnSet.Click
+        noChangeStats.Checked = False
+    End Sub
+
+    Private Sub onEndSetClicked() Handles endSet.Click
+        noChangeStats.Checked = False
+    End Sub
+
+    Private Sub onStrSetClicked() Handles strSet.Click
+        noChangeStats.Checked = False
+    End Sub
+
+    Private Sub onDexSetClicked() Handles dexSet.Click
+        noChangeStats.Checked = False
+    End Sub
+
+    Private Sub onResSetClicked() Handles resSet.Click
+        noChangeStats.Checked = False
+    End Sub
+
+    Private Sub onIntSetClicked() Handles intSet.Click
+        noChangeStats.Checked = False
+    End Sub
+
+    Private Sub onFthSetClicked() Handles fthSet.Click
+        noChangeStats.Checked = False
+    End Sub
+
     Private Sub applyButton_Click(sender As Object, e As EventArgs) Handles applyButton.Click
         If entityBox.SelectedIndex < 0 Then
             Exit Sub
         End If
-        Dim applyLine(17) As Integer
+        Dim applyLine(23) As Integer
         applyLine(0) = entityIDArray(entityBox.SelectedIndex + 1)
         applyLine(1) = helmetIDArray(helmetName.SelectedIndex) + helmetLevel.SelectedIndex
         applyLine(2) = armorIDArray(armorName.SelectedIndex) + armorLevel.SelectedIndex
         applyLine(3) = gauntletIDArray(gauntletsName.SelectedIndex) + gauntletsLevel.SelectedIndex
         applyLine(4) = leggingIDArray(leggingsName.SelectedIndex) + leggingsLevel.SelectedIndex
+
         If leftOneName.SelectedIndex > 0 Then
-            applyLine(5) = (weaponIDArray(leftOneName.SelectedIndex) + (leftOneInfusion.SelectedIndex * 100) + leftOneLevel.SelectedIndex)
+            If leftOneName.SelectedIndex = 140 Or leftOneName.SelectedIndex = 141 Then
+                applyLine(5) = (weaponIDArray(leftOneName.SelectedIndex) + (leftOneLevel.SelectedIndex * 100))
+            Else
+                applyLine(5) = (weaponIDArray(leftOneName.SelectedIndex) + (leftOneInfusion.SelectedIndex * 100) + leftOneLevel.SelectedIndex)
+            End If
         Else
             applyLine(5) = 9876
         End If
+
         If rightOneName.SelectedIndex > 0 Then
-            applyLine(6) = (weaponIDArray(rightOneName.SelectedIndex) + (rightOneInfusion.SelectedIndex * 100) + rightOneLevel.SelectedIndex)
+            If rightOneName.SelectedIndex = 140 Or rightOneName.SelectedIndex = 141 Then
+                applyLine(6) = (weaponIDArray(rightOneName.SelectedIndex) + (rightOneLevel.SelectedIndex * 100))
+            Else
+                applyLine(6) = (weaponIDArray(rightOneName.SelectedIndex) + (rightOneInfusion.SelectedIndex * 100) + rightOneLevel.SelectedIndex)
+            End If
         Else
             applyLine(6) = 9876
         End If
+
         If leftTwoName.SelectedIndex > 0 Then
-            applyLine(7) = (weaponIDArray(leftTwoName.SelectedIndex) + (leftTwoInfusion.SelectedIndex * 100) + LeftTwoLevel.SelectedIndex)
+            If leftTwoName.SelectedIndex = 140 Or leftTwoName.SelectedIndex = 141 Then
+                applyLine(7) = (weaponIDArray(leftTwoName.SelectedIndex) + (LeftTwoLevel.SelectedIndex * 100))
+            Else
+                applyLine(7) = (weaponIDArray(leftTwoName.SelectedIndex) + (leftTwoInfusion.SelectedIndex * 100) + LeftTwoLevel.SelectedIndex)
+            End If
         Else
             applyLine(7) = 9876
         End If
+
         If rightTwoName.SelectedIndex > 0 Then
-            applyLine(8) = (weaponIDArray(rightTwoName.SelectedIndex) + (rightTwoInfusion.SelectedIndex * 100) + rightTwoLevel.SelectedIndex)
+            If rightTwoName.SelectedIndex = 140 Or rightTwoName.SelectedIndex = 141 Then
+                applyLine(8) = (weaponIDArray(rightTwoName.SelectedIndex) + (rightTwoLevel.SelectedIndex * 100))
+            Else
+                applyLine(8) = (weaponIDArray(rightTwoName.SelectedIndex) + (rightTwoInfusion.SelectedIndex * 100) + rightTwoLevel.SelectedIndex)
+            End If
         Else
             applyLine(8) = 9876
         End If
@@ -186,6 +390,12 @@ Public Class CosplayEditor
             applyLine(15) = intSet.Value
             applyLine(16) = fthSet.Value
         End If
+        applyLine(17) = headSize.Value
+        applyLine(18) = chestSize.Value
+        applyLine(19) = abdomenSize.Value
+        applyLine(20) = handSize.Value
+        applyLine(21) = legSize.Value
+        applyLine(22) = speedBar.Value
         allCosplaysArray(entityBox.SelectedIndex) = applyLine
         CosplaySouls.cosplayHash.Item(applyLine(0)) = applyLine
         MessageBox.Show("Applied!")
@@ -193,10 +403,10 @@ Public Class CosplayEditor
 
     Private Function makeCurrentString(applyLine() As Integer) As String
         Dim currentString = applyLine(0).ToString + ":"
-        For i = 1 To 15
+        For i = 1 To 21
             currentString = currentString + applyLine(i).ToString + ":"
         Next
-        currentString = currentString + applyLine(16).ToString
+        currentString = currentString + applyLine(22).ToString
         Return currentString
     End Function
 
@@ -210,7 +420,7 @@ Public Class CosplayEditor
             externalPath = Export.FileName
             Dim currentString = makeCurrentString(allCosplaysArray(0))
             My.Computer.FileSystem.WriteAllText(externalPath, currentString, False)
-            For i = 1 To 136
+            For i = 1 To 181
                 currentString = makeCurrentString(allCosplaysArray(i))
                 My.Computer.FileSystem.WriteAllText(externalPath, Environment.NewLine, True)
                 My.Computer.FileSystem.WriteAllText(externalPath, currentString, True)
@@ -233,5 +443,243 @@ Public Class CosplayEditor
                 MessageBox.Show("Error finding file")
             End If
         End If
+    End Sub
+
+    Public Sub onDepriveClick() Handles deprive.Click
+        leftOneName.SelectedIndex = 1
+        leftTwoName.SelectedIndex = 1
+        rightOneName.SelectedIndex = 1
+        rightTwoName.SelectedIndex = 1
+        helmetName.SelectedIndex = 1
+        armorName.SelectedIndex = 1
+        gauntletsName.SelectedIndex = 1
+        leggingsName.SelectedIndex = 1
+        noChangeStats.Checked = True
+        headSize.Value = -1
+        chestSize.Value = -1
+        abdomenSize.Value = -1
+        handSize.Value = -1
+        legSize.Value = -1
+        speedBar.Value = 10
+    End Sub
+
+    Private Sub onCosplayNowClick() Handles cosplayNow.Click
+
+        'apply from current boxes
+        If entityBox.SelectedIndex < 0 Then
+            Exit Sub
+        End If
+        Dim applyLine(23) As Integer
+        applyLine(0) = entityIDArray(entityBox.SelectedIndex + 1)
+        applyLine(1) = helmetIDArray(helmetName.SelectedIndex) + helmetLevel.SelectedIndex
+        applyLine(2) = armorIDArray(armorName.SelectedIndex) + armorLevel.SelectedIndex
+        applyLine(3) = gauntletIDArray(gauntletsName.SelectedIndex) + gauntletsLevel.SelectedIndex
+        applyLine(4) = leggingIDArray(leggingsName.SelectedIndex) + leggingsLevel.SelectedIndex
+
+        If leftOneName.SelectedIndex > 0 Then
+            If leftOneName.SelectedIndex = 140 Or leftOneName.SelectedIndex = 141 Then
+                applyLine(5) = (weaponIDArray(leftOneName.SelectedIndex) + (leftOneLevel.SelectedIndex * 100))
+            Else
+                applyLine(5) = (weaponIDArray(leftOneName.SelectedIndex) + (leftOneInfusion.SelectedIndex * 100) + leftOneLevel.SelectedIndex)
+            End If
+        Else
+            applyLine(5) = 9876
+        End If
+
+        If rightOneName.SelectedIndex > 0 Then
+            If rightOneName.SelectedIndex = 140 Or rightOneName.SelectedIndex = 141 Then
+                applyLine(6) = (weaponIDArray(rightOneName.SelectedIndex) + (rightOneLevel.SelectedIndex * 100))
+            Else
+                applyLine(6) = (weaponIDArray(rightOneName.SelectedIndex) + (rightOneInfusion.SelectedIndex * 100) + rightOneLevel.SelectedIndex)
+            End If
+        Else
+            applyLine(6) = 9876
+        End If
+
+        If leftTwoName.SelectedIndex > 0 Then
+            If leftTwoName.SelectedIndex = 140 Or leftTwoName.SelectedIndex = 141 Then
+                applyLine(7) = (weaponIDArray(leftTwoName.SelectedIndex) + (LeftTwoLevel.SelectedIndex * 100))
+            Else
+                applyLine(7) = (weaponIDArray(leftTwoName.SelectedIndex) + (leftTwoInfusion.SelectedIndex * 100) + LeftTwoLevel.SelectedIndex)
+            End If
+        Else
+            applyLine(7) = 9876
+        End If
+
+        If rightTwoName.SelectedIndex > 0 Then
+            If rightTwoName.SelectedIndex = 140 Or rightTwoName.SelectedIndex = 141 Then
+                applyLine(8) = (weaponIDArray(rightTwoName.SelectedIndex) + (rightTwoLevel.SelectedIndex * 100))
+            Else
+                applyLine(8) = (weaponIDArray(rightTwoName.SelectedIndex) + (rightTwoInfusion.SelectedIndex * 100) + rightTwoLevel.SelectedIndex)
+            End If
+        Else
+            applyLine(8) = 9876
+        End If
+
+        If noChangeStats.Checked Then
+            For i = 9 To 16
+                applyLine(i) = 9876
+            Next
+        Else
+            applyLine(9) = vitSet.Value
+            applyLine(10) = atnSet.Value
+            applyLine(11) = endSet.Value
+            applyLine(12) = strSet.Value
+            applyLine(13) = dexSet.Value
+            applyLine(14) = resSet.Value
+            applyLine(15) = intSet.Value
+            applyLine(16) = fthSet.Value
+        End If
+        applyLine(17) = headSize.Value
+        applyLine(18) = chestSize.Value
+        applyLine(19) = abdomenSize.Value
+        applyLine(20) = handSize.Value
+        applyLine(21) = legSize.Value
+        applyLine(22) = speedBar.Value
+
+        'setBases
+        Dim tempAddress = CosplaySouls.pointerToAddress(&H1378700)
+        statBase = CosplaySouls.pointerToAddress(tempAddress + &H8)
+        equipmentBase = CosplaySouls.pointerToAddress(statBase + &H318)
+
+        'setGear
+
+        'Helmet
+        tempAddress = equipmentBase + &HB4
+        If applyLine(1) <> 9876 Then
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(1)), 4, 0)
+        End If
+
+        'Armor
+        tempAddress = equipmentBase + &HB8
+        If applyLine(2) <> 9876 Then
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(2)), 4, 0)
+        End If
+
+        'Gauntlets
+        tempAddress = equipmentBase + &HBC
+        If applyLine(3) <> 9876 Then
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(3)), 4, 0)
+        End If
+
+        'Leggings
+        tempAddress = equipmentBase + &HC0
+        If applyLine(4) <> 9876 Then
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(4)), 4, 0)
+        End If
+
+        'L1
+        tempAddress = equipmentBase + &H94
+        If applyLine(5) <> 9876 Then
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(5)), 4, 0)
+        End If
+
+        'R1
+        tempAddress = equipmentBase + &H98
+        If applyLine(6) <> 9876 Then
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(6)), 4, 0)
+        End If
+
+        'L2
+        tempAddress = equipmentBase + &H9C
+        If applyLine(7) <> 9876 Then
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(7)), 4, 0)
+        End If
+
+        'R2
+        tempAddress = equipmentBase + &HA0
+        If applyLine(8) <> 9876 Then
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(8)), 4, 0)
+        End If
+
+        'setStats
+        If applyLine(9) <> 9876 Then
+            Dim hpStamBase = CosplaySouls.pointerToAddress(CosplaySouls.statPtr)
+
+            'VIT
+            tempAddress = statBase + &H38
+            Dim vit As Integer
+            vit = applyLine(9)
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, (hpStamBase + &H14), BitConverter.GetBytes(CosplaySouls.vitalityConv(vit - 1)), 4, 0)
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(vit), 4, 0)
+
+            'ATN
+            tempAddress = statBase + &H40
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(10)), 4, 0)
+
+            'END
+            tempAddress = statBase + &H48
+            Dim endurance As Integer
+            endurance = applyLine(11)
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, (hpStamBase + &H30), BitConverter.GetBytes(CosplaySouls.enduranceConv(endurance - 1)), 4, 0)
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(endurance), 4, 0)
+
+            'STR
+            tempAddress = statBase + &H50
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(12)), 4, 0)
+
+            'DEX
+            tempAddress = statBase + &H58
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(13)), 4, 0)
+
+            'RES
+            tempAddress = statBase + &H80
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(14)), 4, 0)
+
+            'INT
+            tempAddress = statBase + &H60
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(15)), 4, 0)
+
+            'FTH
+            tempAddress = statBase + &H68
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(16)), 4, 0)
+        End If
+
+        'setProportions
+        tempAddress = CosplaySouls.pointerToAddress(&H1378700)
+        Dim proportionBase = CosplaySouls.pointerToAddress(tempAddress + &H8)
+        Dim tempBytes() As Byte
+        Dim proportionSingle As Single
+
+        'Head Proportion
+        tempAddress = proportionBase + &H2AC
+        proportionSingle = applyLine(17) / 2
+        tempBytes = BitConverter.GetBytes(proportionSingle)
+        CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, tempBytes, 4, 0)
+
+        'Chest Proportion
+        tempAddress = proportionBase + &H2B0
+        proportionSingle = applyLine(18) / 2
+        tempBytes = BitConverter.GetBytes(proportionSingle)
+        CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, tempBytes, 4, 0)
+
+        'Abdomen Proportion
+        tempAddress = proportionBase + &H2B4
+        proportionSingle = applyLine(19) / 2
+        tempBytes = BitConverter.GetBytes(proportionSingle)
+        CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, tempBytes, 4, 0)
+
+        'Arm Proportion
+        tempAddress = proportionBase + &H2B8
+        proportionSingle = applyLine(20) / 2
+        tempBytes = BitConverter.GetBytes(proportionSingle)
+        CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, tempBytes, 4, 0)
+
+        'Leg Proportion
+        tempAddress = proportionBase + &H2BC
+        proportionSingle = applyLine(21) / 2
+        tempBytes = BitConverter.GetBytes(proportionSingle)
+        CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, tempBytes, 4, 0)
+
+        'Speed Modifier
+        tempAddress = CosplaySouls.pointerToAddress(&H12E29E8)
+        tempAddress = CosplaySouls.pointerToAddress(tempAddress)
+        tempAddress = CosplaySouls.pointerToAddress(tempAddress + &H28)
+        tempAddress = CosplaySouls.pointerToAddress(tempAddress + &H14)
+        tempAddress = tempAddress + &H64
+        Dim speedSingle As Single
+        speedSingle = applyLine(22) / 10
+        tempBytes = BitConverter.GetBytes(speedSingle)
+        CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, tempBytes, 4, 0)
     End Sub
 End Class

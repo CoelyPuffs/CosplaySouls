@@ -142,7 +142,9 @@
     <Content Include="Resources\emptyCosplays.txt" />
     <None Include="Resources\maggotnobgicon_7r2_icon.ico" />
     <None Include="Resources\maggotgradiconnochop_0zt_icon.ico" />
+    <None Include="Resources\endurance.txt" />
     <Content Include="Resources\sunlight-maggot %281%29.ico" />
+    <None Include="Resources\vitality.txt" />
     <Content Include="sunlight-maggot %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

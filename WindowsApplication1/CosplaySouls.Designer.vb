@@ -95,7 +95,7 @@ Partial Class CosplaySouls
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 25)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Version 0.05"
+        Me.Label1.Text = "Version 0.06"
         '
         'enemyScale
         '
@@ -124,9 +124,9 @@ Partial Class CosplaySouls
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(226, 175)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(171, 25)
+        Me.Label2.Size = New System.Drawing.Size(202, 25)
         Me.Label2.TabIndex = 14
-        Me.Label2.Text = "VIT/END Scaling"
+        Me.Label2.Text = "HP/Stamina Scaling"
         '
         'areaChallenge
         '
@@ -144,7 +144,7 @@ Partial Class CosplaySouls
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(568, 380)
+        Me.ClientSize = New System.Drawing.Size(574, 380)
         Me.Controls.Add(Me.areaChallenge)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.areaNormal)

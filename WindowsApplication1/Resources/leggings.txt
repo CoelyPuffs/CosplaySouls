@@ -19,7 +19,6 @@
 143000:Crimson Waistcloth:5
 133000:Crystalline Leggings:0
 43000:Dark Leggings:5
-1003000:Dragon Legs:0
 283000:Eastern Leggings:5
 653000:Elite Cleric Leggings:10
 353000:Elite Knight Leggings:10

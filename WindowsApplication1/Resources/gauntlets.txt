@@ -17,7 +17,6 @@
 132000:Crystalline Gauntlets:0
 42000:Dark Gauntlets:5
 402000:Dingy Gloves:10
-1002000:Dragon Arms:0
 282000:Eastern Gauntlets:5
 652000:Elite Cleric Gauntlets:10
 352000:Elite Knight Gauntlets:10

@@ -117,34 +117,98 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 9876:Entity
-        '''1200:Rat
-        '''1201:Small Rat
-        '''1202:Large Rat
-        '''1203:Snow Rat
-        '''2060:Infested Ghoul
-        '''2230:Stray Demon
-        '''2231:Demon Firesage
-        '''2232:Asylum Demon
-        '''2240:Capra Demon
-        '''2250:Taurus Demon
-        '''2260:Batwing Demon
-        '''2270:Mushroom Parent
-        '''2280:Mushroom Child
-        '''2300:Titanite Demon
-        '''2310:Crow Demon
-        '''2320:Iron Golem
-        '''2330:Demonic Foliage 
-        '''2360:Smough
-        '''2370:Channeler
-        '''2380:Giant Stone Knight
-        '''2390:Darkwraith
-        '''2400:Painting Guardian
-        '''2410:Silver Knight
-        '''2430:Demonic Statue
-        '''2500:Hollow
-        '''2510:Undead Merchant
-        '''2520:Undead As [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to 1:81	
+        '''2:82	
+        '''3:83	
+        '''4:84	
+        '''5:85	
+        '''6:86	
+        '''7:87	
+        '''8:88	
+        '''9:90	
+        '''10:91	
+        '''11:93	
+        '''12:95	
+        '''13:97	
+        '''14:98	
+        '''15:100	
+        '''16:102	
+        '''17:104	
+        '''18:106	
+        '''19:108	
+        '''20:110	
+        '''21:112	
+        '''22:115	
+        '''23:117	
+        '''24:119	
+        '''25:121	
+        '''26:124	
+        '''27:126	
+        '''28:129	
+        '''29:131	
+        '''30:133	
+        '''31:136	
+        '''32:139	
+        '''33:141	
+        '''34:144	
+        '''35:146	
+        '''36:149	
+        '''37:152	
+        '''38:154	
+        '''39:157	
+        '''40:160	
+        '''41:160	
+        '''42:160	
+        '''43:160	
+        '''44:160	
+        '''45:160	
+        '''46:160	
+        '''47:160	
+        '''48:160	
+        '''49:160	
+        '''50:160	
+        '''51:160	
+        '''52:160	
+        '''53:160	
+        '''54:160	
+        '''55:160	
+        '''56:160	
+        '''57:160	
+        '''58:160	
+        '''59:160	
+        '''60:1 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property endurance() As String
+            Get
+                Return ResourceManager.GetString("endurance", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 9876:Entity:0
+        '''1200:Rat:0.3
+        '''1201:Small Rat:0.3
+        '''1202:Large Rat:0.3
+        '''1203:Snow Rat:0.6
+        '''2060:Infested Ghoul:0.4
+        '''2230:Stray Demon:0.4
+        '''2231:Demon Firesage:0.8
+        '''2232:Asylum Demon:0.1
+        '''2240:Capra Demon:0.3
+        '''2250:Taurus Demon:0.2
+        '''2260:Batwing Demon:0.6
+        '''2270:Mushroom Parent:0.4
+        '''2280:Mushroom Child:0.4
+        '''2300:Titanite Demon:0.5
+        '''2310:Crow Demon:0.6
+        '''2320:Iron Golem:0.5
+        '''2330:Demonic Foliage:0.4 
+        '''2360:Smough:0.6
+        '''2370:Channeler:0.8
+        '''2380:Giant Stone Knight:0.4
+        '''2390:Darkwraith:0.8
+        '''2400:Painting Guardian:0.6
+        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property entities() As String
             Get
@@ -263,6 +327,75 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("sunlight_maggot__1_", resourceCulture)
                 Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 1:400
+        '''2:415
+        '''3:433
+        '''4:451
+        '''5:471
+        '''6:490
+        '''7:511
+        '''8:531
+        '''9:552
+        '''10:573
+        '''11:594
+        '''12:616
+        '''13:638
+        '''14:659
+        '''15:682
+        '''16:698
+        '''17:719
+        '''18:742
+        '''19:767
+        '''20:793
+        '''21:821
+        '''22:849
+        '''23:878
+        '''24:908
+        '''25:938
+        '''26:970
+        '''27:1001
+        '''28:1034
+        '''29:1066
+        '''30:1100
+        '''31:1123
+        '''32:1147
+        '''33:1170
+        '''34:1193
+        '''35:1216
+        '''36:1239
+        '''37:1261
+        '''38:1283
+        '''39:1304
+        '''40:1325
+        '''41:1346
+        '''42:1366
+        '''43:1386
+        '''44:1405
+        '''45:1424
+        '''46:1442
+        '''47:1458
+        '''48:1474
+        '''49:1489
+        '''50:1500
+        '''51:1508
+        '''52:1517
+        '''53:1526
+        '''54:1535
+        '''55:1544
+        '''56:1553
+        '''57:1562
+        '''58:1571
+        '''59:1580
+        '''60:1588
+        '''61:1597 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property vitality() As String
+            Get
+                Return ResourceManager.GetString("vitality", resourceCulture)
             End Get
         End Property
         

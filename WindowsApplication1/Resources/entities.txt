@@ -130,9 +130,54 @@
 5330:Frampt / Kaathe:0.7
 5340:The Fair Lady:0.4
 5350:Bell Gargoyles:0.2
-5351:Lightning Gargoyles:6
-5360:Great Feline:4
-5361:Alvina:4
-5362:Alvina:4
+5351:Lightning Gargoyles:0.6
+5360:Great Feline:0.4
+5361:Alvina:0.4
+5362:Alvina:0.4
 5370:Gwyn:0.9
 5390:Four Kings:0.8
+6000:Solaire of Astora:0.2
+6010:Darkmoon Knightess:0.6
+6020:Oscar of Astora:0.1
+6030:Big Hat Logan:0.8
+6040:Griggs of Vinheim:0.2
+6050:Dusk of Oolacile:0.4
+6070:Rhea of Thorolund:0.7
+6080:Petrus of Thorolund:0.2
+6090:Vince of Thorolund:0.7
+6100:Nico of Thorolund:0.7
+6130:Laurentius of the Great Swamp:0.3
+6170:Quelaana:0.4
+6180:Ingward:0.8
+6220:Rickert of Vinheim:0.2
+6250:Crestfallen Merchant:0.5
+6260:Domnhall of Zena:0.3
+6270:Crestfallen Warrior:0.4
+6280:Siegmeyer of Catarina:0.5
+6290:Sieglinde of Catarina:0.7
+6300:Lautrec of Carim:0.6
+6310:Shiva of the East:0.4
+6320:Patches:0.7
+6370:Oswald of Carim:0.2
+6420:Shiva's Bodyguard:0.4
+6490:Lautrec's Guard:0.6
+6500:Lautrec's Other Guard:0.6
+6510:Black Iron Tarkus:0.5
+6520:Witch Beatrice:0.3
+6530:Maneater Mildred:0.4
+6550:Paladin Leeroy:0.8
+6560:Kirk, Knight of Thorns:0.8
+6570:Xanthous King Jeremiah:0.6
+6580:Havel:0.2
+6600:Undead Prince Ricard:0.5
+6610:Crystal General:0.8
+6620:Daughter of Chaos:0.8
+6640:Darkmoon Soldier 1:0.6
+6650:Darkmoon Soldier 2:0.6
+6740:Ciaran:1
+6801:Forest Hunter 1:0.4
+6802:Forest Hunter 2:0.4
+6803:Forest Hunter 3:0.4
+6804:Forest Hunter 4:0.4
+6805:Forest Hunter 5:0.4
+6806:Forest Hunter 6:0.4
