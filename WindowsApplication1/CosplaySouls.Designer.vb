@@ -32,31 +32,33 @@ Partial Class CosplaySouls
         Me.areaNormal = New System.Windows.Forms.RadioButton()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.areaChallenge = New System.Windows.Forms.RadioButton()
+        Me.currentSetup = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'fullSetup
         '
-        Me.fullSetup.Location = New System.Drawing.Point(24, 24)
+        Me.fullSetup.Location = New System.Drawing.Point(24, 18)
         Me.fullSetup.Margin = New System.Windows.Forms.Padding(4)
         Me.fullSetup.Name = "fullSetup"
-        Me.fullSetup.Size = New System.Drawing.Size(167, 176)
+        Me.fullSetup.Size = New System.Drawing.Size(212, 128)
         Me.fullSetup.TabIndex = 4
         Me.fullSetup.Text = "START"
         Me.fullSetup.UseVisualStyleBackColor = True
         '
         'UnhookButton
         '
-        Me.UnhookButton.Location = New System.Drawing.Point(24, 228)
+        Me.UnhookButton.Location = New System.Drawing.Point(24, 263)
         Me.UnhookButton.Margin = New System.Windows.Forms.Padding(4)
         Me.UnhookButton.Name = "UnhookButton"
-        Me.UnhookButton.Size = New System.Drawing.Size(167, 64)
+        Me.UnhookButton.Size = New System.Drawing.Size(212, 46)
         Me.UnhookButton.TabIndex = 5
         Me.UnhookButton.Text = "UNHOOK"
         Me.UnhookButton.UseVisualStyleBackColor = True
         '
         'CosplayEditor
         '
-        Me.CosplayEditor.Location = New System.Drawing.Point(231, 24)
+        Me.CosplayEditor.Location = New System.Drawing.Point(279, 24)
         Me.CosplayEditor.Margin = New System.Windows.Forms.Padding(4)
         Me.CosplayEditor.Name = "CosplayEditor"
         Me.CosplayEditor.Size = New System.Drawing.Size(195, 44)
@@ -69,7 +71,7 @@ Partial Class CosplaySouls
         Me.autoGear.AutoSize = True
         Me.autoGear.Checked = True
         Me.autoGear.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.autoGear.Location = New System.Drawing.Point(231, 76)
+        Me.autoGear.Location = New System.Drawing.Point(279, 76)
         Me.autoGear.Name = "autoGear"
         Me.autoGear.Size = New System.Drawing.Size(193, 29)
         Me.autoGear.TabIndex = 7
@@ -81,7 +83,7 @@ Partial Class CosplaySouls
         Me.autoLevel.AutoSize = True
         Me.autoLevel.Checked = True
         Me.autoLevel.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.autoLevel.Location = New System.Drawing.Point(231, 123)
+        Me.autoLevel.Location = New System.Drawing.Point(279, 123)
         Me.autoLevel.Name = "autoLevel"
         Me.autoLevel.Size = New System.Drawing.Size(195, 29)
         Me.autoLevel.TabIndex = 8
@@ -91,17 +93,17 @@ Partial Class CosplaySouls
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 316)
+        Me.Label1.Location = New System.Drawing.Point(19, 340)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 25)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Version 0.06"
+        Me.Label1.Text = "Version 0.10"
         '
         'enemyScale
         '
         Me.enemyScale.AutoSize = True
         Me.enemyScale.Checked = True
-        Me.enemyScale.Location = New System.Drawing.Point(255, 213)
+        Me.enemyScale.Location = New System.Drawing.Point(303, 213)
         Me.enemyScale.Name = "enemyScale"
         Me.enemyScale.Size = New System.Drawing.Size(296, 29)
         Me.enemyScale.TabIndex = 11
@@ -112,7 +114,7 @@ Partial Class CosplaySouls
         'areaNormal
         '
         Me.areaNormal.AutoSize = True
-        Me.areaNormal.Location = New System.Drawing.Point(255, 263)
+        Me.areaNormal.Location = New System.Drawing.Point(303, 263)
         Me.areaNormal.Name = "areaNormal"
         Me.areaNormal.Size = New System.Drawing.Size(204, 29)
         Me.areaNormal.TabIndex = 12
@@ -122,7 +124,7 @@ Partial Class CosplaySouls
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(226, 175)
+        Me.Label2.Location = New System.Drawing.Point(274, 175)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(202, 25)
         Me.Label2.TabIndex = 14
@@ -131,7 +133,7 @@ Partial Class CosplaySouls
         'areaChallenge
         '
         Me.areaChallenge.AutoSize = True
-        Me.areaChallenge.Location = New System.Drawing.Point(255, 312)
+        Me.areaChallenge.Location = New System.Drawing.Point(303, 312)
         Me.areaChallenge.Name = "areaChallenge"
         Me.areaChallenge.Size = New System.Drawing.Size(232, 29)
         Me.areaChallenge.TabIndex = 15
@@ -139,12 +141,33 @@ Partial Class CosplaySouls
         Me.areaChallenge.Text = "By Area (challenge)"
         Me.areaChallenge.UseVisualStyleBackColor = True
         '
+        'currentSetup
+        '
+        Me.currentSetup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.currentSetup.FormattingEnabled = True
+        Me.currentSetup.Items.AddRange(New Object() {"EVERYTHING", "Just the Basics", "Custom"})
+        Me.currentSetup.Location = New System.Drawing.Point(24, 195)
+        Me.currentSetup.Name = "currentSetup"
+        Me.currentSetup.Size = New System.Drawing.Size(212, 33)
+        Me.currentSetup.TabIndex = 16
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(24, 164)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(167, 25)
+        Me.Label3.TabIndex = 17
+        Me.Label3.Text = "Cosplay Lineup:"
+        '
         'CosplaySouls
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(574, 380)
+        Me.ClientSize = New System.Drawing.Size(625, 386)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.currentSetup)
         Me.Controls.Add(Me.areaChallenge)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.areaNormal)
@@ -172,4 +195,6 @@ Partial Class CosplaySouls
     Friend WithEvents areaNormal As RadioButton
     Friend WithEvents Label2 As Label
     Friend WithEvents areaChallenge As RadioButton
+    Friend WithEvents currentSetup As ComboBox
+    Friend WithEvents Label3 As Label
 End Class

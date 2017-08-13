@@ -4,7 +4,7 @@
 512000:Balder Gauntlets:10
 72000:Black Iron Gauntlets:5
 322000:Black Knight Gauntlets:5
-302000:Black Leather Gloves:5
+302000:Black Leather Gloves:10
 152000:Black Manchette:5
 642000:Black Sorcerer Gauntlets:10
 552000:Bracelet of the Great Lord:0

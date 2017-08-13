@@ -27,7 +27,8 @@ Public Class CosplayEditor
     Dim weaponIDArray(185) As Integer
     Dim weaponNameArray(185) As String
     Dim weaponLimitArray(185) As Integer
-    Public isApplied As Boolean = False
+    Dim isApplied As Boolean = True
+    Dim isExported As Boolean = True
 
     Private WithEvents editorTimer As New System.Windows.Forms.Timer()
 
@@ -38,6 +39,14 @@ Public Class CosplayEditor
     Private Sub CosplayEditor_Load(Sender As Object, e As EventArgs) Handles MyBase.Load
         editorLoadCosplays()
         editorLoadDualLists()
+    End Sub
+
+    Private Sub editorClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        If Not isExported Then
+            If (MessageBox.Show("Your cosplays must be exported to be saved. Are you sure you want to close?", "Unsaved Work!", MessageBoxButtons.YesNo) = DialogResult.No) Then
+                e.Cancel = True
+            End If
+        End If
     End Sub
 
     Public Sub editorLoadCosplays()
@@ -91,6 +100,13 @@ Public Class CosplayEditor
         Next
     End Sub
 
+    Private Sub onEntityBoxClicked() Handles entityBox.Click
+        If Not isApplied Then
+            MessageBox.Show("Your changes have not been applied. If you want to save this cosplay, please press Apply")
+        End If
+        isApplied = True
+    End Sub
+
     Private Sub onEntityBoxChanged() Handles entityBox.SelectedIndexChanged
         Dim selectedLine = allCosplaysArray(entityBox.SelectedIndex)
         Dim currentData() = analyzeName(selectedLine(1), False)
@@ -106,7 +122,8 @@ Public Class CosplayEditor
         leggingsName.SelectedIndex = Array.IndexOf(leggingIDArray, currentData(0))
         leggingsLevel.SelectedIndex = currentData(2)
         currentData = analyzeName(selectedLine(5), True)
-        If (currentData(0) > 1330000 And currentData(0) < 1333600) Then
+
+        If (currentData(0) >= 1330000 And currentData(0) < 1333600) Then
             If currentData(0) < 1331600 Then
                 leftOneName.SelectedIndex = 141
                 leftOneInfusion.SelectedIndex = 0
@@ -121,8 +138,9 @@ Public Class CosplayEditor
             leftOneInfusion.SelectedIndex = currentData(1)
             leftOneLevel.SelectedIndex = currentData(2)
         End If
+
         currentData = analyzeName(selectedLine(6), True)
-        If (currentData(0) > 1330000 And currentData(0) < 1333600) Then
+        If (currentData(0) >= 1330000 And currentData(0) < 1333600) Then
             If currentData(0) < 1331600 Then
                 rightOneName.SelectedIndex = 141
                 rightOneInfusion.SelectedIndex = 0
@@ -137,8 +155,9 @@ Public Class CosplayEditor
             rightOneInfusion.SelectedIndex = currentData(1)
             rightOneLevel.SelectedIndex = currentData(2)
         End If
+
         currentData = analyzeName(selectedLine(7), True)
-        If (currentData(0) > 1330000 And currentData(0) < 1333600) Then
+        If (currentData(0) >= 1330000 And currentData(0) < 1333600) Then
             If currentData(0) < 1331600 Then
                 leftTwoName.SelectedIndex = 141
                 leftTwoInfusion.SelectedIndex = 0
@@ -153,8 +172,9 @@ Public Class CosplayEditor
             leftTwoInfusion.SelectedIndex = currentData(1)
             LeftTwoLevel.SelectedIndex = currentData(2)
         End If
+
         currentData = analyzeName(selectedLine(8), True)
-        If (currentData(0) > 1330000 And currentData(0) < 1333600) Then
+        If (currentData(0) >= 1330000 And currentData(0) < 1333600) Then
             If currentData(0) < 1331600 Then
                 rightTwoName.SelectedIndex = 141
                 rightTwoInfusion.SelectedIndex = 0
@@ -169,6 +189,7 @@ Public Class CosplayEditor
             rightTwoInfusion.SelectedIndex = currentData(1)
             rightTwoLevel.SelectedIndex = currentData(2)
         End If
+
         If selectedLine(9) = 9876 Then
             noChangeStats.Checked = True
         Else
@@ -188,6 +209,7 @@ Public Class CosplayEditor
         handSize.Value = selectedLine(20)
         legSize.Value = selectedLine(21)
         speedBar.Value = selectedLine(22)
+        isApplied = True
     End Sub
 
     Private Function analyzeName(name As Integer, hasInfusion As Boolean) As Integer()
@@ -209,6 +231,7 @@ Public Class CosplayEditor
     End Function
 
     Private Sub onR1BoxChanged() Handles rightOneName.SelectedIndexChanged
+        isApplied = False
         rightOneLevel.Items.Clear()
         rightOneInfusion.Items.Clear()
         addUpgrades(weaponLimitArray, rightOneName, rightOneLevel)
@@ -218,6 +241,7 @@ Public Class CosplayEditor
     End Sub
 
     Private Sub onR2BoxChanged() Handles rightTwoName.SelectedIndexChanged
+        isApplied = False
         rightTwoLevel.Items.Clear()
         rightTwoInfusion.Items.Clear()
         addUpgrades(weaponLimitArray, rightTwoName, rightTwoLevel)
@@ -227,6 +251,7 @@ Public Class CosplayEditor
     End Sub
 
     Private Sub onL1BoxChanged() Handles leftOneName.SelectedIndexChanged
+        isApplied = False
         leftOneLevel.Items.Clear()
         leftOneInfusion.Items.Clear()
         addUpgrades(weaponLimitArray, leftOneName, leftOneLevel)
@@ -236,6 +261,7 @@ Public Class CosplayEditor
     End Sub
 
     Private Sub onL2BoxChanged() Handles leftTwoName.SelectedIndexChanged
+        isApplied = False
         LeftTwoLevel.Items.Clear()
         leftTwoInfusion.Items.Clear()
         addUpgrades(weaponLimitArray, leftTwoName, LeftTwoLevel)
@@ -245,24 +271,28 @@ Public Class CosplayEditor
     End Sub
 
     Private Sub onHelmChanged() Handles helmetName.SelectedIndexChanged
+        isApplied = False
         helmetLevel.Items.Clear()
         addUpgrades(helmetLimitArray, helmetName, helmetLevel)
         helmetLevel.SelectedIndex = 0
     End Sub
 
     Private Sub onChestChanged() Handles armorName.SelectedIndexChanged
+        isApplied = False
         armorLevel.Items.Clear()
         addUpgrades(armorLimitArray, armorName, armorLevel)
         armorLevel.SelectedIndex = 0
     End Sub
 
     Private Sub onArmsChanged() Handles gauntletsName.SelectedIndexChanged
+        isApplied = False
         gauntletsLevel.Items.Clear()
         addUpgrades(gauntletLimitArray, gauntletsName, gauntletsLevel)
         gauntletsLevel.SelectedIndex = 0
     End Sub
 
     Private Sub onFeetChanged() Handles leggingsName.SelectedIndexChanged
+        isApplied = False
         leggingsLevel.Items.Clear()
         addUpgrades(leggingLimitArray, leggingsName, leggingsLevel)
         leggingsLevel.SelectedIndex = 0
@@ -294,34 +324,42 @@ Public Class CosplayEditor
     End Sub
 
     Private Sub onVitSetClicked() Handles vitSet.Click
+        isApplied = False
         noChangeStats.Checked = False
     End Sub
 
     Private Sub onAtnSetClicked() Handles atnSet.Click
+        isApplied = False
         noChangeStats.Checked = False
     End Sub
 
     Private Sub onEndSetClicked() Handles endSet.Click
+        isApplied = False
         noChangeStats.Checked = False
     End Sub
 
     Private Sub onStrSetClicked() Handles strSet.Click
+        isApplied = False
         noChangeStats.Checked = False
     End Sub
 
     Private Sub onDexSetClicked() Handles dexSet.Click
+        isApplied = False
         noChangeStats.Checked = False
     End Sub
 
     Private Sub onResSetClicked() Handles resSet.Click
+        isApplied = False
         noChangeStats.Checked = False
     End Sub
 
     Private Sub onIntSetClicked() Handles intSet.Click
+        isApplied = False
         noChangeStats.Checked = False
     End Sub
 
     Private Sub onFthSetClicked() Handles fthSet.Click
+        isApplied = False
         noChangeStats.Checked = False
     End Sub
 
@@ -398,6 +436,8 @@ Public Class CosplayEditor
         applyLine(22) = speedBar.Value
         allCosplaysArray(entityBox.SelectedIndex) = applyLine
         CosplaySouls.cosplayHash.Item(applyLine(0)) = applyLine
+        isApplied = True
+        isExported = False
         MessageBox.Show("Applied!")
     End Sub
 
@@ -426,6 +466,7 @@ Public Class CosplayEditor
                 My.Computer.FileSystem.WriteAllText(externalPath, currentString, True)
             Next
         End If
+        isExported = True
     End Sub
 
     Private Sub importButton_Click(sender As Object, e As EventArgs) Handles importButton.Click
@@ -464,6 +505,9 @@ Public Class CosplayEditor
     End Sub
 
     Private Sub onCosplayNowClick() Handles cosplayNow.Click
+        If CosplaySouls.targetProcessHandle = vbNull Then
+            Exit Sub
+        End If
 
         'apply from current boxes
         If entityBox.SelectedIndex < 0 Then

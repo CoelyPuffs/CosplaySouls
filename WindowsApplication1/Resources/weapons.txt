@@ -21,7 +21,7 @@
 856000:Smough's Hammer:5
 701000:Battle Axe:15
 703000:Butcher Knife:15
-702000:Crescent Axe:5
+702000:Crescent Axe:15
 705000:Gargoyle Tail Axe:15
 704000:Golem Axe:5
 700000:Hand Axe:15
@@ -41,13 +41,13 @@
 601000:Rapier:15
 604000:Ricard's Rapier:15
 603000:Velka's Rapier:5
-209000:Astora's Straight Sword:5
+209000:Astora's Straight Sword:15
 204000:Balder Side Sword:15
 207000:Barbed Straight Sword:15
 202000:Broadsword:15
 203000:Broken Straight Sword:15
 205000:Crystal Straight Sword:0
-210000:Dark Sword:5
+210000:Dark Sword:15
 211000:Drake Sword:5
 201000:Longsword:15
 200000:Shortsword:15

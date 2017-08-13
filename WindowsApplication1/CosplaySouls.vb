@@ -118,6 +118,8 @@ Public Class CosplaySouls
 
         Me.Icon = My.Resources.maggotgradiconnochop_0zt_icon
 
+        currentSetup.SelectedIndex = 0
+
         loadCosplays()
         loadEntities()
         loadVitEnd()
@@ -224,6 +226,9 @@ Public Class CosplaySouls
                     If latestHit = 0 Then
                         fullAddress = pointerToAddress(lastHitPtr) + &H68
                         latestHit = ReadUInt32(fullAddress)
+                        If latestHit < 6800 Then
+                            latestHit = (latestHit \ 10) * 10
+                        End If
                     End If
                     If Array.IndexOf(entityLine, latestHit) <> -1 Then
                         onHit()

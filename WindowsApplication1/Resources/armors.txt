@@ -9,7 +9,7 @@
 151000:Black Cleric Robe:5
 71000:Black Iron Armor:5
 321000:Black Knight Armor:5
-301000:Black Leather Armor:5
+301000:Black Leather Armor:10
 641000:Black Sorcerer Cloak:10
 451000:Brass Armor:5
 51000:Brigand Armor:10

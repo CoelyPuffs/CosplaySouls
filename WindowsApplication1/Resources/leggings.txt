@@ -5,7 +5,7 @@
 513000:Balder Leggings:10
 73000:Black Iron Leggings:5
 323000:Black Knight Leggings:5
-303000:Black Leather Boots:5
+303000:Black Leather Boots:10
 643000:Black Sorcerer Boots:10
 153000:Black Tights:5
 403000:Blood-Stained Skirt:10
