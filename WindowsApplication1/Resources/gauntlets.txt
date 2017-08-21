@@ -1,56 +1,56 @@
-9876:No Change:0
-902000:Bare:0
-332000:Antiquated Gloves:5
-512000:Balder Gauntlets:10
-72000:Black Iron Gauntlets:5
-322000:Black Knight Gauntlets:5
-302000:Black Leather Gloves:10
-152000:Black Manchette:5
-642000:Black Sorcerer Gauntlets:10
-552000:Bracelet of the Great Lord:0
-452000:Brass Gauntlets:5
-52000:Brigand Gauntlets:10
-12000:Catarina Gauntlets:5
-702000:Chester`s Gloves:5
-182000:Cleric Gauntlets:10
-142000:Crimson Gloves:5
-132000:Crystalline Gauntlets:0
-42000:Dark Gauntlets:5
-402000:Dingy Gloves:10
-282000:Eastern Gauntlets:5
-652000:Elite Cleric Gauntlets:10
-352000:Elite Knight Gauntlets:10
-662000:Gauntlets of Artorias:5
-102000:Gauntlets of Favor:5
-92000:Gauntlets of the Channelers:0
-112000:Gauntlets of the Vanquisher:0
-202000:Gauntlets of Thorns:5
-532000:Giant Gauntlets:5
-462000:Gold-Hemmed Black Gloves:0
-472000:Golem Gauntlets:0
-682000:Gough`s Gauntlets:5
-692000:Guardian Gauntlets:0
-212000:Hard Leather Gauntlets:10
-442000:Havel's Gauntlets:0
-162000:Iron Bracelet:10
-392000:Knight Gauntlets:10
-172000:Leather Gauntlets:10
-242000:Leather Gloves:10
-672000:Lord`s Blade Gloves:5
-372000:Mage Smith Gauntlets:10
-412000:Maiden Gloves:10
-542000:Moonlight Gloves:0
-272000:Ornstein`s Gauntlets:0
-252000:Painting Guardian Gloves:5
-22000:Paladin Gauntlets:5
-62000:Shadow Gauntlets:5
-422000:Silver Knight Gauntlets:5
-82000:Smough`s Gauntlets:0
-222000:Sorcerer Gauntlets:10
-492000:Steel Gauntlets:10
-122000:Stone Gauntlets:0
-232000:Tattered Cloth Manchette:10
-312000:Traveling Gloves:10
-362000:Wanderer Manchette:10
-342000:Witch Gloves:5
-292000:Xanthous Gloves:5
+9876:No Change:0:9876
+902000:Bare:0:0
+332000:Antiquated Gloves:5:0.6
+512000:Balder Gauntlets:10:3.5
+72000:Black Iron Gauntlets:5:9.2
+322000:Black Knight Gauntlets:5:6
+302000:Black Leather Gloves:10:1.8
+152000:Black Manchette:5:1.8
+642000:Black Sorcerer Gauntlets:10:1
+552000:Bracelet of the Great Lord:0:2.8
+452000:Brass Gauntlets:5:5.4
+52000:Brigand Gauntlets:10:1.8
+12000:Catarina Gauntlets:5:6.9
+702000:Chester`s Gloves:5:1.5
+182000:Cleric Gauntlets:10:7.4
+142000:Crimson Gloves:5:0.8
+132000:Crystalline Gauntlets:0:6.4
+42000:Dark Gauntlets:5:5.8
+402000:Dingy Gloves:10:1.2
+282000:Eastern Gauntlets:5:1.5
+652000:Elite Cleric Gauntlets:10:7.8
+352000:Elite Knight Gauntlets:10:3.7
+662000:Gauntlets of Artorias:5:4.6
+102000:Gauntlets of Favor:5:5
+92000:Gauntlets of the Channelers:0:3
+112000:Gauntlets of the Vanquisher:0:3
+202000:Gauntlets of Thorns:5:6.2
+532000:Giant Gauntlets:5:9.7
+462000:Gold-Hemmed Black Gloves:0:1.2
+472000:Golem Gauntlets:0:9.7
+682000:Gough`s Gauntlets:5:7
+692000:Guardian Gauntlets:0:10.4
+212000:Hard Leather Gauntlets:10:3.5
+442000:Havel's Gauntlets:0:11.5
+162000:Iron Bracelet:10:4.3
+392000:Knight Gauntlets:10:3.5
+172000:Leather Gauntlets:10:3.5
+242000:Leather Gloves:10:2.8
+672000:Lord`s Blade Gloves:5:2.8
+372000:Mage Smith Gauntlets:10:1.4
+412000:Maiden Gloves:10:1.2
+542000:Moonlight Gloves:0:0.5
+272000:Ornstein`s Gauntlets:0:4
+252000:Painting Guardian Gloves:5:0.9
+22000:Paladin Gauntlets:5:7.6
+62000:Shadow Gauntlets:5:1.4
+422000:Silver Knight Gauntlets:5:5.5
+82000:Smough`s Gauntlets:0:10.4
+222000:Sorcerer Gauntlets:10:1.4
+492000:Steel Gauntlets:10:8.3
+122000:Stone Gauntlets:0:10.4
+232000:Tattered Cloth Manchette:10:1.6
+312000:Traveling Gloves:10:1.6
+362000:Wanderer Manchette:10:2.1
+342000:Witch Gloves:5:1.7
+292000:Xanthous Gloves:5:2.3

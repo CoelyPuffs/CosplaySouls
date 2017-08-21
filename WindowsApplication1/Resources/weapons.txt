@@ -1,185 +1,185 @@
-9876:No Change:0
-900000:Bare:0
-901000:Caestus:15
-902000:Claw:15
-904000:Dark Hand:0
-903000:Dragon Bone Fist:5
-811000:Blacksmith Giant Hammer:5
-810000:Blacksmith Hammer:15
-812000:Hammer of Vamos:5
-800000:Club:15
-801000:Mace:15
-802000:Morning Star:15
-804000:Pickaxe:15
-809000:Reinforced Club:15
-803000:Warpick:15
-852000:Demon's Great Hammer:15
-854000:Dragon Tooth:5
-851000:Grant:5
-850000:Great Club:15
-855000:Large Club:15
-856000:Smough's Hammer:5
-701000:Battle Axe:15
-703000:Butcher Knife:15
-702000:Crescent Axe:15
-705000:Gargoyle Tail Axe:15
-704000:Golem Axe:5
-700000:Hand Axe:15
-753000:Black Knight Greataxe:5
-751000:Demon's Greataxe:15
-752000:Dragon King Greataxe:5
-750000:Greataxe:15
-9015000:Stone Greataxe:5
-103000:Bandit's Knife:15
-100000:Dagger:15
-9011000:Dark Silver Tracer:5
-102000:Ghost Blade:5
-101000:Parrying Dagger:15
-104000:Priscilla's Dagger:5
-602000:Estoc:15
-600000:Mail Breaker:15
-601000:Rapier:15
-604000:Ricard's Rapier:15
-603000:Velka's Rapier:5
-209000:Astora's Straight Sword:15
-204000:Balder Side Sword:15
-207000:Barbed Straight Sword:15
-202000:Broadsword:15
-203000:Broken Straight Sword:15
-205000:Crystal Straight Sword:0
-210000:Dark Sword:15
-211000:Drake Sword:5
-201000:Longsword:15
-200000:Shortsword:15
-208000:Silver Knight Straight Sword:5
-212000:Straight Sword Hilt:15
-206000:Sunlight Straight Sword:15
-9012000:Abyss Greatsword:5
-300000:Bastard Sword:15
-310000:Black Knight Sword:5
-301000:Claymore:15
-304000:Crystal Greatsword:0
-303000:Flamberge:15
-314000:Great Lord Greatsword:5
-307000:Greatsword of Artorias:5
-311000:Greatsword of Artorias (Cursed):5
-302000:Man Serpent Greatsword:15
-309000:Moonlight Greatsword:5
-902000:Obsidian Greatsword:5
-306000:Stone Greatsword:5
-355000:Black Knight Greatsword:5
-352000:Demon Great Machete:15
-354000:Dragon Greatsword:5
-351000:Greatsword:15
-350000:Zweihander:15
-503000:Chaos Blade:5
-502000:Iaito:15
-500000:Uchigatana:15
-501000:Washing Pole:15
-401000:Falchion:15
-901000:Gold Tracer:5
-403000:Jagged Ghost Blade:5
-405000:Painting Guardian Sword:15
-406000:Quelaag's Furysword:5
-400000:Scimitar:15
-402000:Shotel:15
-453000:Gravelord Sword:5
-451000:Murakumo:15
-450000:Server:15
-1004000:Channeler's Trident:5
-1003000:Demon's Spear:5
-1051000:Dragonslayer Spear:5
-9016000:Four-Pronged Plow:15
-1052000:Moonlight Butterfly Horn:5
-1002000:Partizan:15
-1050000:Pike:15
-1006000:Silver Knight Spear:5
-1000000:Spear:15
-1001000:Winged Spear:15
-1105000:Black Knight Halberd:5
-1103000:Gargoyle's Halberd:15
-1101000:Giant's Halberd:5
-1150000:Great Scythe:15
-1100000:Halberd:15
-1151000:Lifehunt Scythe:5
-1106000:Lucerne:15
-1107000:Scythe:15
-1102000:Titanite Catch Pole:5
-1202000:Black Bow of Pharis:15
-1204000:Composite Bow:15
-1205000:Darkmoon Bow:5
-1201000:Longbow:15
-1200000:Short Bow:15
-1252000:Avelyn:15
-1251000:Heavy Crossbow:15
-1250000:Light Crossbow:15
-1253000:Sniper Crossbow:15
-1203000:Dragonslayer Greatbow:5
-9021000:Gough's Greatbow:5
-9019000:Guardian Tail:15
-1601000:Notched Whip:15
-1600000:Whip:15
-1301000:Beatrice's Catalyst:0
-1307000:Demon's Catalyst:0
-1308000:Izalith Catalyst:0
-1303000:Logan's Catalyst:0
-9017000:Manus Catalyst:0
-9018000:Oolacile Catalyst:0
-1305000:Oolacile Ivory Catalyst:0
-1300000:Sorcerer's Catalyst:0
-1302000:Tin Banishment Catalyst:0
-1306000:Tin Crystallization Catalyst:0
-1304000:Tin Darkmoon Catalyst:0
-1361000:Canvas Talisman:0
-1366000:Darkmoon Talisman:0
-1363000:Ivory Talisman:0
-1365000:Sunlight Talisman:0
-1360000:Talisman:0
-1362000:Thorolund Talisman:0
-1367000:Velka's Talisman:0
-1396000:Skull Lantern:0
-1332000:Ascended Pyromancy Flame:5
-1330000:Pyromancy Flame:15
-1405000:Buckler:15
-1410000:Caduceus Round Shield:15
-1406000:Cracked Round Shield:15
-9000000:Effigy Shield:15
-1408000:Leather Shield:15
-1409000:Plank Shield:15
-1476000:Red and White Round Shield:15
-1403000:Small Leather Shield:15
-1404000:Target Shield:15
-1460000:Warrior's Round Shield:15
-1455000:Balder Shield:15
-1474000:Black Knight Shield:5
-9002000:Bloodshield:15
-1477000:Caduceus Kite Shield:15
-1456000:Crest Shield:15
-1457000:Dragon Crest Shield:15
-1400000:East-West Shield:15
-1478000:Gargoyle's Shield:15
-1453000:Grass Crest Shield:15
-1450000:Heater Shield:15
-1454000:Hollow Soldier Shield:15
-1461000:Iron Round Shield:15
-1451000:Knight Shield:15
-1402000:Large Leather Shield:15
-9001000:Sanctus:15
-1473000:Silver Knight Shield:5
-1462000:Spider Shield:15
-1472000:Sunlight Shield:15
-1452000:Tower Kite Shield:15
-1401000:Wooden Shield:15
-9003000:Black Iron Greatshield:15
-1506000:Bonewheel Shield:15
-9014000:Cleansing Greatshield:15
-1500000:Eagle Shield:15
-1502000:Giant Shield:15
-1507000:Greatshield of Artorias:5
-1505000:Havel's Greatshield:5
-1503000:Stone Greatshield:5
-1501000:Tower Shield:15
-1411000:Crystal Ring Shield:5
-1471000:Crystal Shield:0
-1470000:Spiked Shield:15
-1475000:Pierce Shield:15
+9876:No Change:0:9876
+900000:Bare:0:0
+901000:Caestus:15:0.5
+902000:Claw:15:1
+904000:Dark Hand:0:0.5
+903000:Dragon Bone Fist:5:8
+811000:Blacksmith Giant Hammer:5:6
+810000:Blacksmith Hammer:15:5
+812000:Hammer of Vamos:5:5
+800000:Club:15:3
+801000:Mace:15:4
+802000:Morning Star:15:4
+804000:Pickaxe:15:5
+809000:Reinforced Club:15:4
+803000:Warpick:15:3.5
+852000:Demon's Great Hammer:15:22
+854000:Dragon Tooth:5:18
+851000:Grant:5:24
+850000:Great Club:15:12
+855000:Large Club:15:11
+856000:Smough's Hammer:5:28
+701000:Battle Axe:15:22
+703000:Butcher Knife:15:18
+702000:Crescent Axe:15:24
+705000:Gargoyle Tail Axe:15:12
+704000:Golem Axe:5:11
+700000:Hand Axe:15:2
+753000:Black Knight Greataxe:5:16
+751000:Demon's Greataxe:15:22
+752000:Dragon King Greataxe:5:24
+750000:Greataxe:15:14
+9015000:Stone Greataxe:5:24
+103000:Bandit's Knife:15:1
+100000:Dagger:15:0.5
+9011000:Dark Silver Tracer:5:1
+102000:Ghost Blade:5:0.5
+101000:Parrying Dagger:15:0.5
+104000:Priscilla's Dagger:5:1
+602000:Estoc:15:3
+600000:Mail Breaker:15:0.5
+601000:Rapier:15:1.5
+604000:Ricard's Rapier:15:2
+603000:Velka's Rapier:5:2
+209000:Astora's Straight Sword:15:3
+204000:Balder Side Sword:15:3
+207000:Barbed Straight Sword:15:3
+202000:Broadsword:15:3
+203000:Broken Straight Sword:15:2
+205000:Crystal Straight Sword:0:6
+210000:Dark Sword:15:6
+211000:Drake Sword:5:6
+201000:Longsword:15:3
+200000:Shortsword:15:2
+208000:Silver Knight Straight Sword:5:6
+212000:Straight Sword Hilt:15:6
+206000:Sunlight Straight Sword:15:4
+9012000:Abyss Greatsword:5:9
+300000:Bastard Sword:15:6
+310000:Black Knight Sword:5:8
+301000:Claymore:15:6
+304000:Crystal Greatsword:0:8
+303000:Flamberge:15:6
+314000:Great Lord Greatsword:5:8
+307000:Greatsword of Artorias:5:10
+311000:Greatsword of Artorias (Cursed):5:10
+302000:Man Serpent Greatsword:15:10
+309000:Moonlight Greatsword:5:6
+9020000:Obsidian Greatsword:5:8
+306000:Stone Greatsword:5:18
+355000:Black Knight Greatsword:5:14
+352000:Demon Great Machete:15:18
+354000:Dragon Greatsword:5:24
+351000:Greatsword:15:12
+350000:Zweihander:15:10
+503000:Chaos Blade:5:6
+502000:Iaito:15:5
+500000:Uchigatana:15:5
+501000:Washing Pole:15:8
+401000:Falchion:15:2.5
+9010000:Gold Tracer:5:2
+403000:Jagged Ghost Blade:5:1.5
+405000:Painting Guardian Sword:15:1.5
+406000:Quelaag's Furysword:5:3.5
+400000:Scimitar:15:1.5
+402000:Shotel:15:2.5
+453000:Gravelord Sword:5:10
+451000:Murakumo:15:12
+450000:Server:15:10
+1004000:Channeler's Trident:5:6
+1003000:Demon's Spear:5:4
+1051000:Dragonslayer Spear:5:10
+9016000:Four-Pronged Plow:15:5.5
+1052000:Moonlight Butterfly Horn:5:4
+1002000:Partizan:15:4.5
+1050000:Pike:15:10
+1006000:Silver Knight Spear:5:6
+1000000:Spear:15:3.5
+1001000:Winged Spear:15:4.5
+1105000:Black Knight Halberd:5:14
+1103000:Gargoyle's Halberd:15:6
+1101000:Giant's Halberd:5:16
+1150000:Great Scythe:15:5
+1100000:Halberd:15:6
+1151000:Lifehunt Scythe:5:6
+1106000:Lucerne:15:5.5
+1107000:Scythe:15:5
+1102000:Titanite Catch Pole:5:6
+1202000:Black Bow of Pharis:15:1
+1204000:Composite Bow:15:1
+1205000:Darkmoon Bow:5:1
+1201000:Longbow:15:1
+1200000:Short Bow:15:0.5
+1252000:Avelyn:15:6
+1251000:Heavy Crossbow:15:5
+1250000:Light Crossbow:15:3
+1253000:Sniper Crossbow:15:8
+1203000:Dragonslayer Greatbow:5:10
+9021000:Gough's Greatbow:5:13
+9019000:Guardian Tail:15:5
+1601000:Notched Whip:15:2
+1600000:Whip:15:1.5
+1301000:Beatrice's Catalyst:0:2
+1307000:Demon's Catalyst:0:4
+1308000:Izalith Catalyst:0:2
+1303000:Logan's Catalyst:0:2
+9017000:Manus Catalyst:0:5
+9018000:Oolacile Catalyst:0:2
+1305000:Oolacile Ivory Catalyst:0:0.5
+1300000:Sorcerer's Catalyst:0:2
+1302000:Tin Banishment Catalyst:0:3
+1306000:Tin Crystallization Catalyst:0:2.5
+1304000:Tin Darkmoon Catalyst:0:1
+1361000:Canvas Talisman:0:0.3
+1366000:Darkmoon Talisman:0:0.3
+1363000:Ivory Talisman:0:0.3
+1365000:Sunlight Talisman:0:0.3
+1360000:Talisman:0:0.3
+1362000:Thorolund Talisman:0:0.3
+1367000:Velka's Talisman:0:0.3
+1396000:Skull Lantern:0:0.5
+1332000:Ascended Pyromancy Flame:5:0.3
+1330000:Pyromancy Flame:15:0.3
+1405000:Buckler:15:1.5
+1410000:Caduceus Round Shield:15:1
+1406000:Cracked Round Shield:15:1
+9000000:Effigy Shield:15:3
+1408000:Leather Shield:15:1
+1409000:Plank Shield:15:1.5
+1476000:Red and White Round Shield:15:1
+1403000:Small Leather Shield:15:2
+1404000:Target Shield:15:2
+1460000:Warrior's Round Shield:15:1
+1455000:Balder Shield:15:4
+1474000:Black Knight Shield:5:6
+9002000:Bloodshield:15:3
+1477000:Caduceus Kite Shield:15:1.5
+1456000:Crest Shield:15:3
+1457000:Dragon Crest Shield:15:3
+1400000:East-West Shield:15:1
+1478000:Gargoyle's Shield:15:4
+1453000:Grass Crest Shield:15:3
+1450000:Heater Shield:15:2
+1454000:Hollow Soldier Shield:15:3.5
+1461000:Iron Round Shield:15:5
+1451000:Knight Shield:15:5.5
+1402000:Large Leather Shield:15:1.5
+9001000:Sanctus:15:3
+1473000:Silver Knight Shield:5:5
+1462000:Spider Shield:15:3
+1472000:Sunlight Shield:15:4
+1452000:Tower Kite Shield:15:3
+1401000:Wooden Shield:15:1.5
+9003000:Black Iron Greatshield:15:16
+1506000:Bonewheel Shield:15:12
+9014000:Cleansing Greatshield:15:14.5
+1500000:Eagle Shield:15:6
+1502000:Giant Shield:15:18
+1507000:Greatshield of Artorias:5:16
+1505000:Havel's Greatshield:5:26
+1503000:Stone Greatshield:5:20
+1501000:Tower Shield:15:13
+1411000:Crystal Ring Shield:5:3
+1471000:Crystal Shield:0:5
+1470000:Spiked Shield:15:3
+1475000:Pierce Shield:15:3.5

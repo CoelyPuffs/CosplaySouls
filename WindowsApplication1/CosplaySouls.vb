@@ -36,9 +36,23 @@ Public Class CosplaySouls
     Dim entityList = My.Resources.entities.Split(Chr(&HA))
     Dim entityLine(183) As Integer
     Dim entityScale(183) As Double
+    Dim helmetList = My.Resources.helmets.Split(Chr(&HA))
+    Dim armorList = My.Resources.armors.Split(Chr(&HA))
+    Dim gauntletList = My.Resources.gauntlets.Split(Chr(&HA))
+    Dim leggingList = My.Resources.leggings.Split(Chr(&HA))
+    Dim weaponList = My.Resources.weapons.Split(Chr(&HA))
+    Dim helmetWeights(73) As Double
+    Dim armorWeights(61) As Double
+    Dim gauntletWeights(56) As Double
+    Dim leggingWeights(60) As Double
+    Dim weaponWeights(185) As Double
+    Dim protectHash As New Hashtable
+    Dim weaponHash As New Hashtable
     Public vitalityConv(98) As Integer
     Public enduranceConv(98) As Integer
     Public statPtr As Integer
+    Dim modifiedLHFunct As Integer
+    Public leftHandPtr As Integer
     'Public externalCosplays() As Array
     'Dim usingExternal As Boolean
 
@@ -123,7 +137,7 @@ Public Class CosplaySouls
         loadCosplays()
         loadEntities()
         loadVitEnd()
-
+        'loadGear() obsolete because of index
     End Sub
 
     Private Sub fullSetup_Click(sender As Object, e As EventArgs) Handles fullSetup.Click
@@ -176,6 +190,25 @@ Public Class CosplaySouls
                 WriteProcessMemory(targetProcessHandle, (modifiedHitFunct + &H1F), newStatFunct, newStatFunct.Length(), 0)
                 WriteProcessMemory(targetProcessHandle, &HBFC4B4, oldStatFunct, oldStatFunct.Length(), 0)
 
+                'Weight Setup
+                originalLHFunct = &HEF953D
+                modifiedLHFunct = modifiedHitFunct + &H3F
+                leftHandPtr = modifiedHitFunct + &H70
+
+                Dim oldHandFunct() As Byte = {&HE9, &H00, &H00, &H00, &H00, &H90}
+                Dim modifiedHandFunct() As Byte = {&H89, &H35, &H0, &H0, &H0, &H0, &H8A, &H86, &H00, &H01, &H00, &H00, &HE9, &H0, &H0, &H0, &H0}
+
+                firstJumpAddress = BitConverter.GetBytes(modifiedHitFunct + &H3F - &HEF953D)
+                Dim leftHandAddress = BitConverter.GetBytes(modifiedHitFunct + &H70)
+                returnAddress = BitConverter.GetBytes((&HFFFFFFFF - ((modifiedHitFunct + &H4B) - &HEF953D)) + 1)
+
+                Array.Copy(firstJumpAddress, 0, oldHandFunct, 1, 4)
+                Array.Copy(leftHandAddress, 0, modifiedHandFunct, 2, 4)
+                Array.Copy(returnAddress, 0, modifiedHandFunct, 13, 4)
+
+                WriteProcessMemory(targetProcessHandle, modifiedLHFunct, modifiedHandFunct, modifiedHandFunct.Length(), 0)
+                WriteProcessMemory(targetProcessHandle, &HEF953D, oldHandFunct, oldHandFunct.Length(), 0)
+
                 isSetup = True
 
                 'Calibration
@@ -201,6 +234,17 @@ Public Class CosplaySouls
         isHooked = False
         isSetup = False
         isCalibrated = False
+    End Sub
+
+    Private Sub onSetupChanged() Handles currentSetup.SelectedIndexChanged
+        If currentSetup.SelectedIndex = 0 Then
+            cosplayList = My.Resources.T_H_I_C_C.Split(Chr(&HA))
+        ElseIf currentSetup.SelectedIndex = 1 Then
+            cosplayList = My.Resources.basicCosplays.Split(Chr(&HA))
+        ElseIf currentSetup.SelectedIndex = 2 Then
+            Dim editor = New CosplayEditor(Me)
+            editor.Show()
+        End If
     End Sub
 
     Private Sub CosplayEditor_Click(sender As Object, e As EventArgs) Handles CosplayEditor.Click
@@ -262,6 +306,24 @@ Public Class CosplaySouls
         Next
     End Sub
 
+    Public Sub loadGear()
+        For i = 0 To helmetList.Length - 1
+            protectHash.Add(Convert.ToInt32(helmetList(i).Split(":")(0)), Convert.ToDouble(helmetList(i).Split(":")(3)))
+        Next
+        For i = 1 To armorList.Length - 1
+            protectHash.Add(Convert.ToInt32(armorList(i).Split(":")(0)), Convert.ToDouble(armorList(i).Split(":")(3)))
+        Next
+        For i = 1 To gauntletList.Length - 1
+            protectHash.Add(Convert.ToInt32(gauntletList(i).Split(":")(0)), Convert.ToDouble(gauntletList(i).Split(":")(3)))
+        Next
+        For i = 1 To leggingList.Length - 1
+            protectHash.Add(Convert.ToInt32(leggingList(i).Split(":")(0)), Convert.ToDouble(leggingList(i).Split(":")(3)))
+        Next
+        For i = 0 To weaponList.Length - 1
+            weaponHash.Add(Convert.ToInt32(weaponList(i).Split(":")(0)), Convert.ToDouble(weaponList(i).Split(":")(3)))
+        Next
+    End Sub
+
     Public Sub loadVitEnd()
         For i = 0 To 98
             vitalityConv(i) = Convert.ToInt32(My.Resources.vitality.Split(Chr(&HA))(i))
@@ -288,6 +350,7 @@ Public Class CosplaySouls
             setStats()
         End If
         setProportions()
+        'setWeight() obsolete because of index
     End Sub
 
     Public Sub setEquipment()
@@ -296,7 +359,9 @@ Public Class CosplaySouls
         equipmentBase = pointerToAddress(tempAddress + &H318)
 
         'Helmet
-        tempAddress = equipmentBase + &HB4
+        'tempAddress = equipmentBase + &HB4
+        tempAddress = pointerToAddress(statPtr) + &H26C
+        Label4.Text = tempAddress
         If currentCosplay(1) <> 9876 Then
             If autoLvlGear Then
                 WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(1)), 4, 0)
@@ -306,7 +371,8 @@ Public Class CosplaySouls
         End If
 
         'Armor
-        tempAddress = equipmentBase + &HB8
+        'tempAddress = equipmentBase + &HB8
+        tempAddress = pointerToAddress(statPtr) + &H270
         If currentCosplay(2) <> 9876 Then
             If autoLvlGear Then
                 WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(2)), 4, 0)
@@ -315,8 +381,9 @@ Public Class CosplaySouls
             End If
         End If
 
-            'Gauntlets
-            tempAddress = equipmentBase + &HBC
+        'Gauntlets
+        'tempAddress = equipmentBase + &HBC
+        tempAddress = pointerToAddress(statPtr) + &H274
         If currentCosplay(3) <> 9876 Then
             If autoLvlGear Then
                 WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(3)), 4, 0)
@@ -325,8 +392,9 @@ Public Class CosplaySouls
             End If
         End If
 
-            'Leggings
-            tempAddress = equipmentBase + &HC0
+        'Leggings
+        'tempAddress = equipmentBase + &HC0
+        tempAddress = pointerToAddress(statPtr) + &H278
         If currentCosplay(4) <> 9876 Then
             If autoLvlGear Then
                 WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(4)), 4, 0)
@@ -335,8 +403,9 @@ Public Class CosplaySouls
             End If
         End If
 
-            'L1
-            tempAddress = equipmentBase + &H94
+        'L1
+        'tempAddress = equipmentBase + &H94
+        tempAddress = pointerToAddress(statPtr) + &H24C
         If currentCosplay(5) <> 9876 Then
             If autoLvlGear Then
                 WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(5)), 4, 0)
@@ -345,8 +414,9 @@ Public Class CosplaySouls
             End If
         End If
 
-            'R1
-            tempAddress = equipmentBase + &H98
+        'R1
+        'tempAddress = equipmentBase + &H98
+        tempAddress = pointerToAddress(statPtr) + &H250
         If currentCosplay(6) <> 9876 Then
             If autoLvlGear Then
                 WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(6)), 4, 0)
@@ -356,7 +426,8 @@ Public Class CosplaySouls
         End If
 
         'L2
-        tempAddress = equipmentBase + &H9C
+        'tempAddress = equipmentBase + &H9C
+        tempAddress = pointerToAddress(statPtr) + &H254
         If currentCosplay(7) <> 9876 Then
             If autoLvlGear Then
                 WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(7)), 4, 0)
@@ -366,7 +437,8 @@ Public Class CosplaySouls
         End If
 
         'R2
-        tempAddress = equipmentBase + &HA0
+        'tempAddress = equipmentBase + &HA0
+        tempAddress = pointerToAddress(statPtr) + &H258
         If currentCosplay(8) <> 9876 Then
             If autoLvlGear Then
                 WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(8)), 4, 0)
@@ -386,7 +458,7 @@ Public Class CosplaySouls
         Dim hpStamBase = pointerToAddress(statPtr)
 
         'VIT
-        tempAddress = statBase + &H38
+        tempAddress = pointerToAddress(statPtr) + &H38
         Dim vit As Integer
         If areaNormal.Checked Then
             vit = (entityScale(Array.IndexOf(entityLine, latestHit)) * 30) + 10
@@ -402,11 +474,11 @@ Public Class CosplaySouls
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(vit), 4, 0)
 
         'ATN
-        tempAddress = statBase + &H40
+        tempAddress = pointerToAddress(statPtr) + &H40
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(10)), 4, 0)
 
         'END
-        tempAddress = statBase + &H48
+        tempAddress = pointerToAddress(statPtr) + &H48
         Dim endurance As Integer
         If areaNormal.Checked Then
             endurance = (entityScale(Array.IndexOf(entityLine, latestHit)) * 30) + 10
@@ -419,23 +491,23 @@ Public Class CosplaySouls
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(endurance), 4, 0)
 
         'STR
-        tempAddress = statBase + &H50
+        tempAddress = pointerToAddress(statPtr) + &H50
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(12)), 4, 0)
 
         'DEX
-        tempAddress = statBase + &H58
+        tempAddress = pointerToAddress(statPtr) + &H58
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(13)), 4, 0)
 
         'RES
-        tempAddress = statBase + &H80
+        tempAddress = pointerToAddress(statPtr) + &H80
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(14)), 4, 0)
 
         'INT
-        tempAddress = statBase + &H60
+        tempAddress = pointerToAddress(statPtr) + &H60
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(15)), 4, 0)
 
         'FTH
-        tempAddress = statBase + &H68
+        tempAddress = pointerToAddress(statPtr) + &H68
         WriteProcessMemory(targetProcessHandle, tempAddress, BitConverter.GetBytes(currentCosplay(16)), 4, 0)
     End Sub
 
@@ -484,5 +556,22 @@ Public Class CosplaySouls
         proportionSingle = currentCosplay(22) / 10
         tempBytes = BitConverter.GetBytes(proportionSingle)
         WriteProcessMemory(targetProcessHandle, tempAddress, tempBytes, 4, 0)
+    End Sub
+
+    Private Sub setWeight()
+        Dim weightPtr As Integer = leftHandPtr + &HC
+        Dim weight As Single = 0
+        For i = 1 To 4
+            If protectHash.Item(currentCosplay(i)) <> 9876 Then
+                weight = weight + protectHash.Item((currentCosplay(i) \ 100) * 100)
+            End If
+        Next
+        For i = 5 To 8
+            If weaponHash.Item(currentCosplay(i)) <> 9876 Then
+                weight = weight + weaponHash.Item((currentCosplay(i) \ 1000) * 1000)
+            End If
+        Next
+        Dim tempBytes = BitConverter.GetBytes(weight)
+        WriteProcessMemory(targetProcessHandle, weightPtr, tempBytes, 4, 0)
     End Sub
 End Class

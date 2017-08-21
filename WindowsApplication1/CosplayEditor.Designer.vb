@@ -740,7 +740,7 @@ Partial Class CosplayEditor
         '
         'deprive
         '
-        Me.deprive.Location = New System.Drawing.Point(16, 631)
+        Me.deprive.Location = New System.Drawing.Point(16, 615)
         Me.deprive.Name = "deprive"
         Me.deprive.Size = New System.Drawing.Size(160, 43)
         Me.deprive.TabIndex = 64
@@ -749,11 +749,11 @@ Partial Class CosplayEditor
         '
         'cosplayNow
         '
-        Me.cosplayNow.Location = New System.Drawing.Point(16, 696)
+        Me.cosplayNow.Location = New System.Drawing.Point(16, 670)
         Me.cosplayNow.Name = "cosplayNow"
-        Me.cosplayNow.Size = New System.Drawing.Size(160, 65)
+        Me.cosplayNow.Size = New System.Drawing.Size(160, 68)
         Me.cosplayNow.TabIndex = 65
-        Me.cosplayNow.Text = "Cosplay NOW (beta feature)"
+        Me.cosplayNow.Text = "Cosplay NOW"
         Me.cosplayNow.UseVisualStyleBackColor = True
         '
         'CosplayEditor

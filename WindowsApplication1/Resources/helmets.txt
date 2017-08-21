@@ -1,73 +1,73 @@
-9876:No Change:0
-900000:Bare:0
-510000:Balder Helm:10
-380000:Big Hat:5
-70000:Black Iron Helm:5
-320000:Black Knight Helm:5
-640000:Black Sorcerer Hat:10
-710000:Bloated Head:0
-720000:Bloated Sorcerer Head:0
-450000:Brass Helm:5
-50000:Brigand Hood:10
-10000:Catarina Helm:5
-170000:Chain Helm:10
-180000:Cleric Helm:10
-330000:Crown of Dusk:5
-540000:Crown of the Dark Sun:0
-550000:Crown of the Great Lord:0
-130000:Crystalline Helm:0
-40000:Dark Mask:5
-400000:Dingy Hood:10
-1000000:Dragon Head:0
-280000:Eastern Helm:5
-1010000:Egg Head:0
-650000:Elite Cleric Helm:10
-350000:Elite Knight Helm:10
-620000:Fang Boar Helm:5
-630000:Gargoyle Helm:5
-530000:Giant Helm:5
-460000:Gold-Hemmed Black Hood:0
-470000:Golem Helm:0
-680000:Gough's Helm:5
-690000:Guardian Helm:0
-440000:Havel's Helm:0
-660000:Helm of Artorias:5
-100000:Helm of Favor:5
-110000:Helm of the Wise:0
-200000:Helm of Thorns:5
-520000:Hollow Soldier Helm:10
-500000:Hollow Thief's Hood:10
-520000:Hollow Warrior Helm:10
-160000:Iron Helm:10
-390000:Knight Helm:10
-370000:Mage Smith Hat:10
-410000:Maiden Hood:10
-610000:Mask of the Child:0
-590000:Mask of the Father:0
-600000:Mask of the Mother:0
-140000:Mask of the Sealer:5
-150000:Mask of Velka:5
-270000:Ornstein's Helm:0
-250000:Painting Guardian Hood:5
-20000:Paladin Helm:5
-240000:Pharis's Hat:10
-670000:Porcelain Mask:5
-310000:Priest's Hat:10
-580000:Royal Helm:10
-560000:Sack:10
-60000:Shadow Mask:5
-420000:Silver Knight Helm:5
-90000:Six-Eyed Helm of the Channelers:0
-80000:Smough's Helm:0
-700000:Snickering Top Hat:5
-220000:Sorcerer Hat:10
-210000:Standard Helm:10
-490000:Steel Helm:10
-120000:Stone Helm:0
-190000:Sunlight Maggot:0
-570000:Symbol of Avarice:0
-230000:Tattered Cloth Hood:10
-300000:Thief Mask:10
-360000:Wanderer Hood:10
-340000:Witch Hat:5
-290000:Xanthous Crown:5
+9876:No Change:0:9876
+900000:Bare:0:0
+510000:Balder Helm:10:4.2
+380000:Big Hat:5:3
+70000:Black Iron Helm:5:6
+320000:Black Knight Helm:5:5
+640000:Black Sorcerer Hat:10:0.7
+710000:Bloated Head:0:2.5
+720000:Bloated Sorcerer Head:0:2.2
+450000:Brass Helm:5:5.1
+50000:Brigand Hood:10:1.2
+10000:Catarina Helm:5:4.5
+170000:Chain Helm:10:3
+180000:Cleric Helm:10:4.8
+330000:Crown of Dusk:5:0.4
+540000:Crown of the Dark Sun:0:3
+550000:Crown of the Great Lord:0:3
+130000:Crystalline Helm:0:4.2
+40000:Dark Mask:5:3.8
+400000:Dingy Hood:10:0.8
+1000000:Dragon Head:0:0
+280000:Eastern Helm:5:4.7
+1010000:Egg Head:0:0
+650000:Elite Cleric Helm:10:5.1
+350000:Elite Knight Helm:10:4.5
+620000:Fang Boar Helm:5:8
+630000:Gargoyle Helm:5:3.5
+530000:Giant Helm:5:6.3
+460000:Gold-Hemmed Black Hood:0:4.5
+470000:Golem Helm:0:6.3
+680000:Gough's Helm:5:6.5
+690000:Guardian Helm:0:7.2
+440000:Havel's Helm:0:7.5
+660000:Helm of Artorias:5:4.2
+100000:Helm of Favor:5:4.5
+110000:Helm of the Wise:0:5.1
+200000:Helm of Thorns:5:4.1
+480000:Hollow Soldier Helm:10:3
+500000:Hollow Thief's Hood:10:1.1
+520000:Hollow Warrior Helm:10:2.6
+160000:Iron Helm:10:4.5
+390000:Knight Helm:10:4.2
+370000:Mage Smith Hat:10:0.9
+410000:Maiden Hood:10:0.8
+610000:Mask of the Child:0:1.2
+590000:Mask of the Father:0:1.2
+600000:Mask of the Mother:0:1.2
+140000:Mask of the Sealer:5:1.5
+150000:Mask of Velka:5:2.5
+270000:Ornstein's Helm:0:5.5
+250000:Painting Guardian Hood:5:0.6
+20000:Paladin Helm:5:5
+240000:Pharis's Hat:10:1.2
+670000:Porcelain Mask:5:2.5
+310000:Priest's Hat:10:1.2
+580000:Royal Helm:10:4.5
+560000:Sack:10:0.6
+60000:Shadow Mask:5:0.9
+420000:Silver Knight Helm:5:4.8
+90000:Six-Eyed Helm of the Channelers:0:3.9
+80000:Smough's Helm:0:6.8
+700000:Snickering Top Hat:5:2
+220000:Sorcerer Hat:10:0.9
+210000:Standard Helm:10:3.5
+490000:Steel Helm:10:5.4
+120000:Stone Helm:0:6.8
+190000:Sunlight Maggot:0:1.4
+570000:Symbol of Avarice:0:10
+230000:Tattered Cloth Hood:10:1.1
+300000:Thief Mask:10:1.2
+360000:Wanderer Hood:10:1.4
+340000:Witch Hat:5:1.1
+290000:Xanthous Crown:5:5

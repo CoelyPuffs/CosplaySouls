@@ -1,61 +1,61 @@
-9876:No Change:0
-901000:Bare:0
-331000:Antiquated Dress:5
-661000:Armor of Artorias:5
-111000:Armor of the Glorious:0
-161000:Armor of the Sun:10
-201000:Armor of Thorns:5
-511000:Balder Armor:10
-151000:Black Cleric Robe:5
-71000:Black Iron Armor:5
-321000:Black Knight Armor:5
-301000:Black Leather Armor:10
-641000:Black Sorcerer Cloak:10
-451000:Brass Armor:5
-51000:Brigand Armor:10
-11000:Catarina Armor:5
-171000:Chain Armor:10
-701000:Chester's Long Coat:5
-181000:Cleric Armor:10
-141000:Crimson Robe:5
-131000:Crystalline Armor:0
-41000:Dark Armor:5
-401000:Dingy Robe:10
-1001000:Dragon Torso:0
-281000:Eastern Armor:5
-651000:Elite Cleric Armor:10
-351000:Elite Knight Armor:10
-101000:Embraced Armor of Favor:5
-531000:Giant Armor:5
-461000:Gold-Hemmed Black Cloak:0
-471000:Golem Armor:0
-681000:Gough's Armor:5
-691000:Guardian Armor:0
-211000:Hard Leather Armor:10
-441000:Havel's Armor:0
-481000:Hollow Soldier Armor:10
-501000:Hollow Thief's Leather Armor:10
-521000:Hollow Warrior Armor:10
-311000:Holy Robe:10
-391000:Knight Armor:10
-241000:Leather Armor:10
-671000:Lord's Blade Robe:5
-411000:Maiden Robe:10
-371000:Mage Smith Coat:10
-541000:Moonlight Robe:0
-271000:Ornstein's Armor:0
-251000:Painting Guardian Robe:5
-21000:Paladin Armor:5
-91000:Robe of the Channelers:0
-551000:Robe of the Great Lord:0
-381000:Sage Robe:5
-61000:Shadow Garb:5
-421000:Silver Knight Armor:5
-81000:Smough's Armor:0
-221000:Sorcerer Cloak:10
-491000:Steel Armor:10
-121000:Stone Armor:0
-231000:Tattered Cloth Robe:10
-361000:Wanderer Coat:10
-341000:Witch Cloak:5
-291000:Xanthous Overcoat:5
+9876:No Change:0:9876
+901000:Bare:0:0
+331000:Antiquated Dress:5:1
+661000:Armor of Artorias:5:10.5
+111000:Armor of the Glorious:0:13.3
+161000:Armor of the Sun:10:9
+201000:Armor of Thorns:5:10.5
+511000:Balder Armor:10:10.9
+151000:Black Cleric Robe:5:3.9
+71000:Black Iron Armor:5:15.6
+321000:Black Knight Armor:5:13
+301000:Black Leather Armor:10:3.1
+641000:Black Sorcerer Cloak:10:1.8
+451000:Brass Armor:5:10.9
+51000:Brigand Armor:10:3.1
+11000:Catarina Armor:5:11.7
+171000:Chain Armor:10:6
+701000:Chester's Long Coat:5:4.5
+181000:Cleric Armor:10:12.5
+141000:Crimson Robe:5:3.9
+131000:Crystalline Armor:0:10.9
+41000:Dark Armor:5:9.8
+401000:Dingy Robe:10:3
+1001000:Dragon Torso:0:0
+281000:Eastern Armor:5:12.3
+651000:Elite Cleric Armor:10:13.3
+351000:Elite Knight Armor:10:11.7
+101000:Embraced Armor of Favor:5:11.7
+531000:Giant Armor:5:16.4
+461000:Gold-Hemmed Black Cloak:0:3.5
+471000:Golem Armor:0:16.4
+681000:Gough's Armor:5:13
+691000:Guardian Armor:0:17
+211000:Hard Leather Armor:10:5.9
+441000:Havel's Armor:0:19.5
+481000:Hollow Soldier Armor:10:7.8
+501000:Hollow Thief's Leather Armor:10:2.8
+521000:Hollow Warrior Armor:10:6.6
+311000:Holy Robe:10:4
+391000:Knight Armor:10:10.9
+241000:Leather Armor:10:4.7
+671000:Lord's Blade Robe:5:6.4
+411000:Maiden Robe:10:2
+371000:Mage Smith Coat:10:2.3
+541000:Moonlight Robe:0:3.1
+271000:Ornstein's Armor:0:12
+251000:Painting Guardian Robe:5:1.6
+21000:Paladin Armor:5:12.9
+91000:Robe of the Channelers:0:10.1
+551000:Robe of the Great Lord:0:6
+381000:Sage Robe:5:4
+61000:Shadow Garb:5:2.3
+421000:Silver Knight Armor:5:12
+81000:Smough's Armor:0:17.6
+221000:Sorcerer Cloak:10:2.3
+491000:Steel Armor:10:14
+121000:Stone Armor:0:17.6
+231000:Tattered Cloth Robe:10:2.7
+361000:Wanderer Coat:10:3.5
+341000:Witch Cloak:5:4
+291000:Xanthous Overcoat:5:3.9

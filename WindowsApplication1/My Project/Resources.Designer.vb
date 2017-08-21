@@ -61,26 +61,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 9876:No Change:0
-        '''901000:Bare:0
-        '''331000:Antiquated Dress:5
-        '''661000:Armor of Artorias:5
-        '''111000:Armor of the Glorious:0
-        '''161000:Armor of the Sun:10
-        '''201000:Armor of Thorns:5
-        '''511000:Balder Armor:10
-        '''151000:Black Cleric Robe:5
-        '''71000:Black Iron Armor:5
-        '''321000:Black Knight Armor:5
-        '''301000:Black Leather Armor:5
-        '''641000:Black Sorcerer Cloak:10
-        '''451000:Brass Armor:5
-        '''51000:Brigand Armor:10
-        '''11000:Catarina Armor:5
-        '''171000:Chain Armor:10
-        '''701000:Chester&apos;s Long Coat:5
-        '''181000:Cleric Armor:10
-        '''141000:Crimson Robe:5        ''' [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to 9876:No Change:0:9876
+        '''901000:Bare:0:0
+        '''331000:Antiquated Dress:5:1
+        '''661000:Armor of Artorias:5:10.5
+        '''111000:Armor of the Glorious:0:13.3
+        '''161000:Armor of the Sun:10:9
+        '''201000:Armor of Thorns:5:10.5
+        '''511000:Balder Armor:10:10.9
+        '''151000:Black Cleric Robe:5:3.9
+        '''71000:Black Iron Armor:5:15.6
+        '''321000:Black Knight Armor:5:13
+        '''301000:Black Leather Armor:10:3.1
+        '''641000:Black Sorcerer Cloak:10:1.8
+        '''451000:Brass Armor:5:10.9
+        '''51000:Brigand Armor:10:3.1
+        '''11000:Catarina Armor:5:11.7
+        '''171000:Chain Armor:10:6
+        '''701000:C [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property armors() As String
             Get
@@ -243,25 +241,23 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 9876:No Change:0
-        '''902000:Bare:0
-        '''332000:Antiquated Gloves:5
-        '''512000:Balder Gauntlets:10
-        '''72000:Black Iron Gauntlets:5
-        '''322000:Black Knight Gauntlets:5
-        '''302000:Black Leather Gloves:5
-        '''152000:Black Manchette:5
-        '''642000:Black Sorcerer Gauntlets:10
-        '''552000:Bracelet of the Great Lord:0
-        '''452000:Brass Gauntlets:5
-        '''52000:Brigand Gauntlets:10
-        '''12000:Catarina Gauntlets:5
-        '''702000:Chester`s Gloves:5
-        '''182000:Cleric Gauntlets:10
-        '''142000:Crimson Gloves:5
-        '''132000:Crystalline Gauntlets:0
-        '''42000:Dark Gauntlets:5
-        '''402000:Dingy [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to 9876:No Change:0:9876
+        '''902000:Bare:0:0
+        '''332000:Antiquated Gloves:5:0.6
+        '''512000:Balder Gauntlets:10:3.5
+        '''72000:Black Iron Gauntlets:5:9.2
+        '''322000:Black Knight Gauntlets:5:6
+        '''302000:Black Leather Gloves:10:1.8
+        '''152000:Black Manchette:5:1.8
+        '''642000:Black Sorcerer Gauntlets:10:1
+        '''552000:Bracelet of the Great Lord:0:2.8
+        '''452000:Brass Gauntlets:5:5.4
+        '''52000:Brigand Gauntlets:10:1.8
+        '''12000:Catarina Gauntlets:5:6.9
+        '''702000:Chester`s Gloves:5:1.5
+        '''182000:Cleric Gauntlets:10:7.4
+        '''142000:Crimson Gloves:5:0.8
+        '''132000:C [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property gauntlets() As String
             Get
@@ -270,28 +266,25 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 9876:No Change:0
-        '''900000:Bare:0
-        '''510000:Balder Helm:10
-        '''380000:Big Hat:5
-        '''70000:Black Iron Helm:5
-        '''320000:Black Knight Helm:5
-        '''640000:Black Sorcerer Hat:10
-        '''710000:Bloated Head:0
-        '''720000:Bloated Sorcerer Head:0
-        '''450000:Brass Helm:5
-        '''50000:Brigand Hood:10
-        '''10000:Catarina Helm:5
-        '''170000:Chain Helm:10
-        '''180000:Cleric Helm:10
-        '''330000:Crown of Dusk:5
-        '''540000:Crown of the Dark Sun:0
-        '''550000:Crown of the Great Lord:0
-        '''130000:Crystalline Helm:0
-        '''40000:Dark Mask:5
-        '''400000:Dingy Hood:10
-        '''1000000:Dragon Head:0
-        '''280000: [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to 9876:No Change:0:9876
+        '''900000:Bare:0:0
+        '''510000:Balder Helm:10:4.2
+        '''380000:Big Hat:5:3
+        '''70000:Black Iron Helm:5:6
+        '''320000:Black Knight Helm:5:5
+        '''640000:Black Sorcerer Hat:10:0.7
+        '''710000:Bloated Head:0:2.5
+        '''720000:Bloated Sorcerer Head:0:2.2
+        '''450000:Brass Helm:5:5.1
+        '''50000:Brigand Hood:10:1.2
+        '''10000:Catarina Helm:5:4.5
+        '''170000:Chain Helm:10:3
+        '''180000:Cleric Helm:10:4.8
+        '''330000:Crown of Dusk:5:0.4
+        '''540000:Crown of the Dark Sun:0:3
+        '''550000:Crown of the Great Lord:0:3
+        '''130000:Crystalline Helm:0:4.2
+        '''40000:Dark M [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property helmets() As String
             Get
@@ -300,25 +293,23 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 9876:No Change:0
-        '''903000:Bare:0
-        '''553000:Anklet of the Great Lord:0
-        '''333000:Antiquated Skirt:5
-        '''513000:Balder Leggings:10
-        '''73000:Black Iron Leggings:5
-        '''323000:Black Knight Leggings:5
-        '''303000:Black Leather Boots:5
-        '''643000:Black Sorcerer Boots:10
-        '''153000:Black Tights:5
-        '''403000:Blood-Stained Skirt:10
-        '''113000:Boots of the Explorer:0
-        '''453000:Brass Leggings:5
-        '''53000:Brigand Trousers:10
-        '''13000:Catarina Leggings:5
-        '''173000:Chain Leggings:10
-        '''703000:Chester`s Trousers:5
-        '''183000:Cleric Leggings:10
-        '''143000:Crimson Waist [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to 9876:No Change:0:9876
+        '''903000:Bare:0:0
+        '''553000:Anklet of the Great Lord:0:2.8
+        '''333000:Antiquated Skirt:5:3
+        '''513000:Balder Leggings:10:6.4
+        '''73000:Black Iron Leggings:5:9.2
+        '''323000:Black Knight Leggings:5:7
+        '''303000:Black Leather Boots:10:3
+        '''643000:Black Sorcerer Boots:10:1
+        '''153000:Black Tights:5:1.8
+        '''403000:Blood-Stained Skirt:10:2.5
+        '''113000:Boots of the Explorer:0:4
+        '''453000:Brass Leggings:5:6.4
+        '''53000:Brigand Trousers:10:1.8
+        '''13000:Catarina Leggings:5:6.9
+        '''173000:Chain Leggings:10:4.6
+        '''703000:Chester`s Trous [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property leggings() As String
             Get
@@ -353,6 +344,20 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("sunlight_maggot__1_", resourceCulture)
                 Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 1200:560000:1001000:902000:903000:902003:902003:900000:900000:10:5:10:8:16:5:5:5:-8:5:5:-4:-5:10
+        '''1201:560000:1001000:902000:903000:902000:902000:900000:900000:8:5:10:6:14:5:5:5:-11:4:5:-7:-6:10
+        '''1202:560000:1001000:902000:903000:902005:902005:900000:900000:20:5:15:14:24:5:5:5:5:6:6:5:5:9
+        '''1203:560000:251000:542000:543000:902010:902010:900000:900000:20:5:15:16:26:5:5:5:-6:5:5:-4:-5:10
+        '''2060:900000:901000:902000:903000:900000:1003002:900000:900000:15:5:15:15:15:5:5:10:6:-3:5:-3:-3:10
+        '''2230:630000:1001000:902 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property T_H_I_C_C() As String
+            Get
+                Return ResourceManager.GetString("T_H_I_C_C", resourceCulture)
             End Get
         End Property
         
@@ -455,29 +460,79 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 9876:No Change:0
-        '''900000:Bare:0
-        '''901000:Caestus:15
-        '''902000:Claw:15
-        '''904000:Dark Hand:0
-        '''903000:Dragon Bone Fist:5
-        '''811000:Blacksmith Giant Hammer:5
-        '''810000:Blacksmith Hammer:15
-        '''812000:Hammer of Vamos:5
-        '''800000:Club:15
-        '''801000:Mace:15
-        '''802000:Morning Star:15
-        '''804000:Pickaxe:15
-        '''809000:Reinforced Club:15
-        '''803000:Warpick:15
-        '''852000:Demon&apos;s Great Hammer:15
-        '''854000:Dragon Tooth:5
-        '''851000:Grant:5
-        '''850000:Great Club:15
-        '''855000:Large Club:15
-        '''856000:Smough&apos;s Hammer:5
-        '''701000:Battle Axe:15
-        '''703000:Butcher Knife:15        ''' [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to 90000:64
+        '''100000:65
+        '''100100:68
+        '''100200:69
+        '''100300:65
+        '''100400:70  
+        '''100500:70
+        '''100600:71
+        '''100700:71
+        '''100800:74
+        '''100900:74
+        '''101000:75
+        '''101100:82
+        '''101200:146
+        '''101500:147
+        '''101600:148
+        '''101900:149
+        '''103000:150
+        '''103100:151
+        '''103200:152
+        '''103500:153
+        '''103600:154
+        '''103900:155
+        '''102000:156
+        '''9011000:157
+        '''104000:158
+        '''200000:159
+        '''200100:160
+        '''200200:161
+        '''200500:162
+        '''200600:163
+        '''200900:164
+        '''201000:165
+        '''201100:166
+        '''201200:167
+        '''201500:168
+        '''201600:169
+        '''201900:170
+        '''202000:171
+        '''202100:172
+        '''202200:173
+        '''202500:174
+        '''202600:175
+        '''202900: [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property weaponIndexes() As String
+            Get
+                Return ResourceManager.GetString("weaponIndexes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to 9876:No Change:0:9876
+        '''900000:Bare:0:0
+        '''901000:Caestus:15:0.5
+        '''902000:Claw:15:1
+        '''904000:Dark Hand:0:0.5
+        '''903000:Dragon Bone Fist:5:8
+        '''811000:Blacksmith Giant Hammer:5:6
+        '''810000:Blacksmith Hammer:15:5
+        '''812000:Hammer of Vamos:5:5
+        '''800000:Club:15:3
+        '''801000:Mace:15:4
+        '''802000:Morning Star:15:4
+        '''804000:Pickaxe:15:5
+        '''809000:Reinforced Club:15:4
+        '''803000:Warpick:15:3.5
+        '''852000:Demon&apos;s Great Hammer:15:22
+        '''854000:Dragon Tooth:5:18
+        '''851000:Grant:5:24
+        '''850000:Great Club:15:12
+        '''855000:Large Club:15:11
+        '''856000:Smough&apos;s Ha [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property weapons() As String
             Get

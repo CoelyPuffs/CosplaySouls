@@ -1,60 +1,60 @@
-9876:No Change:0
-903000:Bare:0
-553000:Anklet of the Great Lord:0
-333000:Antiquated Skirt:5
-513000:Balder Leggings:10
-73000:Black Iron Leggings:5
-323000:Black Knight Leggings:5
-303000:Black Leather Boots:10
-643000:Black Sorcerer Boots:10
-153000:Black Tights:5
-403000:Blood-Stained Skirt:10
-113000:Boots of the Explorer:0
-453000:Brass Leggings:5
-53000:Brigand Trousers:10
-13000:Catarina Leggings:5
-173000:Chain Leggings:10
-703000:Chester`s Trousers:5
-183000:Cleric Leggings:10
-143000:Crimson Waistcloth:5
-133000:Crystalline Leggings:0
-43000:Dark Leggings:5
-283000:Eastern Leggings:5
-653000:Elite Cleric Leggings:10
-353000:Elite Knight Leggings:10
-533000:Giant Leggings:5
-463000:Gold-Hemmed Black Skirt:0
-473000:Golem Leggings:0
-683000:Gough`s Leggings:5
-693000:Guardian Leggings:0
-213000:Hard Leather Boots:10
-443000:Havel`s Leggings:0
-233000:Heavy Boots:10
-483000:Hollow Soldier Waistcloth:10
-503000:Hollow Thief's Tights:10
-523000:Hollow Warrior Waistcloth:10
-313000:Holy Trousers:10
-163000:Iron Leggings:10
-393000:Knight Leggings:10
-243000:Leather Boots:10
-663000:Leggings of Artorias:5
-103000:Leggings of Favor:5
-203000:Leggings of Thorns:5
-673000:Lord`s Blade Waistcloth:5
-373000:Mage Smith Boots:10
-413000:Maiden Skirt:10
-543000:Moonlight Waistcloth:0
-273000:Ornstein`s Leggings:0
-253000:Painting Guardian Waistcloth:5
-23000:Paladin Leggings:5
-63000:Shadow Leggings:5
-423000:Silver Knight Leggings:5
-83000:Smough`s Leggings:0
-223000:Sorcerer Boots:10
-493000:Steel Leggings:10
-123000:Stone Leggings:0
-313000:Traveling Boots:10
-93000:Waistcloth of the Channelers:0
-363000:Wanderer Boots:10
-343000:Witch Skirt:5
-293000:Xanthous Waistcloth:5
+9876:No Change:0:9876
+903000:Bare:0:0
+553000:Anklet of the Great Lord:0:2.8
+333000:Antiquated Skirt:5:3
+513000:Balder Leggings:10:6.4
+73000:Black Iron Leggings:5:9.2
+323000:Black Knight Leggings:5:7
+303000:Black Leather Boots:10:3
+643000:Black Sorcerer Boots:10:1
+153000:Black Tights:5:1.8
+403000:Blood-Stained Skirt:10:2.5
+113000:Boots of the Explorer:0:4
+453000:Brass Leggings:5:6.4
+53000:Brigand Trousers:10:1.8
+13000:Catarina Leggings:5:6.9
+173000:Chain Leggings:10:4.6
+703000:Chester`s Trousers:5:3.2
+183000:Cleric Leggings:10:7.4
+143000:Crimson Waistcloth:5:3.5
+133000:Crystalline Leggings:0:6.4
+43000:Dark Leggings:5:5.8
+283000:Eastern Leggings:5:4
+653000:Elite Cleric Leggings:10:7.8
+353000:Elite Knight Leggings:10:6.9
+533000:Giant Leggings:5:9.7
+463000:Gold-Hemmed Black Skirt:0:3
+473000:Golem Leggings:0:9.7
+683000:Gough`s Leggings:5:8
+693000:Guardian Leggings:0:10.4
+213000:Hard Leather Boots:10:3.5
+443000:Havel`s Leggings:0:11.5
+233000:Heavy Boots:10:1.6
+483000:Hollow Soldier Waistcloth:10:1.5
+503000:Hollow Thief's Tights:10:1.7
+523000:Hollow Warrior Waistcloth:10:1.4
+313000:Holy Trousers:10:2
+163000:Iron Leggings:10:5.3
+393000:Knight Leggings:10:6.4
+243000:Leather Boots:10:2.8
+663000:Leggings of Artorias:5:5.5
+103000:Leggings of Favor:5:6.9
+203000:Leggings of Thorns:5:6.2
+673000:Lord`s Blade Waistcloth:5:5
+373000:Mage Smith Boots:10:1.4
+413000:Maiden Skirt:10:2.5
+543000:Moonlight Waistcloth:0:1.8
+273000:Ornstein`s Leggings:0:7
+253000:Painting Guardian Waistcloth:5:4
+23000:Paladin Leggings:5:7.6
+63000:Shadow Leggings:5:1.4
+423000:Silver Knight Leggings:5:6.5
+83000:Smough`s Leggings:0:10.4
+223000:Sorcerer Boots:10:1.4
+493000:Steel Leggings:10:8.3
+123000:Stone Leggings:0:10.4
+383000:Traveling Boots:10:1.6
+93000:Waistcloth of the Channelers:0:6
+363000:Wanderer Boots:10:2.1
+343000:Witch Skirt:5:2.5
+293000:Xanthous Waistcloth:5:4

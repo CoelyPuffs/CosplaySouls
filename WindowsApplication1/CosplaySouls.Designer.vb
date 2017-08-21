@@ -34,6 +34,8 @@ Partial Class CosplaySouls
         Me.areaChallenge = New System.Windows.Forms.RadioButton()
         Me.currentSetup = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'fullSetup
@@ -160,12 +162,32 @@ Partial Class CosplaySouls
         Me.Label3.TabIndex = 17
         Me.Label3.Text = "Cosplay Lineup:"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(618, 63)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(77, 25)
+        Me.Label4.TabIndex = 18
+        Me.Label4.Text = "Label4"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(623, 137)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(77, 25)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "Label5"
+        '
         'CosplaySouls
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(625, 386)
+        Me.ClientSize = New System.Drawing.Size(823, 386)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.currentSetup)
         Me.Controls.Add(Me.areaChallenge)
@@ -197,4 +219,6 @@ Partial Class CosplaySouls
     Friend WithEvents areaChallenge As RadioButton
     Friend WithEvents currentSetup As ComboBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

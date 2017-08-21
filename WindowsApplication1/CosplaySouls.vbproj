@@ -146,6 +146,8 @@
     <None Include="Resources\NPCs.txt" />
     <Content Include="Resources\sunlight-maggot %281%29.ico" />
     <None Include="Resources\vitality.txt" />
+    <None Include="Resources\weaponIndexes.txt" />
+    <None Include="Resources\T_H_I_C_C.txt" />
     <Content Include="sunlight-maggot %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
