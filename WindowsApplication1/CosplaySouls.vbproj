@@ -138,7 +138,6 @@
     <None Include="Resources\leggings.txt" />
     <None Include="Resources\weapons.txt" />
     <Content Include="maggotgradiconnochop_0zt_icon.ico" />
-    <None Include="Resources\basicCosplays.txt" />
     <Content Include="Resources\emptyCosplays.txt" />
     <None Include="Resources\maggotnobgicon_7r2_icon.ico" />
     <None Include="Resources\maggotgradiconnochop_0zt_icon.ico" />
@@ -148,6 +147,7 @@
     <None Include="Resources\vitality.txt" />
     <None Include="Resources\weaponIndexes.txt" />
     <None Include="Resources\T_H_I_C_C.txt" />
+    <Content Include="Resources\Spells.txt" />
     <Content Include="sunlight-maggot %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

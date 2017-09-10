@@ -1,0 +1,58 @@
+﻿3000:Soul Arrow
+3010:Heavy Soul Arrow
+3020:Great Soul Arrow
+3030:Great Heavy Soul Arrow
+3040:Homing Soulmass
+3050:Crystal Homing Soulmass
+3060:Soul Spear
+3070:Crystal Soul Spear
+3100:Magic Weapon
+3110:Great Magic Weapon
+3120:Crystal Magic Weapon
+3300:Magic Shield
+3310:Strong Magic Shield
+3400:Hidden Weapon
+3410:Hidden Body
+3500:Cast Light
+3510:Hush
+3520:Aural Decoy
+3530:Repair
+3540:Fall Control
+3550:Chameleon
+3600:Resist Curse
+3610:Remedy
+3700:White Dragon Breath
+3710:Dark Orb
+3720:Dark Bead
+3730:Dark Fog
+3740:Pursuers
+4000:Fireball
+4010:Fire Orb
+4020:Great Fireball
+4030:Firestorm
+4040:Fire Tempest
+4050:Fire Surge
+4060:Fire Whip
+4100:Combustion
+4110:Greater Combustion
+4200:Poison Mist
+4210:Toxic Mist
+4220:Acid Surge
+4300:Iron Flesh
+4310:Flash Sweat
+4360:Undead Rapport
+4400:Power Within
+4500:Chaos Fireball
+4510:Chaos Firestorm
+4520:Chaos Fire Whip
+4530:Black Flame
+5000:Heal
+5010:Great Heal
+5020:Great Heal Excerpt
+5030:Soothing Sunlight
+5040:Replenishment
+5050:Bountiful Sunlight
+5100:Gravelord Sword Dance
+5110:Gravelord Greatsword Dance
+5200:Escape Death
+5210:Homeward

@@ -726,4 +726,68 @@ Public Class CosplayEditor
         tempBytes = BitConverter.GetBytes(speedSingle)
         CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, tempBytes, 4, 0)
     End Sub
+
+    Private Sub onHelmChanged(sender As Object, e As EventArgs) Handles helmetName.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub onChestChanged(sender As Object, e As EventArgs) Handles armorName.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub onArmsChanged(sender As Object, e As EventArgs) Handles gauntletsName.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub onFeetChanged(sender As Object, e As EventArgs) Handles leggingsName.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub onL1BoxChanged(sender As Object, e As EventArgs) Handles leftOneName.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub onR1BoxChanged(sender As Object, e As EventArgs) Handles rightOneName.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub onL2BoxChanged(sender As Object, e As EventArgs) Handles leftTwoName.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub onR2BoxChanged(sender As Object, e As EventArgs) Handles rightTwoName.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub onVitSetClicked(sender As Object, e As EventArgs) Handles vitSet.Click
+
+    End Sub
+
+    Private Sub onAtnSetClicked(sender As Object, e As EventArgs) Handles atnSet.Click
+
+    End Sub
+
+    Private Sub onEndSetClicked(sender As Object, e As EventArgs) Handles endSet.Click
+
+    End Sub
+
+    Private Sub onStrSetClicked(sender As Object, e As EventArgs) Handles strSet.Click
+
+    End Sub
+
+    Private Sub onDexSetClicked(sender As Object, e As EventArgs) Handles dexSet.Click
+
+    End Sub
+
+    Private Sub onResSetClicked(sender As Object, e As EventArgs) Handles resSet.Click
+
+    End Sub
+
+    Private Sub onIntSetClicked(sender As Object, e As EventArgs) Handles intSet.Click
+
+    End Sub
+
+    Private Sub onFthSetClicked(sender As Object, e As EventArgs) Handles fthSet.Click
+
+    End Sub
 End Class

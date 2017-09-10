@@ -32,10 +32,6 @@ Partial Class CosplaySouls
         Me.areaNormal = New System.Windows.Forms.RadioButton()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.areaChallenge = New System.Windows.Forms.RadioButton()
-        Me.currentSetup = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'fullSetup
@@ -43,17 +39,17 @@ Partial Class CosplaySouls
         Me.fullSetup.Location = New System.Drawing.Point(24, 18)
         Me.fullSetup.Margin = New System.Windows.Forms.Padding(4)
         Me.fullSetup.Name = "fullSetup"
-        Me.fullSetup.Size = New System.Drawing.Size(212, 128)
+        Me.fullSetup.Size = New System.Drawing.Size(212, 251)
         Me.fullSetup.TabIndex = 4
         Me.fullSetup.Text = "START"
         Me.fullSetup.UseVisualStyleBackColor = True
         '
         'UnhookButton
         '
-        Me.UnhookButton.Location = New System.Drawing.Point(24, 263)
+        Me.UnhookButton.Location = New System.Drawing.Point(24, 277)
         Me.UnhookButton.Margin = New System.Windows.Forms.Padding(4)
         Me.UnhookButton.Name = "UnhookButton"
-        Me.UnhookButton.Size = New System.Drawing.Size(212, 46)
+        Me.UnhookButton.Size = New System.Drawing.Size(212, 59)
         Me.UnhookButton.TabIndex = 5
         Me.UnhookButton.Text = "UNHOOK"
         Me.UnhookButton.UseVisualStyleBackColor = True
@@ -99,7 +95,7 @@ Partial Class CosplaySouls
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(133, 25)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Version 0.10"
+        Me.Label1.Text = "Version 0.11"
         '
         'enemyScale
         '
@@ -143,53 +139,12 @@ Partial Class CosplaySouls
         Me.areaChallenge.Text = "By Area (challenge)"
         Me.areaChallenge.UseVisualStyleBackColor = True
         '
-        'currentSetup
-        '
-        Me.currentSetup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.currentSetup.FormattingEnabled = True
-        Me.currentSetup.Items.AddRange(New Object() {"EVERYTHING", "Just the Basics", "Custom"})
-        Me.currentSetup.Location = New System.Drawing.Point(24, 195)
-        Me.currentSetup.Name = "currentSetup"
-        Me.currentSetup.Size = New System.Drawing.Size(212, 33)
-        Me.currentSetup.TabIndex = 16
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(24, 164)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(167, 25)
-        Me.Label3.TabIndex = 17
-        Me.Label3.Text = "Cosplay Lineup:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(618, 63)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(77, 25)
-        Me.Label4.TabIndex = 18
-        Me.Label4.Text = "Label4"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(623, 137)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(77, 25)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "Label5"
-        '
         'CosplaySouls
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(823, 386)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.currentSetup)
+        Me.ClientSize = New System.Drawing.Size(628, 386)
         Me.Controls.Add(Me.areaChallenge)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.areaNormal)
@@ -217,8 +172,4 @@ Partial Class CosplaySouls
     Friend WithEvents areaNormal As RadioButton
     Friend WithEvents Label2 As Label
     Friend WithEvents areaChallenge As RadioButton
-    Friend WithEvents currentSetup As ComboBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
 End Class
