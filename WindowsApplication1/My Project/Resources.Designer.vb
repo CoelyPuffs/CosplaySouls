@@ -324,6 +324,40 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to 3000:Soul Arrow
+        '''3010:Heavy Soul Arrow
+        '''3020:Great Soul Arrow
+        '''3030:Great Heavy Soul Arrow
+        '''3040:Homing Soulmass
+        '''3050:Crystal Homing Soulmass
+        '''3060:Soul Spear
+        '''3070:Crystal Soul Spear
+        '''3100:Magic Weapon
+        '''3110:Great Magic Weapon
+        '''3120:Crystal Magic Weapon
+        '''3300:Magic Shield
+        '''3310:Strong Magic Shield
+        '''3400:Hidden Weapon
+        '''3410:Hidden Body
+        '''3500:Cast Light
+        '''3510:Hush
+        '''3520:Aural Decoy
+        '''3530:Repair
+        '''3540:Fall Control
+        '''3550:Chameleon
+        '''3600:Resist Curse
+        '''3610:Remedy
+        '''3700:White Dragon Breath
+        '''3710:Dark Orb
+        '''3720: [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property Spells() As String
+            Get
+                Return ResourceManager.GetString("Spells", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         '''</summary>
         Friend ReadOnly Property sunlight_maggot__1_() As System.Drawing.Icon

@@ -37,8 +37,8 @@ Public Class CosplaySouls
     Dim autoLvlGear As Boolean
     Dim cosplayList = My.Resources.T_H_I_C_C.Split(Chr(&HA))
     Dim entityList = My.Resources.entities.Split(Chr(&HA))
-    Dim entityLine(183) As Integer
-    Dim entityScale(183) As Double
+    Dim entityLine(182) As Integer
+    Dim entityScale(182) As Double
     Dim helmetList = My.Resources.helmets.Split(Chr(&HA))
     Dim armorList = My.Resources.armors.Split(Chr(&HA))
     Dim gauntletList = My.Resources.gauntlets.Split(Chr(&HA))
@@ -59,6 +59,7 @@ Public Class CosplaySouls
     'Dim equipPtr As Integer
     'Public externalCosplays() As Array
     'Dim usingExternal As Boolean
+    Dim latestHitBytes(3) As Byte
 
     Private WithEvents refreshTimer As New System.Windows.Forms.Timer()
 
@@ -153,42 +154,42 @@ Public Class CosplaySouls
                 'Setup
                 modifiedHitFunct = VirtualAllocEx(targetProcessHandle, 0, &H1000, 8192, &H40)
                 VirtualAllocEx(targetProcessHandle, modifiedHitFunct, &H1000, 4096, &H40)
-                lastHitPtr = modifiedHitFunct + &H74
-                lastAtkPtr = modifiedHitFunct + &H70
+                lastAtkPtr = modifiedHitFunct + &H74
+                lastHitPtr = modifiedHitFunct + &H70
 
                 'Dim oldInstructions() As Byte = {&HE9, 0, 0, 0, 0, &H90, &H90, &H90}
                 'Dim newInstructions() As Byte = {&H89, &H1D, 0, 0, 0, 0,
                 '                                &H8B, &H3, &H8B, &H90, &H14, &H3, &H0, &H0,
                 '                                &HE9, 0, 0, 0, 0}
-                Dim oldInstructions() As Byte = {&HE9, 0, 0, 0, 0, &H90}
+                Dim oldInstructions() As Byte = {&HE9, 0, 0, 0, 0}
                 Dim newInstructions() As Byte = {&H89, &H35, 0, 0, 0, 0,
-                                                 &H89, &H0D, 0, 0, 0, 0,
-                                                 &H51,
-                                                 &H56,
-                                                 &H8B, &HF1,
-                                                 &H8B, &H06,
+                                                 &HA3, 0, 0, 0, 0,
+                                                 &HE8, 0, 0, 0, 0,
                                                  &HE9, 0, 0, 0, 0}
 
                 Dim firstJumpAddress() As Byte
                 Dim lastHitPtrAddress() As Byte
                 Dim lastAtkPtrAddress() As Byte
+                Dim atkFunctAddress() As Byte
                 Dim returnAddress() As Byte
 
                 'firstJumpAddress = BitConverter.GetBytes(modifiedHitFunct - &HE80247)
-                firstJumpAddress = BitConverter.GetBytes(modifiedHitFunct - &HE527C5)
+                firstJumpAddress = BitConverter.GetBytes(modifiedHitFunct - &HE80667)
                 lastHitPtrAddress = BitConverter.GetBytes(modifiedHitFunct + &H70)
                 lastAtkPtrAddress = BitConverter.GetBytes(modifiedHitFunct + &H74)
+                atkFunctAddress = BitConverter.GetBytes((&HFFFFFFFF - ((modifiedHitFunct + 12) - &HE7FC80)) - 3)
                 'returnAddress = BitConverter.GetBytes((&HFFFFFFFF - ((modifiedHitFunct + 14) - &HE80247)) + 1)
-                returnAddress = BitConverter.GetBytes((&HFFFFFFFF - ((modifiedHitFunct + 12) - &HE527C5)) - 9)
+                returnAddress = BitConverter.GetBytes((&HFFFFFFFF - ((modifiedHitFunct + 12) - &HE80667)) - 8)
 
                 Array.Copy(firstJumpAddress, 0, oldInstructions, 1, 4)
                 Array.Copy(lastHitPtrAddress, 0, newInstructions, 2, 4)
-                Array.Copy(lastAtkPtrAddress, 0, newInstructions, 8, 4)
-                Array.Copy(returnAddress, 0, newInstructions, 19, 4)
+                Array.Copy(lastAtkPtrAddress, 0, newInstructions, 7, 4)
+                Array.Copy(atkFunctAddress, 0, newInstructions, 12, 4)
+                Array.Copy(returnAddress, 0, newInstructions, 17, 4)
 
                 WriteProcessMemory(targetProcessHandle, modifiedHitFunct, newInstructions, newInstructions.Length, 0)
                 'WriteProcessMemory(targetProcessHandle, &HE80242, oldInstructions, oldInstructions.Length, 0)
-                WriteProcessMemory(targetProcessHandle, &HE527C0, oldInstructions, oldInstructions.Length, 0)
+                WriteProcessMemory(targetProcessHandle, &HE80662, oldInstructions, oldInstructions.Length, 0)
 
                 'Vit/End Setup (statPtr now used for gear too)
                 statPtr = modifiedHitFunct + &H80
@@ -313,30 +314,34 @@ Public Class CosplaySouls
                 If Convert.ToChar(validityCheck(0)) = "c" Then
                     If latestHit = 0 Then
                         fullAddress = pointerToAddress(lastHitPtr) + &H68
-                        latestHit = ReadUInt32(fullAddress)
+                        ReadProcessMemory(targetProcessHandle, fullAddress, latestHitBytes, 4, vbNull)
+                        latestHit = BitConverter.ToInt32(latestHitBytes, 0)
                         If latestHit < 6800 Then
                             latestHit = (latestHit \ 10) * 10
                         End If
                     End If
-                    If Array.IndexOf(entityLine, latestHit) <> -1 And latestAtk = 0 Then
+                    If Array.IndexOf(entityLine, latestHit) <> -1 Then
                         onHit()
                     End If
                 End If
             End If
         End If
-            autoStats = autoLevel.Checked
+        autoStats = autoLevel.Checked
         autoLvlGear = autoGear.Checked
     End Sub
 
     Public Sub loadCosplays()
         'Dim cosplayList = My.Resources.basicCosplays.Split(Chr(&HA))
         For i = 0 To cosplayList.Length - 1
-            Dim cosplayLine(22) As Integer
+            Dim cosplayLine(32) As Integer
             For n = 0 To 16
                 cosplayLine(n) = (Convert.ToInt32(cosplayList(i).Split(":")(n)))
             Next
             For n = 17 To 22
                 cosplayLine(n) = (Convert.ToDouble(cosplayList(i).Split(":")(n)))
+            Next
+            For n = 23 To 32
+                cosplayLine(n) = (Convert.ToInt32(cosplayList(i).Split(":")(n)))
             Next
             cosplayHash.Add(cosplayLine(0), cosplayLine)
         Next
@@ -545,7 +550,7 @@ Public Class CosplaySouls
     End Sub
 
     Private Sub setSpells()
-        Dim spellPtr = pointerToAddress(pointerToAddress(statPtr) + &H30C)
+        Dim spellPtr = pointerToAddress(statPtr + &H30C)
         Dim tempAddress As Integer
 
         'Spell 1

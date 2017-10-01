@@ -144,7 +144,7 @@ Partial Class CosplaySouls
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(628, 386)
+        Me.ClientSize = New System.Drawing.Size(639, 386)
         Me.Controls.Add(Me.areaChallenge)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.areaNormal)

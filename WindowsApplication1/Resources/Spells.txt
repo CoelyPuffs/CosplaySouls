@@ -1,4 +1,6 @@
-﻿3000:Soul Arrow
+﻿9876:No Change
+-1:None
+3000:Soul Arrow
 3010:Heavy Soul Arrow
 3020:Great Soul Arrow
 3030:Great Heavy Soul Arrow
@@ -56,3 +58,17 @@
 5110:Gravelord Greatsword Dance
 5200:Escape Death
 5210:Homeward
+5300:Force
+5310:Wrath of the Gods
+5320:Emit Force
+5400:Seek Guidance
+5500:Lightning Spear
+5510:Great Lightning Spear
+5520:Sunlight Spear
+5600:Magic Barrier
+5610:Great Magic Barrier
+5700:Karmic Justice
+5800:Tranquil Walk of Peace
+5810:Vow of Silence
+5900:Sunlight Blade
+5910:Darkmoon Blade

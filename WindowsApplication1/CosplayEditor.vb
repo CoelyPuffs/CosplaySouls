@@ -27,6 +27,8 @@ Public Class CosplayEditor
     Dim weaponIDArray(185) As Integer
     Dim weaponNameArray(185) As String
     Dim weaponLimitArray(185) As Integer
+    Dim spellIDArray(74) As Integer
+    Dim spellNameArray(74) As String
     Dim isApplied As Boolean = True
     Dim isExported As Boolean = True
 
@@ -55,12 +57,15 @@ Public Class CosplayEditor
         End If
         Dim editorCosplayList = cosplayFile.Split(Chr(&HA))
         For i = 0 To editorCosplayList.Length - 1
-            Dim editorCosplayLine(22) As Integer
+            Dim editorCosplayLine(32) As Integer
             For n = 0 To 16
                 editorCosplayLine(n) = (Convert.ToInt32(editorCosplayList(i).Split(":")(n)))
             Next
             For n = 17 To 22
                 editorCosplayLine(n) = (Convert.ToDouble(editorCosplayList(i).Split(":")(n)))
+            Next
+            For n = 23 To 32
+                editorCosplayLine(n) = (Convert.ToInt32(editorCosplayList(i).Split(":")(n)))
             Next
             allCosplaysArray(i) = editorCosplayLine
                 CosplaySouls.cosplayHash.Item(editorCosplayLine(0)) = editorCosplayLine
@@ -97,6 +102,10 @@ Public Class CosplayEditor
             weaponIDArray(i) = Convert.ToInt32(My.Resources.weapons.Split(Chr(&HA))(i).Split(":")(0))
             weaponNameArray(i) = My.Resources.weapons.Split(Chr(&HA))(i).Split(":")(1)
             weaponLimitArray(i) = My.Resources.weapons.Split(Chr(&HA))(i).Split(":")(2)
+        Next
+        For i = 0 To My.Resources.Spells.Split(Chr(&HA)).Length - 1
+            spellIDArray(i) = Convert.ToInt32(My.Resources.Spells.Split(Chr(&HA))(i).Split(":")(0))
+            spellNameArray(i) = My.Resources.Spells.Split(Chr(&HA))(i).Split(":")(1)
         Next
     End Sub
 
@@ -209,6 +218,16 @@ Public Class CosplayEditor
         handSize.Value = selectedLine(20)
         legSize.Value = selectedLine(21)
         speedBar.Value = selectedLine(22)
+        Spell1Name.SelectedIndex = Array.IndexOf(spellIDArray, selectedLine(23))
+        Spell1Num.Value = selectedLine(24)
+        Spell2Name.SelectedIndex = Array.IndexOf(spellIDArray, selectedLine(25))
+        Spell2Num.Value = selectedLine(26)
+        Spell3Name.SelectedIndex = Array.IndexOf(spellIDArray, selectedLine(27))
+        Spell3Num.Value = selectedLine(28)
+        Spell4Name.SelectedIndex = Array.IndexOf(spellIDArray, selectedLine(29))
+        Spell4Num.Value = selectedLine(30)
+        Spell5Name.SelectedIndex = Array.IndexOf(spellIDArray, selectedLine(31))
+        Spell5Num.Value = selectedLine(32)
         isApplied = True
     End Sub
 
@@ -367,7 +386,7 @@ Public Class CosplayEditor
         If entityBox.SelectedIndex < 0 Then
             Exit Sub
         End If
-        Dim applyLine(23) As Integer
+        Dim applyLine(33) As Integer
         applyLine(0) = entityIDArray(entityBox.SelectedIndex + 1)
         applyLine(1) = helmetIDArray(helmetName.SelectedIndex) + helmetLevel.SelectedIndex
         applyLine(2) = armorIDArray(armorName.SelectedIndex) + armorLevel.SelectedIndex
@@ -434,6 +453,16 @@ Public Class CosplayEditor
         applyLine(20) = handSize.Value
         applyLine(21) = legSize.Value
         applyLine(22) = speedBar.Value
+        applyLine(23) = spellIDArray(Spell1Name.SelectedIndex)
+        applyLine(24) = Spell1Num.Value
+        applyLine(25) = spellIDArray(Spell2Name.SelectedIndex)
+        applyLine(26) = Spell2Num.Value
+        applyLine(27) = spellIDArray(Spell3Name.SelectedIndex)
+        applyLine(28) = Spell3Num.Value
+        applyLine(29) = spellIDArray(Spell4Name.SelectedIndex)
+        applyLine(30) = Spell4Num.Value
+        applyLine(31) = spellIDArray(Spell5Name.SelectedIndex)
+        applyLine(32) = Spell5Num.Value
         allCosplaysArray(entityBox.SelectedIndex) = applyLine
         CosplaySouls.cosplayHash.Item(applyLine(0)) = applyLine
         isApplied = True
@@ -443,10 +472,10 @@ Public Class CosplayEditor
 
     Private Function makeCurrentString(applyLine() As Integer) As String
         Dim currentString = applyLine(0).ToString + ":"
-        For i = 1 To 21
+        For i = 1 To 31
             currentString = currentString + applyLine(i).ToString + ":"
         Next
-        currentString = currentString + applyLine(22).ToString
+        currentString = currentString + applyLine(32).ToString
         Return currentString
     End Function
 
@@ -486,6 +515,19 @@ Public Class CosplayEditor
         End If
     End Sub
 
+    Public Sub onNoSpellsClick() Handles NoSpells.Click
+        Spell1Name.SelectedIndex = 1
+        Spell1Num.Value = 0
+        Spell2Name.SelectedIndex = 1
+        Spell2Num.Value = 0
+        Spell3Name.SelectedIndex = 1
+        Spell3Num.Value = 0
+        Spell4Name.SelectedIndex = 1
+        Spell4Num.Value = 0
+        Spell5Name.SelectedIndex = 1
+        Spell5Num.Value = 0
+    End Sub
+
     Public Sub onDepriveClick() Handles deprive.Click
         leftOneName.SelectedIndex = 1
         leftTwoName.SelectedIndex = 1
@@ -502,6 +544,16 @@ Public Class CosplayEditor
         handSize.Value = -1
         legSize.Value = -1
         speedBar.Value = 10
+        Spell1Name.SelectedIndex = 1
+        Spell1Num.Value = 0
+        Spell2Name.SelectedIndex = 1
+        Spell2Num.Value = 0
+        Spell3Name.SelectedIndex = 1
+        Spell3Num.Value = 0
+        Spell4Name.SelectedIndex = 1
+        Spell4Num.Value = 0
+        Spell5Name.SelectedIndex = 1
+        Spell5Num.Value = 0
     End Sub
 
     Private Sub onCosplayNowClick() Handles cosplayNow.Click
@@ -513,7 +565,7 @@ Public Class CosplayEditor
         If entityBox.SelectedIndex < 0 Then
             Exit Sub
         End If
-        Dim applyLine(23) As Integer
+        Dim applyLine(32) As Integer
         applyLine(0) = entityIDArray(entityBox.SelectedIndex + 1)
         applyLine(1) = helmetIDArray(helmetName.SelectedIndex) + helmetLevel.SelectedIndex
         applyLine(2) = armorIDArray(armorName.SelectedIndex) + armorLevel.SelectedIndex
@@ -580,6 +632,16 @@ Public Class CosplayEditor
         applyLine(20) = handSize.Value
         applyLine(21) = legSize.Value
         applyLine(22) = speedBar.Value
+        applyLine(23) = spellIDArray(Spell1Name.SelectedIndex)
+        applyLine(24) = Spell1Num.Value
+        applyLine(25) = spellIDArray(Spell2Name.SelectedIndex)
+        applyLine(26) = Spell2Num.Value
+        applyLine(27) = spellIDArray(Spell3Name.SelectedIndex)
+        applyLine(28) = Spell3Num.Value
+        applyLine(29) = spellIDArray(Spell4Name.SelectedIndex)
+        applyLine(30) = Spell4Num.Value
+        applyLine(31) = spellIDArray(Spell5Name.SelectedIndex)
+        applyLine(32) = Spell5Num.Value
 
         'setBases
         Dim tempAddress = CosplaySouls.pointerToAddress(&H1378700)
@@ -679,6 +741,49 @@ Public Class CosplayEditor
             CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(16)), 4, 0)
         End If
 
+        'setSpells
+        Dim spellPtr = CosplaySouls.pointerToAddress(statBase + &H30C)
+
+        'Spell 1
+        If (applyLine(23) <> 9876) Then
+            tempAddress = spellPtr + &HC
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(23)), 4, 0)
+            tempAddress = spellPtr + &H10
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(24) * 3), 4, 0)
+        End If
+
+        'Spell 2
+        If (applyLine(25) <> 9876) Then
+            tempAddress = spellPtr + &H14
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(25)), 4, 0)
+            tempAddress = spellPtr + &H18
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(26) * 3), 4, 0)
+        End If
+
+        'Spell 3
+        If (applyLine(27) <> 9876) Then
+            tempAddress = spellPtr + &H1C
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(27)), 4, 0)
+            tempAddress = spellPtr + &H20
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(28) * 3), 4, 0)
+        End If
+
+        'Spell 4
+        If (applyLine(29) <> 9876) Then
+            tempAddress = spellPtr + &H24
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(29)), 4, 0)
+            tempAddress = spellPtr + &H28
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(30) * 3), 4, 0)
+        End If
+
+        'Spell 5
+        If (applyLine(31) <> 9876) Then
+            tempAddress = spellPtr + &H2C
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(31)), 4, 0)
+            tempAddress = spellPtr + &H20
+            CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, BitConverter.GetBytes(applyLine(32) * 3), 4, 0)
+        End If
+
         'setProportions
         tempAddress = CosplaySouls.pointerToAddress(&H1378700)
         Dim proportionBase = CosplaySouls.pointerToAddress(tempAddress + &H8)
@@ -727,67 +832,4 @@ Public Class CosplayEditor
         CosplaySouls.WriteProcessMemory(CosplaySouls.targetProcessHandle, tempAddress, tempBytes, 4, 0)
     End Sub
 
-    Private Sub onHelmChanged(sender As Object, e As EventArgs) Handles helmetName.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub onChestChanged(sender As Object, e As EventArgs) Handles armorName.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub onArmsChanged(sender As Object, e As EventArgs) Handles gauntletsName.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub onFeetChanged(sender As Object, e As EventArgs) Handles leggingsName.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub onL1BoxChanged(sender As Object, e As EventArgs) Handles leftOneName.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub onR1BoxChanged(sender As Object, e As EventArgs) Handles rightOneName.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub onL2BoxChanged(sender As Object, e As EventArgs) Handles leftTwoName.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub onR2BoxChanged(sender As Object, e As EventArgs) Handles rightTwoName.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub onVitSetClicked(sender As Object, e As EventArgs) Handles vitSet.Click
-
-    End Sub
-
-    Private Sub onAtnSetClicked(sender As Object, e As EventArgs) Handles atnSet.Click
-
-    End Sub
-
-    Private Sub onEndSetClicked(sender As Object, e As EventArgs) Handles endSet.Click
-
-    End Sub
-
-    Private Sub onStrSetClicked(sender As Object, e As EventArgs) Handles strSet.Click
-
-    End Sub
-
-    Private Sub onDexSetClicked(sender As Object, e As EventArgs) Handles dexSet.Click
-
-    End Sub
-
-    Private Sub onResSetClicked(sender As Object, e As EventArgs) Handles resSet.Click
-
-    End Sub
-
-    Private Sub onIntSetClicked(sender As Object, e As EventArgs) Handles intSet.Click
-
-    End Sub
-
-    Private Sub onFthSetClicked(sender As Object, e As EventArgs) Handles fthSet.Click
-
-    End Sub
 End Class
