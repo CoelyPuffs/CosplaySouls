@@ -136,48 +136,83 @@
 5362:Alvina:0.4
 5370:Gwyn:0.9
 5390:Four Kings:0.8
-6000:Solaire of Astora:0.2
-6010:Darkmoon Knightess:0.6
-6020:Oscar of Astora:0.1
-6030:Big Hat Logan:0.8
-6040:Griggs of Vinheim:0.2
-6050:Dusk of Oolacile:0.4
-6070:Rhea of Thorolund:0.7
-6080:Petrus of Thorolund:0.2
-6090:Vince of Thorolund:0.7
-6100:Nico of Thorolund:0.7
-6130:Laurentius of the Great Swamp:0.3
-6170:Quelaana:0.4
-6180:Ingward:0.8
-6220:Rickert of Vinheim:0.2
-6250:Crestfallen Merchant:0.5
-6260:Domnhall of Zena:0.3
-6270:Crestfallen Warrior:0.4
-6280:Siegmeyer of Catarina:0.5
-6290:Sieglinde of Catarina:0.7
-6300:Lautrec of Carim:0.6
-6310:Shiva of the East:0.4
-6320:Patches:0.7
-6370:Oswald of Carim:0.2
-6420:Shiva's Bodyguard:0.4
-6490:Lautrec's Guard:0.6
-6500:Lautrec's Other Guard:0.6
-6510:Black Iron Tarkus:0.5
-6520:Witch Beatrice:0.3
-6530:Maneater Mildred:0.4
-6550:Paladin Leeroy:0.8
-6560:Kirk, Knight of Thorns:0.8
-6570:Xanthous King Jeremiah:0.6
-6580:Havel:0.2
-6600:Undead Prince Ricard:0.5
-6610:Crystal General:0.8
-6620:Daughter of Chaos:0.8
-6640:Darkmoon Soldier 1:0.6
-6650:Darkmoon Soldier 2:0.6
-6740:Ciaran:1
-6801:Forest Hunter 1:0.4
-6802:Forest Hunter 2:0.4
-6803:Forest Hunter 3:0.4
-6804:Forest Hunter 4:0.4
-6805:Forest Hunter 5:0.4
-6806:Forest Hunter 6:0.4
+6000:NPC:1
+6002:NPC:1
+6003:NPC:1
+6004:NPC:1
+6010:NPC:1
+6020:NPC:1
+6021:NPC:1
+6030:NPC:1
+6031:NPC:1
+6032:NPC:1
+6040:NPC:1
+6041:NPC:1
+6050:NPC:1
+6051:NPC:1
+6070:NPC:1
+6071:NPC:1
+6080:NPC:1
+6090:NPC:1
+6091:NPC:1
+6100:NPC:1
+6101:NPC:1
+6130:NPC:1
+6131:NPC:1
+6170:NPC:1
+6180:NPC:1
+6220:NPC:1
+6250:NPC:1
+6260:NPC:1
+6270:NPC:1
+6271:NPC:1
+6280:NPC:1
+6281:NPC:1
+6282:NPC:1
+6283:NPC:1
+6284:NPC:1
+6290:NPC:1
+6291:NPC:1
+6300:NPC:1
+6301:NPC:1
+6310:NPC:1
+6320:NPC:1
+6321:NPC:1
+6370:NPC:1
+6390:NPC:1
+6420:NPC:1
+6490:NPC:1
+6500:NPC:1
+6510:NPC:1
+6511:NPC:1
+6520:NPC:1
+6521:NPC:1
+6530:NPC:1
+6531:NPC:1
+6540:NPC:1
+6541:NPC:1
+6542:NPC:1
+6543:NPC:1
+6544:NPC:1
+6550:NPC:1
+6551:NPC:1
+6560:NPC:1
+6561:NPC:1
+6562:NPC:1
+6570:NPC:1
+6580:NPC:1
+6590:NPC:1
+6591:NPC:1
+6600:NPC:1
+6610:NPC:1
+6620:NPC:1
+6640:NPC:1
+6650:NPC:1
+6700:NPC:1
+6740:NPC:1
+6801:NPC:1
+6802:NPC:1
+6803:NPC:1
+6804:NPC:1
+6805:NPC:1
+6806:NPC:1

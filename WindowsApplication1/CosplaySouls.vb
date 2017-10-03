@@ -37,8 +37,8 @@ Public Class CosplaySouls
     Dim autoLvlGear As Boolean
     Dim cosplayList = My.Resources.T_H_I_C_C.Split(Chr(&HA))
     Dim entityList = My.Resources.entities.Split(Chr(&HA))
-    Dim entityLine(182) As Integer
-    Dim entityScale(182) As Double
+    Dim entityLine(217) As Integer
+    Dim entityScale(217) As Double
     Dim helmetList = My.Resources.helmets.Split(Chr(&HA))
     Dim armorList = My.Resources.armors.Split(Chr(&HA))
     Dim gauntletList = My.Resources.gauntlets.Split(Chr(&HA))
@@ -316,9 +316,6 @@ Public Class CosplaySouls
                         fullAddress = pointerToAddress(lastHitPtr) + &H68
                         ReadProcessMemory(targetProcessHandle, fullAddress, latestHitBytes, 4, vbNull)
                         latestHit = BitConverter.ToInt32(latestHitBytes, 0)
-                        If latestHit < 6800 Then
-                            latestHit = (latestHit \ 10) * 10
-                        End If
                     End If
                     If Array.IndexOf(entityLine, latestHit) <> -1 Then
                         onHit()

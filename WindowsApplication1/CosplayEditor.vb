@@ -9,9 +9,9 @@ Public Class CosplayEditor
     Dim isExternal As Boolean = False
 
     'Dim editorCosplayHash As New Hashtable
-    Public allCosplaysArray(181) As Array
-    Dim entityIDArray(183) As Integer
-    Dim entityNameArray(183) As String
+    Public allCosplaysArray(217) As Array
+    Dim entityIDArray(217) As Integer
+    Dim entityNameArray(217) As String
     Dim helmetIDArray(72) As Integer
     Dim helmetNameArray(72) As String
     Dim helmetLimitArray(72) As Integer
@@ -489,7 +489,7 @@ Public Class CosplayEditor
             externalPath = Export.FileName
             Dim currentString = makeCurrentString(allCosplaysArray(0))
             My.Computer.FileSystem.WriteAllText(externalPath, currentString, False)
-            For i = 1 To 181
+            For i = 1 To 216
                 currentString = makeCurrentString(allCosplaysArray(i))
                 My.Computer.FileSystem.WriteAllText(externalPath, Environment.NewLine, True)
                 My.Computer.FileSystem.WriteAllText(externalPath, currentString, True)
