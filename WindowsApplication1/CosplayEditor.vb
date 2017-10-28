@@ -259,6 +259,31 @@ Public Class CosplayEditor
         rightOneInfusion.SelectedIndex = 0
     End Sub
 
+    Private Sub onR1InfusionChanged() Handles rightOneInfusion.SelectedIndexChanged
+        isApplied = False
+        Dim numString As String
+        If rightOneInfusion.SelectedIndex = 4 Or rightOneInfusion.SelectedIndex = 6 Or rightOneInfusion.SelectedIndex = 8 Then
+            rightOneLevel.Items.Clear()
+            For n = 0 To 10
+                numString = n
+                rightOneLevel.Items.Add("+" + numString)
+            Next
+        ElseIf rightOneInfusion.SelectedIndex = 1 Or rightOneInfusion.SelectedIndex = 2 Or rightOneInfusion.SelectedIndex = 3 Or rightOneInfusion.SelectedIndex = 5 Or rightOneInfusion.SelectedIndex = 7 Or rightOneInfusion.SelectedIndex = 9 Then
+            rightOneLevel.Items.Clear()
+            For n = 0 To 5
+                numString = n
+                rightOneLevel.Items.Add("+" + numString)
+            Next
+        Else
+            rightOneLevel.Items.Clear()
+            For n = 0 To 15
+                numString = n
+                rightOneLevel.Items.Add("+" + numString)
+            Next
+        End If
+        rightOneLevel.SelectedIndex = 0
+    End Sub
+
     Private Sub onR2BoxChanged() Handles rightTwoName.SelectedIndexChanged
         isApplied = False
         rightTwoLevel.Items.Clear()
@@ -267,6 +292,31 @@ Public Class CosplayEditor
         rightTwoLevel.SelectedIndex = 0
         addInfusions(rightTwoName, rightTwoInfusion)
         rightTwoInfusion.SelectedIndex = 0
+    End Sub
+
+    Private Sub onR2InfusionChanged() Handles rightTwoInfusion.SelectedIndexChanged
+        isApplied = False
+        Dim numString As String
+        If rightTwoInfusion.SelectedIndex = 4 Or rightTwoInfusion.SelectedIndex = 6 Or rightTwoInfusion.SelectedIndex = 8 Then
+            rightTwoLevel.Items.Clear()
+            For n = 0 To 10
+                numString = n
+                rightTwoLevel.Items.Add("+" + numString)
+            Next
+        ElseIf rightTwoInfusion.SelectedIndex = 1 Or rightTwoInfusion.SelectedIndex = 2 Or rightTwoInfusion.SelectedIndex = 3 Or rightTwoInfusion.SelectedIndex = 5 Or rightTwoInfusion.SelectedIndex = 7 Or rightTwoInfusion.SelectedIndex = 9 Then
+            rightTwoLevel.Items.Clear()
+            For n = 0 To 5
+                numString = n
+                rightTwoLevel.Items.Add("+" + numString)
+            Next
+        Else
+            rightTwoLevel.Items.Clear()
+            For n = 0 To 15
+                numString = n
+                rightTwoLevel.Items.Add("+" + numString)
+            Next
+        End If
+        rightTwoLevel.SelectedIndex = 0
     End Sub
 
     Private Sub onL1BoxChanged() Handles leftOneName.SelectedIndexChanged
@@ -279,6 +329,31 @@ Public Class CosplayEditor
         leftOneInfusion.SelectedIndex = 0
     End Sub
 
+    Private Sub onL1InfusionChanged() Handles leftOneInfusion.SelectedIndexChanged
+        isApplied = False
+        Dim numString As String
+        If leftOneInfusion.SelectedIndex = 4 Or leftOneInfusion.SelectedIndex = 6 Or leftOneInfusion.SelectedIndex = 8 Then
+            leftOneLevel.Items.Clear()
+            For n = 0 To 10
+                numString = n
+                leftOneLevel.Items.Add("+" + numString)
+            Next
+        ElseIf leftOneInfusion.SelectedIndex = 1 Or leftOneInfusion.SelectedIndex = 2 Or leftOneInfusion.SelectedIndex = 3 Or leftOneInfusion.SelectedIndex = 5 Or leftOneInfusion.SelectedIndex = 7 Or leftOneInfusion.SelectedIndex = 9 Then
+            leftOneLevel.Items.Clear()
+            For n = 0 To 5
+                numString = n
+                leftOneLevel.Items.Add("+" + numString)
+            Next
+        Else
+            leftOneLevel.Items.Clear()
+            For n = 0 To 15
+                numString = n
+                leftOneLevel.Items.Add("+" + numString)
+            Next
+        End If
+        leftOneLevel.SelectedIndex = 0
+    End Sub
+
     Private Sub onL2BoxChanged() Handles leftTwoName.SelectedIndexChanged
         isApplied = False
         LeftTwoLevel.Items.Clear()
@@ -287,6 +362,31 @@ Public Class CosplayEditor
         LeftTwoLevel.SelectedIndex = 0
         addInfusions(leftTwoName, leftTwoInfusion)
         leftTwoInfusion.SelectedIndex = 0
+    End Sub
+
+    Private Sub onL2InfusionChanged() Handles leftTwoInfusion.SelectedIndexChanged
+        isApplied = False
+        Dim numString As String
+        If leftTwoInfusion.SelectedIndex = 4 Or leftTwoInfusion.SelectedIndex = 6 Or leftTwoInfusion.SelectedIndex = 8 Then
+            LeftTwoLevel.Items.Clear()
+            For n = 0 To 10
+                numString = n
+                LeftTwoLevel.Items.Add("+" + numString)
+            Next
+        ElseIf leftTwoInfusion.SelectedIndex = 1 Or leftTwoInfusion.SelectedIndex = 2 Or leftTwoInfusion.SelectedIndex = 3 Or leftTwoInfusion.SelectedIndex = 5 Or leftTwoInfusion.SelectedIndex = 7 Or leftTwoInfusion.SelectedIndex = 9 Then
+            LeftTwoLevel.Items.Clear()
+            For n = 0 To 5
+                numString = n
+                LeftTwoLevel.Items.Add("+" + numString)
+            Next
+        Else
+            LeftTwoLevel.Items.Clear()
+            For n = 0 To 15
+                numString = n
+                LeftTwoLevel.Items.Add("+" + numString)
+            Next
+        End If
+        LeftTwoLevel.SelectedIndex = 0
     End Sub
 
     Private Sub onHelmChanged() Handles helmetName.SelectedIndexChanged
@@ -326,7 +426,7 @@ Public Class CosplayEditor
     End Sub
 
     Public Sub addInfusions(nameBox As ComboBox, box As ComboBox)
-        If weaponLimitArray(nameBox.SelectedIndex) = 15 And nameBox.SelectedIndex <> 141 Then
+        If weaponLimitArray(nameBox.SelectedIndex) = 15 And nameBox.SelectedIndex <> 141 And nameBox.SelectedIndex <> 140 Then
             box.Items.Add("Standard")
             box.Items.Add("Crystal")
             box.Items.Add("Lightning")

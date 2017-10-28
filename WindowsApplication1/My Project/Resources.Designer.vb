@@ -39,7 +39,7 @@ Namespace My.Resources
         Friend ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
             Get
                 If Object.ReferenceEquals(resourceMan, Nothing) Then
-                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("WindowsFormApplication1.Resources", GetType(Resources).Assembly)
+                    Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("CosplaySouls.Resources", GetType(Resources).Assembly)
                     resourceMan = temp
                 End If
                 Return resourceMan
@@ -324,7 +324,9 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 3000:Soul Arrow
+        '''  Looks up a localized string similar to 9876:No Change
+        '''-1:None
+        '''3000:Soul Arrow
         '''3010:Heavy Soul Arrow
         '''3020:Great Soul Arrow
         '''3030:Great Heavy Soul Arrow
@@ -347,9 +349,7 @@ Namespace My.Resources
         '''3550:Chameleon
         '''3600:Resist Curse
         '''3610:Remedy
-        '''3700:White Dragon Breath
-        '''3710:Dark Orb
-        '''3720: [rest of string was truncated]&quot;;.
+        '''3700:White Dragon Bre [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property Spells() As String
             Get
@@ -368,12 +368,11 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 1200:560000:1001000:902000:903000:902003:902003:900000:900000:10:5:10:8:16:5:5:5:-8:5:5:-4:-5:10
-        '''1201:560000:1001000:902000:903000:902000:902000:900000:900000:8:5:10:6:14:5:5:5:-11:4:5:-7:-6:10
-        '''1202:560000:1001000:902000:903000:902005:902005:900000:900000:20:5:15:14:24:5:5:5:5:6:6:5:5:9
-        '''1203:560000:251000:542000:543000:902010:902010:900000:900000:20:5:15:16:26:5:5:5:-6:5:5:-4:-5:10
-        '''2060:900000:901000:902000:903000:900000:1003002:900000:900000:15:5:15:15:15:5:5:10:6:-3:5:-3:-3:10
-        '''2230:630000:1001000:902 [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to 1200:560000:1001000:902000:903000:902003:902003:900000:900000:10:5:10:8:16:5:5:5:-8:5:5:-4:-5:10:-1:0:-1:0:-1:0:-1:0:-1:0
+        '''1201:560000:1001000:902000:903000:902000:902000:900000:900000:8:5:10:6:14:5:5:5:-11:4:5:-7:-6:10:-1:0:-1:0:-1:0:-1:0:-1:0
+        '''1202:560000:1001000:902000:903000:902005:902005:900000:900000:20:5:15:14:24:5:5:5:5:6:6:5:5:9:-1:0:-1:0:-1:0:-1:0:-1:0
+        '''1203:560000:251000:542000:543000:902010:902010:900000:900000:20:5:15:16:26:5:5:5:-6:5:5:-4:-5:10:-1:0:-1:0:-1:0:-1:0:-1:0
+        '''2060:900000:901000:9020 [rest of string was truncated]&quot;;.
         '''</summary>
         Friend ReadOnly Property T_H_I_C_C() As String
             Get

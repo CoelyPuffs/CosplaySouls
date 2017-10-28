@@ -309,7 +309,7 @@ Public Class CosplaySouls
             latestHit = Val(System.Text.Encoding.Unicode.GetString(lastHit))
             latestAtk = Val(System.Text.Encoding.Unicode.GetString(lastAtk))
             'entityName.Text = System.Text.Encoding.Unicode.GetString(lastHit)
-            If latestHit <> previousHit Then
+            If latestHit <> previousHit And latestAtk = "0000" Then
                 ReadProcessMemory(targetProcessHandle, (pointerToAddress(lastHitPtr) + 56), validityCheck, 1, vbNull)
                 If Convert.ToChar(validityCheck(0)) = "c" Then
                     If latestHit = 0 Then
@@ -397,6 +397,7 @@ Public Class CosplaySouls
         If autoStats Then
             setStats()
         End If
+        setSpells()
         setProportions()
     End Sub
 
@@ -547,7 +548,7 @@ Public Class CosplaySouls
     End Sub
 
     Private Sub setSpells()
-        Dim spellPtr = pointerToAddress(statPtr + &H30C)
+        Dim spellPtr = pointerToAddress(statBase + &H30C)
         Dim tempAddress As Integer
 
         'Spell 1
