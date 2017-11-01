@@ -1,6 +1,8 @@
 ﻿'Author: CoelyPuffs
 
 'Hooking function modified from Wulf2k's DaS-PC-Gizmo
+Imports System.Threading
+Imports System.Threading.Tasks
 
 Public Class CosplaySouls
 
@@ -130,6 +132,8 @@ Public Class CosplaySouls
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture
 
         refreshTimer = New System.Windows.Forms.Timer()
         refreshTimer.Interval = 500

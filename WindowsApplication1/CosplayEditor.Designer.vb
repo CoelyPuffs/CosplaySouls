@@ -23,7 +23,6 @@ Partial Class CosplayEditor
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CosplayEditor))
-        Me.entityBox = New System.Windows.Forms.ComboBox()
         Me.helmetName = New System.Windows.Forms.ComboBox()
         Me.armorName = New System.Windows.Forms.ComboBox()
         Me.gauntletsName = New System.Windows.Forms.ComboBox()
@@ -85,8 +84,8 @@ Partial Class CosplayEditor
         Me.speedBar = New System.Windows.Forms.TrackBar()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.abdomenSize = New System.Windows.Forms.TrackBar()
-        Me.deprive = New System.Windows.Forms.Button()
-        Me.cosplayNow = New System.Windows.Forms.Button()
+        Me.depriveButton = New System.Windows.Forms.Button()
+        Me.cosplayNowButton = New System.Windows.Forms.Button()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Spell1Name = New System.Windows.Forms.ComboBox()
         Me.Spell1Num = New System.Windows.Forms.NumericUpDown()
@@ -102,7 +101,8 @@ Partial Class CosplayEditor
         Me.Spell5Num = New System.Windows.Forms.NumericUpDown()
         Me.Spell5Name = New System.Windows.Forms.ComboBox()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.NoSpells = New System.Windows.Forms.Button()
+        Me.noSpellsButton = New System.Windows.Forms.Button()
+        Me.entityListBox = New System.Windows.Forms.ListBox()
         CType(Me.vitSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.atnSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.endSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,27 +124,16 @@ Partial Class CosplayEditor
         CType(Me.Spell5Num, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'entityBox
-        '
-        Me.entityBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.entityBox.FormattingEnabled = True
-        Me.entityBox.Items.AddRange(New Object() {"Rat", "Small Rat", "Large Rat", "Snow Rat", "Infested Ghoul", "Stray Demon", "Demon Firesage", "Asylum Demon", "Capra Demon", "Taurus Demon", "Batwing Demon", "Mushroom Parent", "Mushroom Child", "Titanite Demon", "Crow Demon", "Iron Golem", "Demonic Foliage ", "Smough", "Channeler", "Giant Stone Knight", "Darkwraith", "Painting Guardian", "Silver Knight", "Demonic Statue", "Hollow", "Undead Merchant", "Undead Assassin", "Blowdart Sniper", "Armored Hollow", "Undead Soldier", "Balder Knight", "Berenike Knight", "Andre of Astora", "Necromancer", "Butcher", "Ghost (Male)", "Ghost (Female)", "Serpent Soldier", "Serpent Mage", "Crystal Golem", "Golden Crystal Golem", "Crossbreed Priscilla", "Anastacia of Astora", "Mimic", "Black Knight (Axe)", "Black Knight (Halberd)", "Black Knight (Sword)", "Black Knight (Greatsword)", "Undead Crystal Soldier", "Infested Barbarian (Club)", "Infested Barbarian (Boulder)", "Phalanx", "Engorged Zombie", "Giant", "Sentinel or Royal Sentinel", "Skeleton", "Giant Skeleton", "Vamos", "Bonewheel Skeleton", "Skeleton Baby", "Skeleton Beast", "Bone Tower", "Giant Mosquito", "Slime", "Egg Carrier", "Vile Maggot", "Moonlight Butterfly", "Chaos Eater", "Man-Eater Shell", "Basilisk", "Crystal Lizard", "Pinwheel", "Pisaca", "Undead Attack Dog", "Flaming Attack Dog", "Possessed Tree", "Tree Lizard", "Giant Leech", "Burrowing Rockworm", "Crag-Spider", "Frog-Ray", "Undead Dragon", "Bounding Demon of Izalith", "Hellkite Drake", "Everlasting Dragon", "Armored Tusk", "Armored Tusk (Reinforced)", "Sanctuary Guardian", "Chaos Bug", "Good Vagrant", "Evil Vagrant", "Mass of Souls", "Wisp (exploding skull)", "Asylum Transport Crow", "Drake", "Hydra", "Hydra Head", "Marvelous Chester", "Artorias", "Hawkeye Gough", "Stone Guardian", "Scarecrow", "Elizabeth", "Bloathead", "Bloathead Sorcerer", "Humanity Phantom (small)", "Humanity Phantom (medium)", "Humanity Phantom (large)", "Chained Prisoner", "Attack Dog (DLC)", "Manus, Father of the Abyss", "Black Dragon Kalameet", "Young Sif", "Centipede Demon", "Centipede Demon's Arm", "Centipede Demon's Tail", "Sif", "Gravelord Nito", "Bed of Chaos", "Parasitic Wall Hugger", "Ceaseless Discharge", "Gaping Dragon", "Ornstein", "Super Ornstein", "Quelaag", "Seath the Scaleless", "Gwynevere", "Gwyndolin", "Frampt / Kaathe", "The Fair Lady", "Bell Gargoyles", "Lightning Gargoyles", "Great Feline", "Alvina", "Alvina", "Gwyn", "Four Kings"})
-        Me.entityBox.Location = New System.Drawing.Point(16, 70)
-        Me.entityBox.Margin = New System.Windows.Forms.Padding(4)
-        Me.entityBox.Name = "entityBox"
-        Me.entityBox.Size = New System.Drawing.Size(265, 33)
-        Me.entityBox.TabIndex = 0
-        '
         'helmetName
         '
         Me.helmetName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.helmetName.DropDownWidth = 200
         Me.helmetName.FormattingEnabled = True
         Me.helmetName.Items.AddRange(New Object() {"No Change", "Bare", "Balder Helm", "Big Hat", "Black Iron Helm", "Black Knight Helm", "Black Sorcerer Hat", "Bloated Head", "Bloated Sorcerer Head", "Brass Helm", "Brigand Hood", "Catarina Helm", "Chain Helm", "Cleric Helm", "Crown of Dusk", "Crown of the Dark Sun", "Crown of the Great Lord", "Crystalline Helm", "Dark Mask", "Dingy Hood", "Dragon Head", "Eastern Helm", "Egg Head", "Elite Cleric Helm", "Elite Knight Helm", "Fang Boar Helm", "Gargoyle Helm", "Giant Helm", "Gold-Hemmed Black Hood", "Golem Helm", "Ghough's Helm", "Guardian Helm", "Havel's Helm", "Helm of Artorias", "Helm of Favor", "Helm of the Wise", "Helm of Thorns", "Hollow Soldier Helm", "Hollow Thief's Hood", "Hollow Warrior Helm", "Iron Helm", "Knight Helm", "Mage Smith Hat", "Maiden Hood", "Mask of the Child", "Mask of the Father", "Mask of the Mother", "Mask of the Sealer", "Mask of Velka", "Ornstein's Helm", "Painting Guardian Hood", "Paladin Helm", "Pharis's Hat", "Porcelain Mask", "Priest's Hat", "Royal Helm", "Sack", "Shadow Mask", "Silver Knight Helm", "Six-Eyed Helm of the Channelers", "Smough's Helm", "Snickering Top Hat", "Sorcerer Hat", "Standard Helm", "Steel Helm", "Stone Helm", "Sunlight Maggot", "Symbol of Avarice", "Tattered Cloth Hood", "Thief Mask", "Wanderer Hood", "Witch Hat", "Xanthous Crown"})
-        Me.helmetName.Location = New System.Drawing.Point(16, 897)
-        Me.helmetName.Margin = New System.Windows.Forms.Padding(4)
+        Me.helmetName.Location = New System.Drawing.Point(354, 748)
+        Me.helmetName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.helmetName.Name = "helmetName"
-        Me.helmetName.Size = New System.Drawing.Size(265, 33)
+        Me.helmetName.Size = New System.Drawing.Size(264, 33)
         Me.helmetName.TabIndex = 16
         '
         'armorName
@@ -153,10 +142,10 @@ Partial Class CosplayEditor
         Me.armorName.DropDownWidth = 200
         Me.armorName.FormattingEnabled = True
         Me.armorName.Items.AddRange(New Object() {"No Change", "Bare", "Antiquated Dress", "Armor of Artorias", "Armor of the Glorious", "Armor of the Sun", "Armor of Thorns", "Balder Armor", "Black Cleric Robe", "Black Iron Armor", "Black Knight Armor", "Black Leather Armor", "Black Sorcerer Cloak", "Brass Armor", "Brigand Armor", "Catarina Armor", "Chain Armor", "Chester's Long Coat", "Cleric Armor", "Crimson Robe", "Crystalline Armor", "Dark Armor", "Dingy Robe", "Dragon Torso", "Eastern Armor", "Elite Cleric Armor", "Elite Knight Armor", "Embraced Armor of Favor", "Giant Armor", "Gold-Hemmed Black Cloak", "Golem Armor", "Gough's Armor", "Guardian Armor", "Hard Leather Armor", "Havel's Armor", "Hollow Soldier Armor", "Hollow Thief's Leather Armor", "Hollow Warrior Armor", "Holy Robe", "Knight Armor", "Leather Armor", "Lord's Blade Robe", "Maiden Robe", "Mage Smith Coat", "Moonlight Robe", "Ornstein's Armor", "Painting Guardian Robe", "Paladin Armor", "Robe of the Channelers", "Robe of the Great Lord", "Sage Robe", "Shadow Garb", "Silver Knight Armor", "Smough's Armor", "Sorcerer Cloak", "Steel Armor", "Stone Armor", "Tattered Cloth Robe", "Wanderer Coat", "Witch Cloak", "Xanthous Overcoat"})
-        Me.armorName.Location = New System.Drawing.Point(291, 897)
-        Me.armorName.Margin = New System.Windows.Forms.Padding(4)
+        Me.armorName.Location = New System.Drawing.Point(630, 748)
+        Me.armorName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.armorName.Name = "armorName"
-        Me.armorName.Size = New System.Drawing.Size(265, 33)
+        Me.armorName.Size = New System.Drawing.Size(264, 33)
         Me.armorName.TabIndex = 18
         '
         'gauntletsName
@@ -165,10 +154,10 @@ Partial Class CosplayEditor
         Me.gauntletsName.DropDownWidth = 200
         Me.gauntletsName.FormattingEnabled = True
         Me.gauntletsName.Items.AddRange(New Object() {"No Change", "Bare", "Antiquated Gloves", "Balder Gauntlets", "Black Iron Gauntlets", "Black Knight Gauntlets", "Black Leather Gloves", "Black Manchette", "Black Sorcerer Gauntlets", "Bracelet of the Great Lord", "Brass Gauntlets", "Brigand Gauntlets", "Catarina Gauntlets", "Chester`s Gloves", "Cleric Gauntlets", "Crimson Gloves", "Crystalline Gauntlets", "Dark Gauntlets", "Dingy Gloves", "Eastern Gauntlets", "Elite Cleric Gauntlets", "Elite Knight Gauntlets", "Gauntlets of Artorias", "Gauntlets of Favor", "Gauntlets of the Channelers", "Gauntlets of the Vanquisher", "Gauntlets of Thorns", "Giant Gauntlets", "Gold-Hemmed Black Gloves", "Golem Gauntlets", "Gough`s Gauntlets", "Guardian Gauntlets", "Hard Leather Gauntlets", "Havel`s Gauntlets", "Iron Bracelet", "Knight Gauntlets", "Leather Gauntlets", "Leather Gloves", "Lord`s Blade Gloves", "Mage Smith Gauntlets", "Maiden Gloves", "Moonlight Gloves", "Ornstein`s Gauntlets", "Painting Guardian Gloves", "Paladin Gauntlets", "Shadow Gauntlets", "Silver Knight Gauntlets", "Smough`s Gauntlets", "Sorcerer Gauntlets", "Steel Gauntlets", "Stone Gauntlets", "Tattered Cloth Manchette", "Traveling Gloves", "Wanderer Manchette", "Witch Gloves", "Xanthous Gloves"})
-        Me.gauntletsName.Location = New System.Drawing.Point(566, 897)
-        Me.gauntletsName.Margin = New System.Windows.Forms.Padding(4)
+        Me.gauntletsName.Location = New System.Drawing.Point(904, 748)
+        Me.gauntletsName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.gauntletsName.Name = "gauntletsName"
-        Me.gauntletsName.Size = New System.Drawing.Size(265, 33)
+        Me.gauntletsName.Size = New System.Drawing.Size(264, 33)
         Me.gauntletsName.TabIndex = 20
         '
         'leggingsName
@@ -177,10 +166,10 @@ Partial Class CosplayEditor
         Me.leggingsName.DropDownWidth = 200
         Me.leggingsName.FormattingEnabled = True
         Me.leggingsName.Items.AddRange(New Object() {"No Change", "Bare", "Anklet of the Great Lord", "Antiquated Skirt", "Balder Leggings", "Black Iron Leggings", "Black Knight Leggings", "Black Leather Boots", "Black Sorcerer Boots", "Black Tights", "Blood-Stained Skirt", "Boots of the Explorer", "Brass Leggings", "Brigand Trousers", "Catarina Leggings", "Chain Leggings", "Chester`s Trousers", "Cleric Leggings", "Crimson Waistcloth", "Crystalline Leggings", "Dark Leggings", "Eastern Leggings", "Elite Cleric Leggings", "Elite Knight Leggings", "Giant Leggings", "Gold-Hemmed Black Skirt", "Golem Leggings", "Gough`s Leggings", "Guardian Leggings", "Hard Leather Boots", "Havel`s Leggings", "Heavy Boots", "Hollow Soldier Waistcloth", "Hollow Thief`s Tights", "Hollow Warrior Waistcloth", "Holy Trousers", "Iron Leggings", "Knight Leggings", "Leather Boots", "Leggings of Artorias", "Leggings of Favor", "Leggings of Thorns", "Lord`s Blade Waistcloth", "Mage Smith Boots", "Maiden Skirt", "Moonlight Waistcloth", "Ornstein`s Leggings", "Painting Guardian Waistcloth", "Paladin Leggings", "Shadow Leggings", "Silver Knight Leggings", "Smough`s Leggings", "Sorcerer Boots", "Steel Leggings", "Stone Leggings", "Traveling Boots", "Waistcloth of the Channelers", "Wanderer Boots", "Witch Skirt", "Xanthous Waistcloth"})
-        Me.leggingsName.Location = New System.Drawing.Point(840, 897)
-        Me.leggingsName.Margin = New System.Windows.Forms.Padding(4)
+        Me.leggingsName.Location = New System.Drawing.Point(1176, 748)
+        Me.leggingsName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.leggingsName.Name = "leggingsName"
-        Me.leggingsName.Size = New System.Drawing.Size(265, 33)
+        Me.leggingsName.Size = New System.Drawing.Size(264, 33)
         Me.leggingsName.TabIndex = 22
         '
         'leftOneName
@@ -189,10 +178,10 @@ Partial Class CosplayEditor
         Me.leftOneName.DropDownWidth = 200
         Me.leftOneName.FormattingEnabled = True
         Me.leftOneName.Items.AddRange(New Object() {"No Change", "Bare", "Caestus", "Claw", "Dark Hand", "Dragon Bone Fist", "Blacksmith Giant Hammer", "Blacksmith Hammer", "Hammer of Vamos", "Club", "Mace", "Morning Star", "Pickaxe", "Reinforced Club", "Warpick", "Demon's Great Hammer", "Dragon Tooth", "Grant", "Great Club", "Large Club", "Smough's Hammer", "Battle Axe", "Butcher Knife", "Crescent Axe", "Gargoyle Tail Axe", "Golem Axe", "Hand Axe", "Black Knight Greataxe", "Demon's Greataxe", "Dragon King Greataxe", "Greataxe", "Stone Greataxe", "Bandit's Knife", "Dagger", "Dark Silver Tracer", "Ghost Blade", "Parrying Dagger", "Priscilla's Dagger", "Estoc", "Mail Breaker", "Rapier", "Ricard's Rapier", "Velka's Rapier", "Astora's Straight Sword", "Balder Side Sword", "Barbed Straight Sword", "Broad Sword", "Broken Straight Sword", "Crystal Straight Sword", "Dark Sword", "Drake Sword", "Longsword", "Shortsword", "Silver Knight Straight Sword", "Straight Sword Hilt", "Sunlight Straight Sword", "Abyss Greatsword", "Bastard Sword", "Black Knight Sword", "Claymore", "Crystal Greatsword", "Flamberge", "Great Lord Greatsword", "Greatsword of Artorias", "Greatsword of Artorias (Cursed)", "Man Serpent Greatsword", "Moonlight Greatsword", "Obsidian Greatsword", "Stone Greatsword", "Black Knight Greatsword", "Demon Great Machete", "Dragon Greatsword", "Greatsword", "Zweihander", "Chaos Blade", "Iaito", "Uchigatana", "Washing Pole", "Falchion", "Gold Tracer", "Jagged Ghost Blade", "Painting Guardian Sword", "Quelaag's Fury Sword", "Scimitar", "Shotel", "Gravelord Sword", "Murakumo", "Server", "Channeler's Trident", "Demon's Spear", "Dragonslayer Spear", "Four-Pronged Plow", "Moonlight Butterfly Horn", "Partizan", "Pike", "Silver Knight Spear", "Spear", "Winged Spear", "Black Knight Halberd", "Gargoyle's Halberd", "Giant's Halberd", "Great Scythe", "Halberd", "Lifehunt Scythe", "Lucerne", "Scythe", "Titanite Catch Pole", "Black Bow of Pharis", "Composite Bow", "Darkmoon Bow", "Long Bow", "Short Bow", "Avelyn", "Heavy Crossbow", "Light Crossbow", "Sniper Crossbow", "Dragonslayer Greatbow", "Gough's Greatbow", "Guardian Tail", "Notched Whip", "Whip", "Beatrice's Catalyst", "Demon's Catalyst", "Izalith Catalyst", "Logan's Catalyst", "Manus Catalyst", "Oolacile Catalyst", "Oolacile Ivory Catalyst", "Sorcerer's Catalyst", "Tin Banishment Catalyst", "Tin Crystallization Catalyst", "Tin Darkmoon Catalyst", "Canvas Talisman", "Darkmoon Talisman", "Ivory Talisman", "Sunlight Talisman", "Talisman", "Thorolund Talisman", "Velka's Talisman", "Skull Lantern", "Ascended Pyromancy Flame", "Pyromancy Flame", "Buckler", "Caduceus Round Shield", "Cracked Round Shield", "Effigy Shield", "Leather Shield", "Plank Shield", "Red and White Round Shield", "Small Leather Shield", "Target Shield", "Warrior's Round Shield", "Balder Shield", "Black Knight Shield", "Bloodshield", "Caduceus Kite Shield", "Crest Shield", "Dragon Crest Shield", "East-West Shield", "Gargoyle's Shield", "Grass Crest Shield", "Heater Shield", "Hollow Soldier Shield", "Iron Round Shield", "Knight Shield", "Large Leather Shield", "Sanctus", "Silver Knight Shield", "Spider Shield", "Sunlight Shield", "Tower Kite Shield", "Wooden Shield", "Black Iron Greatshield", "Bonewheel Shield", "Cleansing Greatshield", "Eagle Shield", "Giant Shield", "Greatshield of Artorias", "Havel's Greatshield", "Stone Greatshield", "Tower Shield", "Crystal Ring Shield", "Crystal Shield", "Spiked Shield", "Pierce Shield"})
-        Me.leftOneName.Location = New System.Drawing.Point(17, 638)
-        Me.leftOneName.Margin = New System.Windows.Forms.Padding(4)
+        Me.leftOneName.Location = New System.Drawing.Point(354, 490)
+        Me.leftOneName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.leftOneName.Name = "leftOneName"
-        Me.leftOneName.Size = New System.Drawing.Size(265, 33)
+        Me.leftOneName.Size = New System.Drawing.Size(264, 33)
         Me.leftOneName.TabIndex = 10
         '
         'rightOneName
@@ -201,10 +190,10 @@ Partial Class CosplayEditor
         Me.rightOneName.DropDownWidth = 200
         Me.rightOneName.FormattingEnabled = True
         Me.rightOneName.Items.AddRange(New Object() {"No Change", "Bare", "Caestus", "Claw", "Dark Hand", "Dragon Bone Fist", "Blacksmith Giant Hammer", "Blacksmith Hammer", "Hammer of Vamos", "Club", "Mace", "Morning Star", "Pickaxe", "Reinforced Club", "Warpick", "Demon's Great Hammer", "Dragon Tooth", "Grant", "Great Club", "Large Club", "Smough's Hammer", "Battle Axe", "Butcher Knife", "Crescent Axe", "Gargoyle Tail Axe", "Golem Axe", "Hand Axe", "Black Knight Greataxe", "Demon's Greataxe", "Dragon King Greataxe", "Greataxe", "Stone Greataxe", "Bandit's Knife", "Dagger", "Dark Silver Tracer", "Ghost Blade", "Parrying Dagger", "Priscilla's Dagger", "Estoc", "Mail Breaker", "Rapier", "Ricard's Rapier", "Velka's Rapier", "Astora's Straight Sword", "Balder Side Sword", "Barbed Straight Sword", "Broad Sword", "Broken Straight Sword", "Crystal Straight Sword", "Dark Sword", "Drake Sword", "Longsword", "Shortsword", "Silver Knight Straight Sword", "Straight Sword Hilt", "Sunlight Straight Sword", "Abyss Greatsword", "Bastard Sword", "Black Knight Sword", "Claymore", "Crystal Greatsword", "Flamberge", "Great Lord Greatsword", "Greatsword of Artorias", "Greatsword of Artorias (Cursed)", "Man Serpent Greatsword", "Moonlight Greatsword", "Obsidian Greatsword", "Stone Greatsword", "Black Knight Greatsword", "Demon Great Machete", "Dragon Greatsword", "Greatsword", "Zweihander", "Chaos Blade", "Iaito", "Uchigatana", "Washing Pole", "Falchion", "Gold Tracer", "Jagged Ghost Blade", "Painting Guardian Sword", "Quelaag's Fury Sword", "Scimitar", "Shotel", "Gravelord Sword", "Murakumo", "Server", "Channeler's Trident", "Demon's Spear", "Dragonslayer Spear", "Four-Pronged Plow", "Moonlight Butterfly Horn", "Partizan", "Pike", "Silver Knight Spear", "Spear", "Winged Spear", "Black Knight Halberd", "Gargoyle's Halberd", "Giant's Halberd", "Great Scythe", "Halberd", "Lifehunt Scythe", "Lucerne", "Scythe", "Titanite Catch Pole", "Black Bow of Pharis", "Composite Bow", "Darkmoon Bow", "Long Bow", "Short Bow", "Avelyn", "Heavy Crossbow", "Light Crossbow", "Sniper Crossbow", "Dragonslayer Greatbow", "Gough's Greatbow", "Guardian Tail", "Notched Whip", "Whip", "Beatrice's Catalyst", "Demon's Catalyst", "Izalith Catalyst", "Logan's Catalyst", "Manus Catalyst", "Oolacile Catalyst", "Oolacile Ivory Catalyst", "Sorcerer's Catalyst", "Tin Banishment Catalyst", "Tin Crystallization Catalyst", "Tin Darkmoon Catalyst", "Canvas Talisman", "Darkmoon Talisman", "Ivory Talisman", "Sunlight Talisman", "Talisman", "Thorolund Talisman", "Velka's Talisman", "Skull Lantern", "Ascended Pyromancy Flame", "Pyromancy Flame", "Buckler", "Caduceus Round Shield", "Cracked Round Shield", "Effigy Shield", "Leather Shield", "Plank Shield", "Red and White Round Shield", "Small Leather Shield", "Target Shield", "Warrior's Round Shield", "Balder Shield", "Black Knight Shield", "Bloodshield", "Caduceus Kite Shield", "Crest Shield", "Dragon Crest Shield", "East-West Shield", "Gargoyle's Shield", "Grass Crest Shield", "Heater Shield", "Hollow Soldier Shield", "Iron Round Shield", "Knight Shield", "Large Leather Shield", "Sanctus", "Silver Knight Shield", "Spider Shield", "Sunlight Shield", "Tower Kite Shield", "Wooden Shield", "Black Iron Greatshield", "Bonewheel Shield", "Cleansing Greatshield", "Eagle Shield", "Giant Shield", "Greatshield of Artorias", "Havel's Greatshield", "Stone Greatshield", "Tower Shield", "Crystal Ring Shield", "Crystal Shield", "Spiked Shield", "Pierce Shield"})
-        Me.rightOneName.Location = New System.Drawing.Point(16, 405)
-        Me.rightOneName.Margin = New System.Windows.Forms.Padding(4)
+        Me.rightOneName.Location = New System.Drawing.Point(354, 258)
+        Me.rightOneName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.rightOneName.Name = "rightOneName"
-        Me.rightOneName.Size = New System.Drawing.Size(265, 33)
+        Me.rightOneName.Size = New System.Drawing.Size(264, 33)
         Me.rightOneName.TabIndex = 4
         '
         'leftTwoName
@@ -213,10 +202,10 @@ Partial Class CosplayEditor
         Me.leftTwoName.DropDownWidth = 200
         Me.leftTwoName.FormattingEnabled = True
         Me.leftTwoName.Items.AddRange(New Object() {"No Change", "Bare", "Caestus", "Claw", "Dark Hand", "Dragon Bone Fist", "Blacksmith Giant Hammer", "Blacksmith Hammer", "Hammer of Vamos", "Club", "Mace", "Morning Star", "Pickaxe", "Reinforced Club", "Warpick", "Demon's Great Hammer", "Dragon Tooth", "Grant", "Great Club", "Large Club", "Smough's Hammer", "Battle Axe", "Butcher Knife", "Crescent Axe", "Gargoyle Tail Axe", "Golem Axe", "Hand Axe", "Black Knight Greataxe", "Demon's Greataxe", "Dragon King Greataxe", "Greataxe", "Stone Greataxe", "Bandit's Knife", "Dagger", "Dark Silver Tracer", "Ghost Blade", "Parrying Dagger", "Priscilla's Dagger", "Estoc", "Mail Breaker", "Rapier", "Ricard's Rapier", "Velka's Rapier", "Astora's Straight Sword", "Balder Side Sword", "Barbed Straight Sword", "Broad Sword", "Broken Straight Sword", "Crystal Straight Sword", "Dark Sword", "Drake Sword", "Longsword", "Shortsword", "Silver Knight Straight Sword", "Straight Sword Hilt", "Sunlight Straight Sword", "Abyss Greatsword", "Bastard Sword", "Black Knight Sword", "Claymore", "Crystal Greatsword", "Flamberge", "Great Lord Greatsword", "Greatsword of Artorias", "Greatsword of Artorias (Cursed)", "Man Serpent Greatsword", "Moonlight Greatsword", "Obsidian Greatsword", "Stone Greatsword", "Black Knight Greatsword", "Demon Great Machete", "Dragon Greatsword", "Greatsword", "Zweihander", "Chaos Blade", "Iaito", "Uchigatana", "Washing Pole", "Falchion", "Gold Tracer", "Jagged Ghost Blade", "Painting Guardian Sword", "Quelaag's Fury Sword", "Scimitar", "Shotel", "Gravelord Sword", "Murakumo", "Server", "Channeler's Trident", "Demon's Spear", "Dragonslayer Spear", "Four-Pronged Plow", "Moonlight Butterfly Horn", "Partizan", "Pike", "Silver Knight Spear", "Spear", "Winged Spear", "Black Knight Halberd", "Gargoyle's Halberd", "Giant's Halberd", "Great Scythe", "Halberd", "Lifehunt Scythe", "Lucerne", "Scythe", "Titanite Catch Pole", "Black Bow of Pharis", "Composite Bow", "Darkmoon Bow", "Long Bow", "Short Bow", "Avelyn", "Heavy Crossbow", "Light Crossbow", "Sniper Crossbow", "Dragonslayer Greatbow", "Gough's Greatbow", "Guardian Tail", "Notched Whip", "Whip", "Beatrice's Catalyst", "Demon's Catalyst", "Izalith Catalyst", "Logan's Catalyst", "Manus Catalyst", "Oolacile Catalyst", "Oolacile Ivory Catalyst", "Sorcerer's Catalyst", "Tin Banishment Catalyst", "Tin Crystallization Catalyst", "Tin Darkmoon Catalyst", "Canvas Talisman", "Darkmoon Talisman", "Ivory Talisman", "Sunlight Talisman", "Talisman", "Thorolund Talisman", "Velka's Talisman", "Skull Lantern", "Ascended Pyromancy Flame", "Pyromancy Flame", "Buckler", "Caduceus Round Shield", "Cracked Round Shield", "Effigy Shield", "Leather Shield", "Plank Shield", "Red and White Round Shield", "Small Leather Shield", "Target Shield", "Warrior's Round Shield", "Balder Shield", "Black Knight Shield", "Bloodshield", "Caduceus Kite Shield", "Crest Shield", "Dragon Crest Shield", "East-West Shield", "Gargoyle's Shield", "Grass Crest Shield", "Heater Shield", "Hollow Soldier Shield", "Iron Round Shield", "Knight Shield", "Large Leather Shield", "Sanctus", "Silver Knight Shield", "Spider Shield", "Sunlight Shield", "Tower Kite Shield", "Wooden Shield", "Black Iron Greatshield", "Bonewheel Shield", "Cleansing Greatshield", "Eagle Shield", "Giant Shield", "Greatshield of Artorias", "Havel's Greatshield", "Stone Greatshield", "Tower Shield", "Crystal Ring Shield", "Crystal Shield", "Spiked Shield", "Pierce Shield"})
-        Me.leftTwoName.Location = New System.Drawing.Point(292, 639)
-        Me.leftTwoName.Margin = New System.Windows.Forms.Padding(4)
+        Me.leftTwoName.Location = New System.Drawing.Point(630, 490)
+        Me.leftTwoName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.leftTwoName.Name = "leftTwoName"
-        Me.leftTwoName.Size = New System.Drawing.Size(265, 33)
+        Me.leftTwoName.Size = New System.Drawing.Size(264, 33)
         Me.leftTwoName.TabIndex = 13
         '
         'rightTwoName
@@ -225,16 +214,16 @@ Partial Class CosplayEditor
         Me.rightTwoName.DropDownWidth = 200
         Me.rightTwoName.FormattingEnabled = True
         Me.rightTwoName.Items.AddRange(New Object() {"No Change", "Bare", "Caestus", "Claw", "Dark Hand", "Dragon Bone Fist", "Blacksmith Giant Hammer", "Blacksmith Hammer", "Hammer of Vamos", "Club", "Mace", "Morning Star", "Pickaxe", "Reinforced Club", "Warpick", "Demon's Great Hammer", "Dragon Tooth", "Grant", "Great Club", "Large Club", "Smough's Hammer", "Battle Axe", "Butcher Knife", "Crescent Axe", "Gargoyle Tail Axe", "Golem Axe", "Hand Axe", "Black Knight Greataxe", "Demon's Greataxe", "Dragon King Greataxe", "Greataxe", "Stone Greataxe", "Bandit's Knife", "Dagger", "Dark Silver Tracer", "Ghost Blade", "Parrying Dagger", "Priscilla's Dagger", "Estoc", "Mail Breaker", "Rapier", "Ricard's Rapier", "Velka's Rapier", "Astora's Straight Sword", "Balder Side Sword", "Barbed Straight Sword", "Broad Sword", "Broken Straight Sword", "Crystal Straight Sword", "Dark Sword", "Drake Sword", "Longsword", "Shortsword", "Silver Knight Straight Sword", "Straight Sword Hilt", "Sunlight Straight Sword", "Abyss Greatsword", "Bastard Sword", "Black Knight Sword", "Claymore", "Crystal Greatsword", "Flamberge", "Great Lord Greatsword", "Greatsword of Artorias", "Greatsword of Artorias (Cursed)", "Man Serpent Greatsword", "Moonlight Greatsword", "Obsidian Greatsword", "Stone Greatsword", "Black Knight Greatsword", "Demon Great Machete", "Dragon Greatsword", "Greatsword", "Zweihander", "Chaos Blade", "Iaito", "Uchigatana", "Washing Pole", "Falchion", "Gold Tracer", "Jagged Ghost Blade", "Painting Guardian Sword", "Quelaag's Fury Sword", "Scimitar", "Shotel", "Gravelord Sword", "Murakumo", "Server", "Channeler's Trident", "Demon's Spear", "Dragonslayer Spear", "Four-Pronged Plow", "Moonlight Butterfly Horn", "Partizan", "Pike", "Silver Knight Spear", "Spear", "Winged Spear", "Black Knight Halberd", "Gargoyle's Halberd", "Giant's Halberd", "Great Scythe", "Halberd", "Lifehunt Scythe", "Lucerne", "Scythe", "Titanite Catch Pole", "Black Bow of Pharis", "Composite Bow", "Darkmoon Bow", "Long Bow", "Short Bow", "Avelyn", "Heavy Crossbow", "Light Crossbow", "Sniper Crossbow", "Dragonslayer Greatbow", "Gough's Greatbow", "Guardian Tail", "Notched Whip", "Whip", "Beatrice's Catalyst", "Demon's Catalyst", "Izalith Catalyst", "Logan's Catalyst", "Manus Catalyst", "Oolacile Catalyst", "Oolacile Ivory Catalyst", "Sorcerer's Catalyst", "Tin Banishment Catalyst", "Tin Crystallization Catalyst", "Tin Darkmoon Catalyst", "Canvas Talisman", "Darkmoon Talisman", "Ivory Talisman", "Sunlight Talisman", "Talisman", "Thorolund Talisman", "Velka's Talisman", "Skull Lantern", "Ascended Pyromancy Flame", "Pyromancy Flame", "Buckler", "Caduceus Round Shield", "Cracked Round Shield", "Effigy Shield", "Leather Shield", "Plank Shield", "Red and White Round Shield", "Small Leather Shield", "Target Shield", "Warrior's Round Shield", "Balder Shield", "Black Knight Shield", "Bloodshield", "Caduceus Kite Shield", "Crest Shield", "Dragon Crest Shield", "East-West Shield", "Gargoyle's Shield", "Grass Crest Shield", "Heater Shield", "Hollow Soldier Shield", "Iron Round Shield", "Knight Shield", "Large Leather Shield", "Sanctus", "Silver Knight Shield", "Spider Shield", "Sunlight Shield", "Tower Kite Shield", "Wooden Shield", "Black Iron Greatshield", "Bonewheel Shield", "Cleansing Greatshield", "Eagle Shield", "Giant Shield", "Greatshield of Artorias", "Havel's Greatshield", "Stone Greatshield", "Tower Shield", "Crystal Ring Shield", "Crystal Shield", "Spiked Shield", "Pierce Shield"})
-        Me.rightTwoName.Location = New System.Drawing.Point(291, 405)
-        Me.rightTwoName.Margin = New System.Windows.Forms.Padding(4)
+        Me.rightTwoName.Location = New System.Drawing.Point(630, 258)
+        Me.rightTwoName.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.rightTwoName.Name = "rightTwoName"
-        Me.rightTwoName.Size = New System.Drawing.Size(265, 33)
+        Me.rightTwoName.Size = New System.Drawing.Size(264, 33)
         Me.rightTwoName.TabIndex = 7
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 868)
+        Me.Label1.Location = New System.Drawing.Point(350, 719)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(79, 25)
@@ -244,7 +233,7 @@ Partial Class CosplayEditor
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(286, 863)
+        Me.Label2.Location = New System.Drawing.Point(624, 715)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 25)
@@ -254,7 +243,7 @@ Partial Class CosplayEditor
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(560, 864)
+        Me.Label3.Location = New System.Drawing.Point(898, 715)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(104, 25)
@@ -264,7 +253,7 @@ Partial Class CosplayEditor
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(835, 868)
+        Me.Label4.Location = New System.Drawing.Point(1174, 719)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(100, 25)
@@ -274,7 +263,7 @@ Partial Class CosplayEditor
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(12, 605)
+        Me.Label5.Location = New System.Drawing.Point(350, 458)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(152, 25)
@@ -284,7 +273,7 @@ Partial Class CosplayEditor
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(12, 372)
+        Me.Label6.Location = New System.Drawing.Point(350, 223)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(166, 25)
@@ -294,7 +283,7 @@ Partial Class CosplayEditor
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(291, 607)
+        Me.Label7.Location = New System.Drawing.Point(630, 460)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(152, 25)
@@ -304,7 +293,7 @@ Partial Class CosplayEditor
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(287, 372)
+        Me.Label8.Location = New System.Drawing.Point(626, 223)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(166, 25)
@@ -314,7 +303,7 @@ Partial Class CosplayEditor
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(61, 30)
+        Me.Label9.Location = New System.Drawing.Point(22, 12)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(66, 25)
@@ -324,10 +313,10 @@ Partial Class CosplayEditor
         'applyButton
         '
         Me.applyButton.DialogResult = System.Windows.Forms.DialogResult.Retry
-        Me.applyButton.Location = New System.Drawing.Point(304, 70)
-        Me.applyButton.Margin = New System.Windows.Forms.Padding(4)
+        Me.applyButton.Location = New System.Drawing.Point(354, 867)
+        Me.applyButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.applyButton.Name = "applyButton"
-        Me.applyButton.Size = New System.Drawing.Size(160, 43)
+        Me.applyButton.Size = New System.Drawing.Size(212, 62)
         Me.applyButton.TabIndex = 1
         Me.applyButton.Text = "Apply"
         Me.applyButton.UseVisualStyleBackColor = True
@@ -337,10 +326,10 @@ Partial Class CosplayEditor
         Me.helmetLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.helmetLevel.FormattingEnabled = True
         Me.helmetLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10"})
-        Me.helmetLevel.Location = New System.Drawing.Point(16, 952)
-        Me.helmetLevel.Margin = New System.Windows.Forms.Padding(4)
+        Me.helmetLevel.Location = New System.Drawing.Point(354, 804)
+        Me.helmetLevel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.helmetLevel.Name = "helmetLevel"
-        Me.helmetLevel.Size = New System.Drawing.Size(99, 33)
+        Me.helmetLevel.Size = New System.Drawing.Size(100, 33)
         Me.helmetLevel.TabIndex = 17
         '
         'armorLevel
@@ -348,10 +337,10 @@ Partial Class CosplayEditor
         Me.armorLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.armorLevel.FormattingEnabled = True
         Me.armorLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10"})
-        Me.armorLevel.Location = New System.Drawing.Point(291, 952)
-        Me.armorLevel.Margin = New System.Windows.Forms.Padding(4)
+        Me.armorLevel.Location = New System.Drawing.Point(630, 804)
+        Me.armorLevel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.armorLevel.Name = "armorLevel"
-        Me.armorLevel.Size = New System.Drawing.Size(99, 33)
+        Me.armorLevel.Size = New System.Drawing.Size(100, 33)
         Me.armorLevel.TabIndex = 19
         '
         'gauntletsLevel
@@ -359,10 +348,10 @@ Partial Class CosplayEditor
         Me.gauntletsLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.gauntletsLevel.FormattingEnabled = True
         Me.gauntletsLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10"})
-        Me.gauntletsLevel.Location = New System.Drawing.Point(566, 951)
-        Me.gauntletsLevel.Margin = New System.Windows.Forms.Padding(4)
+        Me.gauntletsLevel.Location = New System.Drawing.Point(904, 804)
+        Me.gauntletsLevel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.gauntletsLevel.Name = "gauntletsLevel"
-        Me.gauntletsLevel.Size = New System.Drawing.Size(99, 33)
+        Me.gauntletsLevel.Size = New System.Drawing.Size(100, 33)
         Me.gauntletsLevel.TabIndex = 21
         '
         'leggingsLevel
@@ -370,10 +359,10 @@ Partial Class CosplayEditor
         Me.leggingsLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leggingsLevel.FormattingEnabled = True
         Me.leggingsLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10"})
-        Me.leggingsLevel.Location = New System.Drawing.Point(840, 951)
-        Me.leggingsLevel.Margin = New System.Windows.Forms.Padding(4)
+        Me.leggingsLevel.Location = New System.Drawing.Point(1178, 804)
+        Me.leggingsLevel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.leggingsLevel.Name = "leggingsLevel"
-        Me.leggingsLevel.Size = New System.Drawing.Size(99, 33)
+        Me.leggingsLevel.Size = New System.Drawing.Size(100, 33)
         Me.leggingsLevel.TabIndex = 23
         '
         'leftOneLevel
@@ -381,10 +370,10 @@ Partial Class CosplayEditor
         Me.leftOneLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leftOneLevel.FormattingEnabled = True
         Me.leftOneLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
-        Me.leftOneLevel.Location = New System.Drawing.Point(17, 693)
-        Me.leftOneLevel.Margin = New System.Windows.Forms.Padding(4)
+        Me.leftOneLevel.Location = New System.Drawing.Point(354, 544)
+        Me.leftOneLevel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.leftOneLevel.Name = "leftOneLevel"
-        Me.leftOneLevel.Size = New System.Drawing.Size(99, 33)
+        Me.leftOneLevel.Size = New System.Drawing.Size(100, 33)
         Me.leftOneLevel.TabIndex = 11
         '
         'rightOneLevel
@@ -392,10 +381,10 @@ Partial Class CosplayEditor
         Me.rightOneLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.rightOneLevel.FormattingEnabled = True
         Me.rightOneLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
-        Me.rightOneLevel.Location = New System.Drawing.Point(17, 459)
-        Me.rightOneLevel.Margin = New System.Windows.Forms.Padding(4)
+        Me.rightOneLevel.Location = New System.Drawing.Point(354, 312)
+        Me.rightOneLevel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.rightOneLevel.Name = "rightOneLevel"
-        Me.rightOneLevel.Size = New System.Drawing.Size(99, 33)
+        Me.rightOneLevel.Size = New System.Drawing.Size(100, 33)
         Me.rightOneLevel.TabIndex = 5
         '
         'LeftTwoLevel
@@ -403,10 +392,10 @@ Partial Class CosplayEditor
         Me.LeftTwoLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.LeftTwoLevel.FormattingEnabled = True
         Me.LeftTwoLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
-        Me.LeftTwoLevel.Location = New System.Drawing.Point(292, 693)
-        Me.LeftTwoLevel.Margin = New System.Windows.Forms.Padding(4)
+        Me.LeftTwoLevel.Location = New System.Drawing.Point(630, 544)
+        Me.LeftTwoLevel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.LeftTwoLevel.Name = "LeftTwoLevel"
-        Me.LeftTwoLevel.Size = New System.Drawing.Size(99, 33)
+        Me.LeftTwoLevel.Size = New System.Drawing.Size(100, 33)
         Me.LeftTwoLevel.TabIndex = 14
         '
         'rightTwoLevel
@@ -414,10 +403,10 @@ Partial Class CosplayEditor
         Me.rightTwoLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.rightTwoLevel.FormattingEnabled = True
         Me.rightTwoLevel.Items.AddRange(New Object() {"+0", "+1", "+2", "+3", "+4", "+5", "+6", "+7", "+8", "+9", "+10", "+11", "+12", "+13", "+14", "+15"})
-        Me.rightTwoLevel.Location = New System.Drawing.Point(291, 459)
-        Me.rightTwoLevel.Margin = New System.Windows.Forms.Padding(4)
+        Me.rightTwoLevel.Location = New System.Drawing.Point(630, 312)
+        Me.rightTwoLevel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.rightTwoLevel.Name = "rightTwoLevel"
-        Me.rightTwoLevel.Size = New System.Drawing.Size(99, 33)
+        Me.rightTwoLevel.Size = New System.Drawing.Size(100, 33)
         Me.rightTwoLevel.TabIndex = 8
         '
         'leftOneInfusion
@@ -425,8 +414,8 @@ Partial Class CosplayEditor
         Me.leftOneInfusion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leftOneInfusion.FormattingEnabled = True
         Me.leftOneInfusion.Items.AddRange(New Object() {"Standard/None", "Crystal", "Lightning", "Raw", "Magic", "Enchanged", "Divine", "Occult", "Fire", "Chaos"})
-        Me.leftOneInfusion.Location = New System.Drawing.Point(17, 752)
-        Me.leftOneInfusion.Margin = New System.Windows.Forms.Padding(4)
+        Me.leftOneInfusion.Location = New System.Drawing.Point(354, 604)
+        Me.leftOneInfusion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.leftOneInfusion.Name = "leftOneInfusion"
         Me.leftOneInfusion.Size = New System.Drawing.Size(172, 33)
         Me.leftOneInfusion.TabIndex = 12
@@ -436,8 +425,8 @@ Partial Class CosplayEditor
         Me.rightOneInfusion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.rightOneInfusion.FormattingEnabled = True
         Me.rightOneInfusion.Items.AddRange(New Object() {"Standard/None", "Crystal", "Lightning", "Raw", "Magic", "Enchanged", "Divine", "Occult", "Fire", "Chaos"})
-        Me.rightOneInfusion.Location = New System.Drawing.Point(17, 518)
-        Me.rightOneInfusion.Margin = New System.Windows.Forms.Padding(4)
+        Me.rightOneInfusion.Location = New System.Drawing.Point(354, 369)
+        Me.rightOneInfusion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.rightOneInfusion.Name = "rightOneInfusion"
         Me.rightOneInfusion.Size = New System.Drawing.Size(172, 33)
         Me.rightOneInfusion.TabIndex = 6
@@ -447,8 +436,8 @@ Partial Class CosplayEditor
         Me.leftTwoInfusion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.leftTwoInfusion.FormattingEnabled = True
         Me.leftTwoInfusion.Items.AddRange(New Object() {"Standard/None", "Crystal", "Lightning", "Raw", "Magic", "Enchanged", "Divine", "Occult", "Fire", "Chaos"})
-        Me.leftTwoInfusion.Location = New System.Drawing.Point(292, 751)
-        Me.leftTwoInfusion.Margin = New System.Windows.Forms.Padding(4)
+        Me.leftTwoInfusion.Location = New System.Drawing.Point(630, 604)
+        Me.leftTwoInfusion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.leftTwoInfusion.Name = "leftTwoInfusion"
         Me.leftTwoInfusion.Size = New System.Drawing.Size(172, 33)
         Me.leftTwoInfusion.TabIndex = 15
@@ -458,33 +447,36 @@ Partial Class CosplayEditor
         Me.rightTwoInfusion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.rightTwoInfusion.FormattingEnabled = True
         Me.rightTwoInfusion.Items.AddRange(New Object() {"Standard/None", "Crystal", "Lightning", "Raw", "Magic", "Enchanged", "Divine", "Occult", "Fire", "Chaos"})
-        Me.rightTwoInfusion.Location = New System.Drawing.Point(292, 518)
-        Me.rightTwoInfusion.Margin = New System.Windows.Forms.Padding(4)
+        Me.rightTwoInfusion.Location = New System.Drawing.Point(630, 369)
+        Me.rightTwoInfusion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.rightTwoInfusion.Name = "rightTwoInfusion"
         Me.rightTwoInfusion.Size = New System.Drawing.Size(172, 33)
         Me.rightTwoInfusion.TabIndex = 9
         '
         'exportButton
         '
-        Me.exportButton.Location = New System.Drawing.Point(717, 72)
+        Me.exportButton.Location = New System.Drawing.Point(186, 867)
+        Me.exportButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.exportButton.Name = "exportButton"
-        Me.exportButton.Size = New System.Drawing.Size(160, 43)
+        Me.exportButton.Size = New System.Drawing.Size(160, 62)
         Me.exportButton.TabIndex = 3
         Me.exportButton.Text = "Export"
         Me.exportButton.UseVisualStyleBackColor = True
         '
         'importButton
         '
-        Me.importButton.Location = New System.Drawing.Point(551, 72)
+        Me.importButton.Location = New System.Drawing.Point(18, 867)
+        Me.importButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.importButton.Name = "importButton"
-        Me.importButton.Size = New System.Drawing.Size(160, 43)
+        Me.importButton.Size = New System.Drawing.Size(160, 62)
         Me.importButton.TabIndex = 2
         Me.importButton.Text = "Import"
         Me.importButton.UseVisualStyleBackColor = True
         '
         'vitSet
         '
-        Me.vitSet.Location = New System.Drawing.Point(731, 375)
+        Me.vitSet.Location = New System.Drawing.Point(1070, 227)
+        Me.vitSet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.vitSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.vitSet.Name = "vitSet"
         Me.vitSet.Size = New System.Drawing.Size(100, 31)
@@ -492,7 +484,8 @@ Partial Class CosplayEditor
         '
         'atnSet
         '
-        Me.atnSet.Location = New System.Drawing.Point(731, 438)
+        Me.atnSet.Location = New System.Drawing.Point(1070, 290)
+        Me.atnSet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.atnSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.atnSet.Name = "atnSet"
         Me.atnSet.Size = New System.Drawing.Size(100, 31)
@@ -500,7 +493,8 @@ Partial Class CosplayEditor
         '
         'endSet
         '
-        Me.endSet.Location = New System.Drawing.Point(730, 500)
+        Me.endSet.Location = New System.Drawing.Point(1068, 352)
+        Me.endSet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.endSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.endSet.Name = "endSet"
         Me.endSet.Size = New System.Drawing.Size(100, 31)
@@ -508,7 +502,8 @@ Partial Class CosplayEditor
         '
         'strSet
         '
-        Me.strSet.Location = New System.Drawing.Point(731, 559)
+        Me.strSet.Location = New System.Drawing.Point(1070, 412)
+        Me.strSet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.strSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.strSet.Name = "strSet"
         Me.strSet.Size = New System.Drawing.Size(100, 31)
@@ -516,7 +511,8 @@ Partial Class CosplayEditor
         '
         'dexSet
         '
-        Me.dexSet.Location = New System.Drawing.Point(731, 620)
+        Me.dexSet.Location = New System.Drawing.Point(1070, 471)
+        Me.dexSet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dexSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.dexSet.Name = "dexSet"
         Me.dexSet.Size = New System.Drawing.Size(100, 31)
@@ -524,7 +520,8 @@ Partial Class CosplayEditor
         '
         'resSet
         '
-        Me.resSet.Location = New System.Drawing.Point(731, 675)
+        Me.resSet.Location = New System.Drawing.Point(1070, 527)
+        Me.resSet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.resSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.resSet.Name = "resSet"
         Me.resSet.Size = New System.Drawing.Size(100, 31)
@@ -532,7 +529,8 @@ Partial Class CosplayEditor
         '
         'intSet
         '
-        Me.intSet.Location = New System.Drawing.Point(731, 728)
+        Me.intSet.Location = New System.Drawing.Point(1070, 581)
+        Me.intSet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.intSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.intSet.Name = "intSet"
         Me.intSet.Size = New System.Drawing.Size(100, 31)
@@ -540,7 +538,8 @@ Partial Class CosplayEditor
         '
         'fthSet
         '
-        Me.fthSet.Location = New System.Drawing.Point(731, 783)
+        Me.fthSet.Location = New System.Drawing.Point(1070, 635)
+        Me.fthSet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.fthSet.Maximum = New Decimal(New Integer() {99, 0, 0, 0})
         Me.fthSet.Name = "fthSet"
         Me.fthSet.Size = New System.Drawing.Size(100, 31)
@@ -549,7 +548,8 @@ Partial Class CosplayEditor
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(606, 381)
+        Me.Label10.Location = New System.Drawing.Point(944, 233)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(76, 25)
         Me.Label10.TabIndex = 43
@@ -558,7 +558,8 @@ Partial Class CosplayEditor
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(606, 500)
+        Me.Label11.Location = New System.Drawing.Point(944, 352)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(116, 25)
         Me.Label11.TabIndex = 44
@@ -567,7 +568,8 @@ Partial Class CosplayEditor
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(606, 444)
+        Me.Label12.Location = New System.Drawing.Point(944, 296)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(121, 25)
         Me.Label12.TabIndex = 45
@@ -576,7 +578,8 @@ Partial Class CosplayEditor
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(606, 565)
+        Me.Label13.Location = New System.Drawing.Point(944, 417)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(93, 25)
         Me.Label13.TabIndex = 46
@@ -585,7 +588,8 @@ Partial Class CosplayEditor
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(606, 626)
+        Me.Label14.Location = New System.Drawing.Point(944, 479)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(97, 25)
         Me.Label14.TabIndex = 47
@@ -594,7 +598,8 @@ Partial Class CosplayEditor
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(606, 681)
+        Me.Label15.Location = New System.Drawing.Point(944, 533)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(119, 25)
         Me.Label15.TabIndex = 48
@@ -603,7 +608,8 @@ Partial Class CosplayEditor
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(606, 734)
+        Me.Label16.Location = New System.Drawing.Point(944, 587)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(121, 25)
         Me.Label16.TabIndex = 49
@@ -612,7 +618,8 @@ Partial Class CosplayEditor
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(606, 789)
+        Me.Label17.Location = New System.Drawing.Point(944, 640)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(60, 25)
         Me.Label17.TabIndex = 50
@@ -621,7 +628,8 @@ Partial Class CosplayEditor
         'noChangeStats
         '
         Me.noChangeStats.AutoSize = True
-        Me.noChangeStats.Location = New System.Drawing.Point(635, 331)
+        Me.noChangeStats.Location = New System.Drawing.Point(968, 169)
+        Me.noChangeStats.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.noChangeStats.Name = "noChangeStats"
         Me.noChangeStats.Size = New System.Drawing.Size(196, 29)
         Me.noChangeStats.TabIndex = 51
@@ -631,11 +639,12 @@ Partial Class CosplayEditor
         'headSize
         '
         Me.headSize.AutoSize = False
-        Me.headSize.Location = New System.Drawing.Point(900, 331)
+        Me.headSize.Location = New System.Drawing.Point(1256, 202)
+        Me.headSize.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.headSize.Maximum = 50
         Me.headSize.Minimum = -50
         Me.headSize.Name = "headSize"
-        Me.headSize.Size = New System.Drawing.Size(240, 50)
+        Me.headSize.Size = New System.Drawing.Size(290, 50)
         Me.headSize.TabIndex = 52
         Me.headSize.TickFrequency = 10
         Me.headSize.TickStyle = System.Windows.Forms.TickStyle.TopLeft
@@ -644,11 +653,12 @@ Partial Class CosplayEditor
         'chestSize
         '
         Me.chestSize.AutoSize = False
-        Me.chestSize.Location = New System.Drawing.Point(900, 419)
+        Me.chestSize.Location = New System.Drawing.Point(1256, 288)
+        Me.chestSize.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chestSize.Maximum = 50
         Me.chestSize.Minimum = -50
         Me.chestSize.Name = "chestSize"
-        Me.chestSize.Size = New System.Drawing.Size(240, 50)
+        Me.chestSize.Size = New System.Drawing.Size(290, 50)
         Me.chestSize.TabIndex = 53
         Me.chestSize.TickFrequency = 10
         Me.chestSize.TickStyle = System.Windows.Forms.TickStyle.TopLeft
@@ -657,11 +667,12 @@ Partial Class CosplayEditor
         'handSize
         '
         Me.handSize.AutoSize = False
-        Me.handSize.Location = New System.Drawing.Point(900, 593)
+        Me.handSize.Location = New System.Drawing.Point(1256, 465)
+        Me.handSize.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.handSize.Maximum = 50
         Me.handSize.Minimum = -50
         Me.handSize.Name = "handSize"
-        Me.handSize.Size = New System.Drawing.Size(240, 50)
+        Me.handSize.Size = New System.Drawing.Size(290, 50)
         Me.handSize.TabIndex = 54
         Me.handSize.TickFrequency = 10
         Me.handSize.TickStyle = System.Windows.Forms.TickStyle.TopLeft
@@ -670,11 +681,12 @@ Partial Class CosplayEditor
         'legSize
         '
         Me.legSize.AutoSize = False
-        Me.legSize.Location = New System.Drawing.Point(900, 681)
+        Me.legSize.Location = New System.Drawing.Point(1256, 556)
+        Me.legSize.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.legSize.Maximum = 50
         Me.legSize.Minimum = -50
         Me.legSize.Name = "legSize"
-        Me.legSize.Size = New System.Drawing.Size(240, 50)
+        Me.legSize.Size = New System.Drawing.Size(290, 50)
         Me.legSize.TabIndex = 55
         Me.legSize.TickFrequency = 10
         Me.legSize.TickStyle = System.Windows.Forms.TickStyle.TopLeft
@@ -683,7 +695,8 @@ Partial Class CosplayEditor
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(895, 292)
+        Me.Label18.Location = New System.Drawing.Point(1276, 169)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(111, 25)
         Me.Label18.TabIndex = 56
@@ -692,7 +705,8 @@ Partial Class CosplayEditor
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(895, 391)
+        Me.Label19.Location = New System.Drawing.Point(1276, 260)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(116, 25)
         Me.Label19.TabIndex = 57
@@ -701,7 +715,8 @@ Partial Class CosplayEditor
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(895, 565)
+        Me.Label20.Location = New System.Drawing.Point(1276, 435)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(111, 25)
         Me.Label20.TabIndex = 58
@@ -710,7 +725,8 @@ Partial Class CosplayEditor
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(895, 655)
+        Me.Label21.Location = New System.Drawing.Point(1276, 525)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(96, 25)
         Me.Label21.TabIndex = 59
@@ -719,7 +735,8 @@ Partial Class CosplayEditor
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(895, 739)
+        Me.Label22.Location = New System.Drawing.Point(1276, 608)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(74, 25)
         Me.Label22.TabIndex = 60
@@ -728,11 +745,12 @@ Partial Class CosplayEditor
         'speedBar
         '
         Me.speedBar.AutoSize = False
-        Me.speedBar.Location = New System.Drawing.Point(900, 764)
+        Me.speedBar.Location = New System.Drawing.Point(1256, 635)
+        Me.speedBar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.speedBar.Maximum = 20
         Me.speedBar.Minimum = 1
         Me.speedBar.Name = "speedBar"
-        Me.speedBar.Size = New System.Drawing.Size(240, 50)
+        Me.speedBar.Size = New System.Drawing.Size(290, 50)
         Me.speedBar.TabIndex = 61
         Me.speedBar.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.speedBar.Value = 10
@@ -740,7 +758,8 @@ Partial Class CosplayEditor
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(895, 472)
+        Me.Label23.Location = New System.Drawing.Point(1276, 340)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(151, 25)
         Me.Label23.TabIndex = 62
@@ -749,38 +768,43 @@ Partial Class CosplayEditor
         'abdomenSize
         '
         Me.abdomenSize.AutoSize = False
-        Me.abdomenSize.Location = New System.Drawing.Point(900, 501)
+        Me.abdomenSize.Location = New System.Drawing.Point(1256, 369)
+        Me.abdomenSize.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.abdomenSize.Maximum = 50
         Me.abdomenSize.Minimum = -50
         Me.abdomenSize.Name = "abdomenSize"
-        Me.abdomenSize.Size = New System.Drawing.Size(240, 50)
+        Me.abdomenSize.Size = New System.Drawing.Size(290, 50)
         Me.abdomenSize.TabIndex = 63
         Me.abdomenSize.TickFrequency = 10
         Me.abdomenSize.TickStyle = System.Windows.Forms.TickStyle.TopLeft
         Me.abdomenSize.Value = -1
         '
-        'deprive
+        'depriveButton
         '
-        Me.deprive.Location = New System.Drawing.Point(1180, 375)
-        Me.deprive.Name = "deprive"
-        Me.deprive.Size = New System.Drawing.Size(212, 63)
-        Me.deprive.TabIndex = 64
-        Me.deprive.Text = "Deprive"
-        Me.deprive.UseVisualStyleBackColor = True
+        Me.depriveButton.Location = New System.Drawing.Point(1124, 865)
+        Me.depriveButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.depriveButton.Name = "depriveButton"
+        Me.depriveButton.Size = New System.Drawing.Size(212, 63)
+        Me.depriveButton.TabIndex = 64
+        Me.depriveButton.Text = "Deprive"
+        Me.depriveButton.UseVisualStyleBackColor = True
         '
-        'cosplayNow
+        'cosplayNowButton
         '
-        Me.cosplayNow.Location = New System.Drawing.Point(1180, 459)
-        Me.cosplayNow.Name = "cosplayNow"
-        Me.cosplayNow.Size = New System.Drawing.Size(212, 112)
-        Me.cosplayNow.TabIndex = 65
-        Me.cosplayNow.Text = "Cosplay NOW"
-        Me.cosplayNow.UseVisualStyleBackColor = True
+        Me.cosplayNowButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cosplayNowButton.Location = New System.Drawing.Point(1462, 867)
+        Me.cosplayNowButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cosplayNowButton.Name = "cosplayNowButton"
+        Me.cosplayNowButton.Size = New System.Drawing.Size(228, 62)
+        Me.cosplayNowButton.TabIndex = 65
+        Me.cosplayNowButton.Text = "Cosplay NOW"
+        Me.cosplayNowButton.UseVisualStyleBackColor = True
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(13, 142)
+        Me.Label24.Location = New System.Drawing.Point(350, 12)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(78, 25)
         Me.Label24.TabIndex = 66
@@ -791,14 +815,16 @@ Partial Class CosplayEditor
         Me.Spell1Name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Spell1Name.FormattingEnabled = True
         Me.Spell1Name.Items.AddRange(New Object() {"No Change", "None", "Soul Arrow", "Heavy Soul Arrow", "Great Soul Arrow", "Great Heavy Soul Arrow", "Homing Soulmass", "Crystal Homing Soulmass", "Soul Spear", "Crystal Soul Spear", "Magic Weapon", "Great Magic Weapon", "Crystal Magic Weapon", "Magic Shield", "Strong Magic Shield", "Hidden Weapon", "Hidden Body", "Cast Light", "Hush", "Aural Decoy", "Repair", "Fall Control", "Chameleon", "Resist Curse", "Remedy", "White Dragon Breath", "Dark Orb", "Dark Bead", "Dark Fog", "Pursuers", "Fireball", "Fire Orb", "Great Fireball", "Firestorm", "Fire Tempest", "Fire Surge", "Fire Whip", "Combustion", "Greater Combustion", "Poison Mist", "Toxic Mist", "Acid Surge", "Iron Flesh", "Flash Sweat", "Undead Rapport", "Power Within", "Chaos Fireball", "Chaos Firestorm", "Chaos Fire Whip", "Black Flame", "Heal", "Great Heal", "Great Heal Excerpt", "Soothing Sunlight", "Replenishment", "Bountiful Sunlight", "Gravelord Sword Dance", "Gravelord Greatsword Dance", "Escape Death", "Homeward", "Force", "Wrath of the Gods", "Emit Force", "Seek Guidance", "Lightning Spear", "Great Lightning Spear", "Sunlight Spear", "Magic Barrier", "Great Magic Barrier", "Karmic Justice", "Tranquil Walk of Peace", "Vow of Silence", "Sunlight Blade", "Darkmoon Blade"})
-        Me.Spell1Name.Location = New System.Drawing.Point(18, 190)
+        Me.Spell1Name.Location = New System.Drawing.Point(356, 42)
+        Me.Spell1Name.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Spell1Name.Name = "Spell1Name"
-        Me.Spell1Name.Size = New System.Drawing.Size(261, 33)
+        Me.Spell1Name.Size = New System.Drawing.Size(260, 33)
         Me.Spell1Name.TabIndex = 67
         '
         'Spell1Num
         '
-        Me.Spell1Num.Location = New System.Drawing.Point(18, 245)
+        Me.Spell1Num.Location = New System.Drawing.Point(356, 96)
+        Me.Spell1Num.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Spell1Num.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.Spell1Num.Name = "Spell1Num"
         Me.Spell1Num.Size = New System.Drawing.Size(120, 31)
@@ -806,7 +832,8 @@ Partial Class CosplayEditor
         '
         'Spell2Num
         '
-        Me.Spell2Num.Location = New System.Drawing.Point(285, 245)
+        Me.Spell2Num.Location = New System.Drawing.Point(622, 96)
+        Me.Spell2Num.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Spell2Num.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.Spell2Num.Name = "Spell2Num"
         Me.Spell2Num.Size = New System.Drawing.Size(120, 31)
@@ -817,15 +844,17 @@ Partial Class CosplayEditor
         Me.Spell2Name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Spell2Name.FormattingEnabled = True
         Me.Spell2Name.Items.AddRange(New Object() {"No Change", "None", "Soul Arrow", "Heavy Soul Arrow", "Great Soul Arrow", "Great Heavy Soul Arrow", "Homing Soulmass", "Crystal Homing Soulmass", "Soul Spear", "Crystal Soul Spear", "Magic Weapon", "Great Magic Weapon", "Crystal Magic Weapon", "Magic Shield", "Strong Magic Shield", "Hidden Weapon", "Hidden Body", "Cast Light", "Hush", "Aural Decoy", "Repair", "Fall Control", "Chameleon", "Resist Curse", "Remedy", "White Dragon Breath", "Dark Orb", "Dark Bead", "Dark Fog", "Pursuers", "Fireball", "Fire Orb", "Great Fireball", "Firestorm", "Fire Tempest", "Fire Surge", "Fire Whip", "Combustion", "Greater Combustion", "Poison Mist", "Toxic Mist", "Acid Surge", "Iron Flesh", "Flash Sweat", "Undead Rapport", "Power Within", "Chaos Fireball", "Chaos Firestorm", "Chaos Fire Whip", "Black Flame", "Heal", "Great Heal", "Great Heal Excerpt", "Soothing Sunlight", "Replenishment", "Bountiful Sunlight", "Gravelord Sword Dance", "Gravelord Greatsword Dance", "Escape Death", "Homeward", "Force", "Wrath of the Gods", "Emit Force", "Seek Guidance", "Lightning Spear", "Great Lightning Spear", "Sunlight Spear", "Magic Barrier", "Great Magic Barrier", "Karmic Justice", "Tranquil Walk of Peace", "Vow of Silence", "Sunlight Blade", "Darkmoon Blade"})
-        Me.Spell2Name.Location = New System.Drawing.Point(285, 190)
+        Me.Spell2Name.Location = New System.Drawing.Point(622, 42)
+        Me.Spell2Name.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Spell2Name.Name = "Spell2Name"
-        Me.Spell2Name.Size = New System.Drawing.Size(261, 33)
+        Me.Spell2Name.Size = New System.Drawing.Size(260, 33)
         Me.Spell2Name.TabIndex = 70
         '
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(280, 142)
+        Me.Label25.Location = New System.Drawing.Point(618, 12)
+        Me.Label25.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(78, 25)
         Me.Label25.TabIndex = 69
@@ -833,7 +862,8 @@ Partial Class CosplayEditor
         '
         'Spell3Num
         '
-        Me.Spell3Num.Location = New System.Drawing.Point(554, 245)
+        Me.Spell3Num.Location = New System.Drawing.Point(892, 96)
+        Me.Spell3Num.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Spell3Num.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.Spell3Num.Name = "Spell3Num"
         Me.Spell3Num.Size = New System.Drawing.Size(120, 31)
@@ -844,15 +874,17 @@ Partial Class CosplayEditor
         Me.Spell3Name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Spell3Name.FormattingEnabled = True
         Me.Spell3Name.Items.AddRange(New Object() {"No Change", "None", "Soul Arrow", "Heavy Soul Arrow", "Great Soul Arrow", "Great Heavy Soul Arrow", "Homing Soulmass", "Crystal Homing Soulmass", "Soul Spear", "Crystal Soul Spear", "Magic Weapon", "Great Magic Weapon", "Crystal Magic Weapon", "Magic Shield", "Strong Magic Shield", "Hidden Weapon", "Hidden Body", "Cast Light", "Hush", "Aural Decoy", "Repair", "Fall Control", "Chameleon", "Resist Curse", "Remedy", "White Dragon Breath", "Dark Orb", "Dark Bead", "Dark Fog", "Pursuers", "Fireball", "Fire Orb", "Great Fireball", "Firestorm", "Fire Tempest", "Fire Surge", "Fire Whip", "Combustion", "Greater Combustion", "Poison Mist", "Toxic Mist", "Acid Surge", "Iron Flesh", "Flash Sweat", "Undead Rapport", "Power Within", "Chaos Fireball", "Chaos Firestorm", "Chaos Fire Whip", "Black Flame", "Heal", "Great Heal", "Great Heal Excerpt", "Soothing Sunlight", "Replenishment", "Bountiful Sunlight", "Gravelord Sword Dance", "Gravelord Greatsword Dance", "Escape Death", "Homeward", "Force", "Wrath of the Gods", "Emit Force", "Seek Guidance", "Lightning Spear", "Great Lightning Spear", "Sunlight Spear", "Magic Barrier", "Great Magic Barrier", "Karmic Justice", "Tranquil Walk of Peace", "Vow of Silence", "Sunlight Blade", "Darkmoon Blade"})
-        Me.Spell3Name.Location = New System.Drawing.Point(554, 190)
+        Me.Spell3Name.Location = New System.Drawing.Point(892, 42)
+        Me.Spell3Name.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Spell3Name.Name = "Spell3Name"
-        Me.Spell3Name.Size = New System.Drawing.Size(261, 33)
+        Me.Spell3Name.Size = New System.Drawing.Size(260, 33)
         Me.Spell3Name.TabIndex = 73
         '
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(549, 142)
+        Me.Label26.Location = New System.Drawing.Point(886, 12)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(78, 25)
         Me.Label26.TabIndex = 72
@@ -860,7 +892,8 @@ Partial Class CosplayEditor
         '
         'Spell4Num
         '
-        Me.Spell4Num.Location = New System.Drawing.Point(821, 245)
+        Me.Spell4Num.Location = New System.Drawing.Point(1158, 96)
+        Me.Spell4Num.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Spell4Num.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.Spell4Num.Name = "Spell4Num"
         Me.Spell4Num.Size = New System.Drawing.Size(120, 31)
@@ -871,15 +904,17 @@ Partial Class CosplayEditor
         Me.Spell4Name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Spell4Name.FormattingEnabled = True
         Me.Spell4Name.Items.AddRange(New Object() {"No Change", "None", "Soul Arrow", "Heavy Soul Arrow", "Great Soul Arrow", "Great Heavy Soul Arrow", "Homing Soulmass", "Crystal Homing Soulmass", "Soul Spear", "Crystal Soul Spear", "Magic Weapon", "Great Magic Weapon", "Crystal Magic Weapon", "Magic Shield", "Strong Magic Shield", "Hidden Weapon", "Hidden Body", "Cast Light", "Hush", "Aural Decoy", "Repair", "Fall Control", "Chameleon", "Resist Curse", "Remedy", "White Dragon Breath", "Dark Orb", "Dark Bead", "Dark Fog", "Pursuers", "Fireball", "Fire Orb", "Great Fireball", "Firestorm", "Fire Tempest", "Fire Surge", "Fire Whip", "Combustion", "Greater Combustion", "Poison Mist", "Toxic Mist", "Acid Surge", "Iron Flesh", "Flash Sweat", "Undead Rapport", "Power Within", "Chaos Fireball", "Chaos Firestorm", "Chaos Fire Whip", "Black Flame", "Heal", "Great Heal", "Great Heal Excerpt", "Soothing Sunlight", "Replenishment", "Bountiful Sunlight", "Gravelord Sword Dance", "Gravelord Greatsword Dance", "Escape Death", "Homeward", "Force", "Wrath of the Gods", "Emit Force", "Seek Guidance", "Lightning Spear", "Great Lightning Spear", "Sunlight Spear", "Magic Barrier", "Great Magic Barrier", "Karmic Justice", "Tranquil Walk of Peace", "Vow of Silence", "Sunlight Blade", "Darkmoon Blade"})
-        Me.Spell4Name.Location = New System.Drawing.Point(821, 190)
+        Me.Spell4Name.Location = New System.Drawing.Point(1158, 42)
+        Me.Spell4Name.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Spell4Name.Name = "Spell4Name"
-        Me.Spell4Name.Size = New System.Drawing.Size(261, 33)
+        Me.Spell4Name.Size = New System.Drawing.Size(260, 33)
         Me.Spell4Name.TabIndex = 76
         '
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(816, 142)
+        Me.Label27.Location = New System.Drawing.Point(1154, 12)
+        Me.Label27.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(78, 25)
         Me.Label27.TabIndex = 75
@@ -887,7 +922,8 @@ Partial Class CosplayEditor
         '
         'Spell5Num
         '
-        Me.Spell5Num.Location = New System.Drawing.Point(1088, 245)
+        Me.Spell5Num.Location = New System.Drawing.Point(1426, 96)
+        Me.Spell5Num.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Spell5Num.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.Spell5Num.Name = "Spell5Num"
         Me.Spell5Num.Size = New System.Drawing.Size(120, 31)
@@ -898,36 +934,51 @@ Partial Class CosplayEditor
         Me.Spell5Name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Spell5Name.FormattingEnabled = True
         Me.Spell5Name.Items.AddRange(New Object() {"No Change", "None", "Soul Arrow", "Heavy Soul Arrow", "Great Soul Arrow", "Great Heavy Soul Arrow", "Homing Soulmass", "Crystal Homing Soulmass", "Soul Spear", "Crystal Soul Spear", "Magic Weapon", "Great Magic Weapon", "Crystal Magic Weapon", "Magic Shield", "Strong Magic Shield", "Hidden Weapon", "Hidden Body", "Cast Light", "Hush", "Aural Decoy", "Repair", "Fall Control", "Chameleon", "Resist Curse", "Remedy", "White Dragon Breath", "Dark Orb", "Dark Bead", "Dark Fog", "Pursuers", "Fireball", "Fire Orb", "Great Fireball", "Firestorm", "Fire Tempest", "Fire Surge", "Fire Whip", "Combustion", "Greater Combustion", "Poison Mist", "Toxic Mist", "Acid Surge", "Iron Flesh", "Flash Sweat", "Undead Rapport", "Power Within", "Chaos Fireball", "Chaos Firestorm", "Chaos Fire Whip", "Black Flame", "Heal", "Great Heal", "Great Heal Excerpt", "Soothing Sunlight", "Replenishment", "Bountiful Sunlight", "Gravelord Sword Dance", "Gravelord Greatsword Dance", "Escape Death", "Homeward", "Force", "Wrath of the Gods", "Emit Force", "Seek Guidance", "Lightning Spear", "Great Lightning Spear", "Sunlight Spear", "Magic Barrier", "Great Magic Barrier", "Karmic Justice", "Tranquil Walk of Peace", "Vow of Silence", "Sunlight Blade", "Darkmoon Blade"})
-        Me.Spell5Name.Location = New System.Drawing.Point(1088, 190)
+        Me.Spell5Name.Location = New System.Drawing.Point(1426, 42)
+        Me.Spell5Name.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Spell5Name.Name = "Spell5Name"
-        Me.Spell5Name.Size = New System.Drawing.Size(261, 33)
+        Me.Spell5Name.Size = New System.Drawing.Size(260, 33)
         Me.Spell5Name.TabIndex = 79
         '
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(1083, 142)
+        Me.Label28.Location = New System.Drawing.Point(1422, 12)
+        Me.Label28.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(78, 25)
         Me.Label28.TabIndex = 78
         Me.Label28.Text = "Spell 5"
         '
-        'NoSpells
+        'noSpellsButton
         '
-        Me.NoSpells.Location = New System.Drawing.Point(1180, 307)
-        Me.NoSpells.Name = "NoSpells"
-        Me.NoSpells.Size = New System.Drawing.Size(212, 62)
-        Me.NoSpells.TabIndex = 81
-        Me.NoSpells.Text = "No Spells"
-        Me.NoSpells.UseVisualStyleBackColor = True
+        Me.noSpellsButton.Location = New System.Drawing.Point(904, 865)
+        Me.noSpellsButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.noSpellsButton.Name = "noSpellsButton"
+        Me.noSpellsButton.Size = New System.Drawing.Size(212, 63)
+        Me.noSpellsButton.TabIndex = 81
+        Me.noSpellsButton.Text = "No Spells"
+        Me.noSpellsButton.UseVisualStyleBackColor = True
+        '
+        'entityListBox
+        '
+        Me.entityListBox.FormattingEnabled = True
+        Me.entityListBox.ItemHeight = 25
+        Me.entityListBox.Items.AddRange(New Object() {"Rat", "Small Rat", "Large Rat", "Snow Rat", "Infested Ghoul", "Stray Demon", "Demon Firesage", "Asylum Demon", "Capra Demon", "Taurus Demon", "Batwing Demon", "Mushroom Parent", "Mushroom Child", "Titanite Demon", "Crow Demon", "Iron Golem", "Demonic Foliage ", "Smough", "Channeler", "Giant Stone Knight", "Darkwraith", "Painting Guardian", "Silver Knight", "Demonic Statue", "Hollow", "Undead Merchant", "Undead Assassin", "Blowdart Sniper", "Armored Hollow", "Undead Soldier", "Balder Knight", "Berenike Knight", "Andre of Astora", "Necromancer", "Butcher", "Ghost (Male)", "Ghost (Female)", "Serpent Soldier", "Serpent Mage", "Crystal Golem", "Golden Crystal Golem", "Crossbreed Priscilla", "Anastacia of Astora", "Mimic", "Black Knight (Axe)", "Black Knight (Halberd)", "Black Knight (Sword)", "Black Knight (Greatsword)", "Undead Crystal Soldier", "Infested Barbarian (Club)", "Infested Barbarian (Boulder)", "Phalanx", "Engorged Zombie", "Giant", "Sentinel or Royal Sentinel", "Skeleton", "Giant Skeleton", "Vamos", "Bonewheel Skeleton", "Skeleton Baby", "Skeleton Beast", "Bone Tower", "Giant Mosquito", "Slime", "Egg Carrier", "Vile Maggot", "Moonlight Butterfly", "Chaos Eater", "Man-Eater Shell", "Basilisk", "Crystal Lizard", "Pinwheel", "Pisaca", "Undead Attack Dog", "Flaming Attack Dog", "Possessed Tree", "Tree Lizard", "Giant Leech", "Burrowing Rockworm", "Crag-Spider", "Frog-Ray", "Undead Dragon", "Bounding Demon of Izalith", "Hellkite Drake", "Everlasting Dragon", "Armored Tusk", "Armored Tusk (Reinforced)", "Sanctuary Guardian", "Chaos Bug", "Good Vagrant", "Evil Vagrant", "Mass of Souls", "Wisp (exploding skull)", "Asylum Transport Crow", "Drake", "Hydra", "Hydra Head", "Marvelous Chester", "Artorias", "Hawkeye Gough", "Stone Guardian", "Scarecrow", "Elizabeth", "Bloathead", "Bloathead Sorcerer", "Humanity Phantom (small)", "Humanity Phantom (medium)", "Humanity Phantom (large)", "Chained Prisoner", "Attack Dog (DLC)", "Manus, Father of the Abyss", "Black Dragon Kalameet", "Young Sif", "Centipede Demon", "Centipede Demon's Arm", "Centipede Demon's Tail", "Sif", "Gravelord Nito", "Bed of Chaos", "Parasitic Wall Hugger", "Ceaseless Discharge", "Gaping Dragon", "Ornstein", "Super Ornstein", "Quelaag", "Seath the Scaleless", "Gwynevere", "Gwyndolin", "Frampt / Kaathe", "The Fair Lady", "Bell Gargoyles", "Lightning Gargoyles", "Great Feline", "Alvina", "Alvina", "Gwyn", "Four Kings"})
+        Me.entityListBox.Location = New System.Drawing.Point(24, 42)
+        Me.entityListBox.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.entityListBox.Name = "entityListBox"
+        Me.entityListBox.Size = New System.Drawing.Size(318, 804)
+        Me.entityListBox.TabIndex = 82
         '
         'CosplayEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(1424, 1032)
-        Me.Controls.Add(Me.NoSpells)
+        Me.ClientSize = New System.Drawing.Size(1704, 944)
+        Me.Controls.Add(Me.entityListBox)
+        Me.Controls.Add(Me.noSpellsButton)
         Me.Controls.Add(Me.Spell5Num)
         Me.Controls.Add(Me.Spell5Name)
         Me.Controls.Add(Me.Label28)
@@ -943,8 +994,8 @@ Partial Class CosplayEditor
         Me.Controls.Add(Me.Spell1Num)
         Me.Controls.Add(Me.Spell1Name)
         Me.Controls.Add(Me.Label24)
-        Me.Controls.Add(Me.cosplayNow)
-        Me.Controls.Add(Me.deprive)
+        Me.Controls.Add(Me.cosplayNowButton)
+        Me.Controls.Add(Me.depriveButton)
         Me.Controls.Add(Me.abdomenSize)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.speedBar)
@@ -1006,11 +1057,12 @@ Partial Class CosplayEditor
         Me.Controls.Add(Me.gauntletsName)
         Me.Controls.Add(Me.armorName)
         Me.Controls.Add(Me.helmetName)
-        Me.Controls.Add(Me.entityBox)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MaximizeBox = False
         Me.Name = "CosplayEditor"
-        Me.Text = "CosplayEditor"
+        Me.Text = "Cosplay Editor"
         CType(Me.vitSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.atnSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.endSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1034,8 +1086,6 @@ Partial Class CosplayEditor
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents entityBox As ComboBox
     Friend WithEvents helmetName As ComboBox
     Friend WithEvents armorName As ComboBox
     Friend WithEvents gauntletsName As ComboBox
@@ -1097,8 +1147,8 @@ Partial Class CosplayEditor
     Friend WithEvents speedBar As TrackBar
     Friend WithEvents Label23 As Label
     Friend WithEvents abdomenSize As TrackBar
-    Friend WithEvents deprive As Button
-    Friend WithEvents cosplayNow As Button
+    Friend WithEvents depriveButton As Button
+    Friend WithEvents cosplayNowButton As Button
     Friend WithEvents Label24 As Label
     Friend WithEvents Spell1Name As ComboBox
     Friend WithEvents Spell1Num As NumericUpDown
@@ -1114,5 +1164,6 @@ Partial Class CosplayEditor
     Friend WithEvents Spell5Num As NumericUpDown
     Friend WithEvents Spell5Name As ComboBox
     Friend WithEvents Label28 As Label
-    Friend WithEvents NoSpells As Button
+    Friend WithEvents noSpellsButton As Button
+    Friend WithEvents entityListBox As ListBox
 End Class

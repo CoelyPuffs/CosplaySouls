@@ -2,9 +2,11 @@
 
 Public Class CosplayEditor
 
-    Dim cosplayFile = My.Resources.emptyCosplays
+    Dim cosplayFile As String = My.Resources.emptyCosplays
     Dim cosplayFileName As String
     Dim externalPath As String
+
+    Dim currentEntityIndex As Integer = -1
 
     Dim isExternal As Boolean = False
 
@@ -41,11 +43,12 @@ Public Class CosplayEditor
     Private Sub CosplayEditor_Load(Sender As Object, e As EventArgs) Handles MyBase.Load
         editorLoadCosplays()
         editorLoadDualLists()
+        cosplayNowButton.Image = Me.Icon.ToBitmap
     End Sub
 
     Private Sub editorClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         If Not isExported Then
-            If (MessageBox.Show("Your cosplays must be exported to be saved. Are you sure you want to close?", "Unsaved Work!", MessageBoxButtons.YesNo) = DialogResult.No) Then
+            If (MessageBox.Show("Your cosplays must be exported to be saved. Are you sure you want to close?", "Unsaved Work!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.No) Then
                 e.Cancel = True
             End If
         End If
@@ -68,9 +71,9 @@ Public Class CosplayEditor
                 editorCosplayLine(n) = (Convert.ToInt32(editorCosplayList(i).Split(":")(n)))
             Next
             allCosplaysArray(i) = editorCosplayLine
-                CosplaySouls.cosplayHash.Item(editorCosplayLine(0)) = editorCosplayLine
-                'editorCosplayHash.Add(editorCosplayLine(0), editorCosplayLine)
-            Next
+            CosplaySouls.cosplayHash.Item(editorCosplayLine(0)) = editorCosplayLine
+            'editorCosplayHash.Add(editorCosplayLine(0), editorCosplayLine)
+        Next
     End Sub
 
     Public Sub editorLoadDualLists()
@@ -109,15 +112,21 @@ Public Class CosplayEditor
         Next
     End Sub
 
-    Private Sub onEntityBoxClicked() Handles entityBox.Click
-        If Not isApplied Then
-            MessageBox.Show("Your changes have not been applied. If you want to save this cosplay, please press Apply")
-        End If
-        isApplied = True
-    End Sub
+    'Private Sub onEntityBoxClicked() Handles entityBox.Click
+    '    If Not isApplied Then
+    '        MessageBox.Show("Your changes have not been applied. If you want to save this cosplay, please press Apply")
+    '    End If
+    '    isApplied = True
+    'End Sub
 
-    Private Sub onEntityBoxChanged() Handles entityBox.SelectedIndexChanged
-        Dim selectedLine = allCosplaysArray(entityBox.SelectedIndex)
+    Private Sub onEntityBoxChanged() Handles entityListBox.SelectedIndexChanged
+        If Not isApplied Then
+            If MessageBox.Show("Apply changes?", "Unsaved Work!", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+                applyButton.PerformClick()
+            End If
+        End If
+
+        Dim selectedLine = allCosplaysArray(entityListBox.SelectedIndex)
         Dim currentData() = analyzeName(selectedLine(1), False)
         helmetName.SelectedIndex = Array.IndexOf(helmetIDArray, currentData(0))
         helmetLevel.SelectedIndex = currentData(2)
@@ -229,6 +238,8 @@ Public Class CosplayEditor
         Spell5Name.SelectedIndex = Array.IndexOf(spellIDArray, selectedLine(31))
         Spell5Num.Value = selectedLine(32)
         isApplied = True
+
+        currentEntityIndex = entityListBox.SelectedIndex
     End Sub
 
     Private Function analyzeName(name As Integer, hasInfusion As Boolean) As Integer()
@@ -483,11 +494,13 @@ Public Class CosplayEditor
     End Sub
 
     Private Sub applyButton_Click(sender As Object, e As EventArgs) Handles applyButton.Click
-        If entityBox.SelectedIndex < 0 Then
+        'We use currentEntityIndex so that we apply on the LAST selected entity, and handle the confirmation message on .SelectedIndexChanged() correctly
+        If currentEntityIndex < 0 Then
             Exit Sub
         End If
+
         Dim applyLine(33) As Integer
-        applyLine(0) = entityIDArray(entityBox.SelectedIndex + 1)
+        applyLine(0) = entityIDArray(currentEntityIndex + 1)
         applyLine(1) = helmetIDArray(helmetName.SelectedIndex) + helmetLevel.SelectedIndex
         applyLine(2) = armorIDArray(armorName.SelectedIndex) + armorLevel.SelectedIndex
         applyLine(3) = gauntletIDArray(gauntletsName.SelectedIndex) + gauntletsLevel.SelectedIndex
@@ -563,7 +576,7 @@ Public Class CosplayEditor
         applyLine(30) = Spell4Num.Value
         applyLine(31) = spellIDArray(Spell5Name.SelectedIndex)
         applyLine(32) = Spell5Num.Value
-        allCosplaysArray(entityBox.SelectedIndex) = applyLine
+        allCosplaysArray(currentEntityIndex) = applyLine
         CosplaySouls.cosplayHash.Item(applyLine(0)) = applyLine
         isApplied = True
         isExported = False
@@ -579,12 +592,14 @@ Public Class CosplayEditor
         Return currentString
     End Function
 
-    Private Sub externalButton_Click(sender As Object, e As EventArgs) Handles exportButton.Click
+    Private Sub exportButton_Click(sender As Object, e As EventArgs) Handles exportButton.Click
         Dim Export As New SaveFileDialog()
-        Export.InitialDirectory = "C:\"
+        Export.InitialDirectory = IO.Path.GetDirectoryName(Reflection.Assembly.GetExecutingAssembly.Location)
         Export.Filter = "txt files (*.txt)|*.txt"
         Export.FilterIndex = 1
         Export.RestoreDirectory = True
+        Export.CheckPathExists = True
+
         If Export.ShowDialog() = DialogResult.OK Then
             externalPath = Export.FileName
             Dim currentString = makeCurrentString(allCosplaysArray(0))
@@ -600,22 +615,20 @@ Public Class CosplayEditor
 
     Private Sub importButton_Click(sender As Object, e As EventArgs) Handles importButton.Click
         Dim Import As New OpenFileDialog()
-        Import.InitialDirectory = "C:\"
+        Import.InitialDirectory = IO.Path.GetDirectoryName(Reflection.Assembly.GetExecutingAssembly.Location)
         Import.Filter = "txt files (*.txt)|*.txt"
         Import.FilterIndex = 1
         Import.RestoreDirectory = True
+        Import.CheckFileExists = True 'no need to check after .ShowDialog()
+
         If Import.ShowDialog() = DialogResult.OK Then
-            If Dir(Import.FileName) <> "" Then
-                cosplayFileName = Import.FileName
-                isExternal = True
-                editorLoadCosplays()
-            Else
-                MessageBox.Show("Error finding file")
-            End If
+            cosplayFileName = Import.FileName
+            isExternal = True
+            editorLoadCosplays()
         End If
     End Sub
 
-    Public Sub onNoSpellsClick() Handles NoSpells.Click
+    Public Sub onNoSpellsClick() Handles noSpellsButton.Click
         Spell1Name.SelectedIndex = 1
         Spell1Num.Value = 0
         Spell2Name.SelectedIndex = 1
@@ -628,7 +641,7 @@ Public Class CosplayEditor
         Spell5Num.Value = 0
     End Sub
 
-    Public Sub onDepriveClick() Handles deprive.Click
+    Public Sub onDepriveClick() Handles depriveButton.Click
         leftOneName.SelectedIndex = 1
         leftTwoName.SelectedIndex = 1
         rightOneName.SelectedIndex = 1
@@ -656,17 +669,17 @@ Public Class CosplayEditor
         Spell5Num.Value = 0
     End Sub
 
-    Private Sub onCosplayNowClick() Handles cosplayNow.Click
+    Private Sub onCosplayNowClick() Handles cosplayNowButton.Click
         If CosplaySouls.targetProcessHandle = vbNull Then
             Exit Sub
         End If
 
         'apply from current boxes
-        If entityBox.SelectedIndex < 0 Then
+        If entityListBox.SelectedIndex < 0 Then
             Exit Sub
         End If
         Dim applyLine(32) As Integer
-        applyLine(0) = entityIDArray(entityBox.SelectedIndex + 1)
+        applyLine(0) = entityIDArray(entityListBox.SelectedIndex + 1)
         applyLine(1) = helmetIDArray(helmetName.SelectedIndex) + helmetLevel.SelectedIndex
         applyLine(2) = armorIDArray(armorName.SelectedIndex) + armorLevel.SelectedIndex
         applyLine(3) = gauntletIDArray(gauntletsName.SelectedIndex) + gauntletsLevel.SelectedIndex
